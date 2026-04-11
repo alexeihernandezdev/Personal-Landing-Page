@@ -20,19 +20,19 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-// export async function generateMetadata({ params }: Props) {
-//   const { locale } = await params;
-//   const t = await getTranslations({ locale, namespace: "metadata" });
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
-//   return {
-//     title: t("title"),
-//     description: t("description"),
-//   };
-// }
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
@@ -41,7 +41,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   setRequestLocale(locale);
-  // const messages = await getMessages();
+  const messages = await getMessages();
 
   return (
     <html
@@ -49,9 +49,9 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
-        {/* <NextIntlClientProvider messages={messages}> */}
+        <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-full flex-col">{children}</div>
-        {/* </NextIntlClientProvider> */}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
