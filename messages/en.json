@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "title": "Alexei Hernández — Portfolio",
+    "description": "Full stack web developer: projects, blog, and contact."
+  },
+  "locale": {
+    "es": "ES",
+    "en": "EN"
+  },
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Web Developer",
+    "description": "I build modern, functional web experiences. Specialized in React, Node.js, and cutting-edge web technologies.",
+    "primaryCta": "Get in touch",
+    "secondaryCta": "View projects",
+    "cvEn": "CV (English)",
+    "cvEs": "CV (Spanish)",
+    "heroImageAlt": "Developer workspace",
+    "profileImageAlt": "{name} — Web developer"
+  },
+  "about": {
+    "title": "About me",
+    "bio1": "I'm a web developer passionate about creating exceptional digital experiences. With more than {years} years of experience, I focus on modern, scalable, user-centered web applications.",
+    "bio2": "My goal is to turn ideas into digital solutions that make a real impact. I love learning new technologies and tackling complex challenges."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I work with every day",
+    "groups": {
+      "layout": { "title": "Frontend" },
+      "server": { "title": "Backend" },
+      "database": { "title": "Databases" },
+      "code2": { "title": "Tools" }
+    }
+  },
+  "projects": {
+    "sectionTitle": "Featured projects",
+    "sectionSubtitle": "Some of my recent work",
+    "codeLink": "Code",
+    "demoLink": "Demo",
+    "items": {
+      "1": {
+        "title": "E-commerce platform",
+        "description": "Full e-commerce platform with admin panel, payment gateway, and inventory management."
+      },
+      "2": {
+        "title": "Task management app",
+        "description": "Task management app with real-time collaboration, notifications, and analytics."
+      },
+      "3": {
+        "title": "Portfolio generator",
+        "description": "Custom portfolio generator with multiple templates and code export."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "pageSubtitle": "Have a project in mind? Let's talk",
+    "infoHeading": "Contact details",
+    "availability": "I'm available for freelance work and job opportunities. Don't hesitate to reach out.",
+    "locationValue": "Bolivar, Venezuela",
+    "methods": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submit": "Send message"
+    }
+  },
+  "footer": {
+    "developedWith": "Built with",
+    "byAuthor": "by {name}",
+    "rightsReserved": "All rights reserved"
+  },
+  "blog": {
+    "listHeroTitle": "Personal blog",
+    "listHeroSubtitle": "Thoughts, tutorials, and notes on web development, technology, and more.",
+    "readMore": "Read more",
+    "notFoundTitle": "Post not found",
+    "backToBlog": "Back to blog",
+    "readSuffix": "read",
+    "relatedTitle": "More articles you might like",
+    "comingSoonTitle": "Coming soon",
+    "comingSoonSubtitle": "We are preparing articles and notes. Check back soon for updates on development and technology."
+  },
+  "codeConsole": {
+    "windowTitle": "terminal — bash — 80×24",
+    "lineInstall": "$ npm install passion dedication creativity",
+    "lineOk": "✓ Installing packages...",
+    "role": "Full Stack Developer",
+    "passion": "Building amazing web experiences",
+    "status": "Ready to create! 🚀",
+    "magicComment": "developer.code(); // ✨ Magic happens here"
+  }
+}

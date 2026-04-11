@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "title": "Alexei Hernández — Portfolio",
+    "description": "Desarrollador web full stack: proyectos, blog y contacto."
+  },
+  "locale": {
+    "es": "ES",
+    "en": "EN"
+  },
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador Web Full Stack",
+    "description": "Creo experiencias web modernas y funcionales. Especializado en React, Node.js y tecnologías web de vanguardia.",
+    "primaryCta": "Contactar",
+    "secondaryCta": "Ver Proyectos",
+    "cvEn": "CV (inglés)",
+    "cvEs": "CV (español)",
+    "heroImageAlt": "Espacio de trabajo de desarrollador",
+    "profileImageAlt": "{name} — Desarrollador web"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio1": "Soy un desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de {years} años de experiencia, me especializo en construir aplicaciones web modernas, escalables y centradas en el usuario.",
+    "bio2": "Mi objetivo es transformar ideas en soluciones digitales que generen un impacto real. Me encanta aprender nuevas tecnologías y enfrentar desafíos complejos."
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologías",
+    "subtitle": "Tecnologías con las que trabajo día a día",
+    "groups": {
+      "layout": { "title": "Frontend" },
+      "server": { "title": "Backend" },
+      "database": { "title": "Base de Datos" },
+      "code2": { "title": "Herramientas" }
+    }
+  },
+  "projects": {
+    "sectionTitle": "Proyectos Destacados",
+    "sectionSubtitle": "Algunos de mis trabajos recientes",
+    "codeLink": "Código",
+    "demoLink": "Demo",
+    "items": {
+      "1": {
+        "title": "Plataforma E-Commerce",
+        "description": "Plataforma de comercio electrónico completa con panel de administración, pasarela de pagos y gestión de inventario."
+      },
+      "2": {
+        "title": "App de gestión de tareas",
+        "description": "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones y analytics."
+      },
+      "3": {
+        "title": "Generador de portfolios",
+        "description": "Generador de portfolios personalizados con múltiples plantillas y exportación a código."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "pageSubtitle": "¿Tienes un proyecto en mente? Hablemos",
+    "infoHeading": "Información de Contacto",
+    "availability": "Estoy disponible para proyectos freelance y oportunidades laborales. No dudes en contactarme.",
+    "locationValue": "Bolívar, Venezuela",
+    "methods": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    },
+    "form": {
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "submit": "Enviar mensaje"
+    }
+  },
+  "footer": {
+    "developedWith": "Desarrollado con",
+    "byAuthor": "por {name}",
+    "rightsReserved": "Todos los derechos reservados"
+  },
+  "blog": {
+    "listHeroTitle": "Blog personal",
+    "listHeroSubtitle": "Pensamientos, tutoriales y reflexiones sobre desarrollo web, tecnología y más.",
+    "readMore": "Leer más",
+    "notFoundTitle": "Artículo no encontrado",
+    "backToBlog": "Volver al blog",
+    "readSuffix": "de lectura",
+    "relatedTitle": "Más artículos que podrían interesarte",
+    "comingSoonTitle": "Próximamente",
+    "comingSoonSubtitle": "Estamos preparando artículos y notas. Vuelve pronto para leer novedades sobre desarrollo y tecnología."
+  },
+  "codeConsole": {
+    "windowTitle": "terminal — bash — 80×24",
+    "lineInstall": "$ npm install passion dedication creativity",
+    "lineOk": "✓ Installing packages...",
+    "role": "Desarrollador Full Stack",
+    "passion": "Crear experiencias web increíbles",
+    "status": "¡Listo para crear! 🚀",
+    "magicComment": "developer.code(); // ✨ Aquí ocurre la magia"
+  }
+}
