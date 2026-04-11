@@ -72,6 +72,8 @@ export function Hero() {
               className="px-8 py-3 border-2 border-[#06B6D4] text-[#06B6D4] rounded-lg hover:bg-[#06B6D4]/10 transition-colors font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {t('secondaryCta')}
             </motion.a>
@@ -82,6 +84,8 @@ export function Hero() {
                 className="inline-flex items-center gap-2 px-5 py-3 border border-[#06B6D4]/60 text-[#06B6D4] rounded-lg hover:bg-[#06B6D4]/10 transition-colors font-medium text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden />
                 {t('cvEn')}
