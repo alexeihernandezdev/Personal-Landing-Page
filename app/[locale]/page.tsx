@@ -10,19 +10,19 @@
 
 export default function Page() {
   return <div>Hello World</div>;
-  return (
-    <div className="min-h-screen relative">
-      <MouseGlow />
-      <div className="relative z-10">
-        <Navigation />
-        <Hero />
-        <ProfileSection />
-        <CodeConsole />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="min-h-screen relative">
+  //     <MouseGlow />
+  //     <div className="relative z-10">
+  //       <Navigation />
+  //       <Hero />
+  //       <ProfileSection />
+  //       <CodeConsole />
+  //       <Skills />
+  //       <Projects />
+  //       <Contact />
+  //       <Footer />
+  //     </div>
+  //   </div>
+  // );
 }
