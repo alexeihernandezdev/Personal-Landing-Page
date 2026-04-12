@@ -1,26 +1,29 @@
-import type { JSX } from 'react';
-import { Navigation } from '@components/Navigation';
-import { Footer } from '@components/Footer';
-import { MouseGlow } from '@components/MouseGlow';
-import { blogPosts } from '@data/blogPosts';
-import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
-import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+"use client";
+import type { JSX } from "react";
+import { Navigation } from "@components/Navigation";
+import { Footer } from "@components/Footer";
+import { MouseGlow } from "@components/MouseGlow";
+import { blogPosts } from "@data/blogPosts";
+import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
+import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function BlogPostPage() {
-  const t = useTranslations('blog');
+  const t = useTranslations("blog");
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
       <div className="min-h-screen bg-[#090E1B] flex items-center justify-center relative">
         <MouseGlow />
         <div className="text-center relative z-10">
-          <h1 className="text-4xl font-bold text-white mb-4">{t('notFoundTitle')}</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">
+            {t("notFoundTitle")}
+          </h1>
           <Link href="/blog" className="text-[#06B6D4] hover:underline">
-            {t('backToBlog')}
+            {t("backToBlog")}
           </Link>
         </div>
       </div>
@@ -32,7 +35,7 @@ export default function BlogPostPage() {
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
-        
+
         {/* Hero Section */}
         <article className="pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto">
@@ -42,7 +45,7 @@ export default function BlogPostPage() {
               className="inline-flex items-center gap-2 text-[#06B6D4] hover:text-[#0EA5E9] transition-colors mb-8 group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              <span>{t('backToBlog')}</span>
+              <span>{t("backToBlog")}</span>
             </Link>
 
             {/* Category Badge */}
@@ -61,15 +64,19 @@ export default function BlogPostPage() {
             <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-8 pb-8 border-b border-[#1E293B]">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span>{new Date(post.date).toLocaleDateString('es-ES', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}</span>
+                <span>
+                  {new Date(post.date).toLocaleDateString("es-ES", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span>{post.readTime} {t('readSuffix')}</span>
+                <span>
+                  {post.readTime} {t("readSuffix")}
+                </span>
               </div>
             </div>
 
@@ -85,25 +92,28 @@ export default function BlogPostPage() {
             {/* Content */}
             <div className="prose prose-invert prose-lg max-w-none mb-12">
               <div className="text-gray-300 leading-relaxed space-y-6">
-                {post.content.split('\n').map((paragraph, index) => {
-                  if (paragraph.trim().startsWith('#')) {
+                {post.content.split("\n").map((paragraph, index) => {
+                  if (paragraph.trim().startsWith("#")) {
                     const level = paragraph.match(/^#+/)?.[0].length || 1;
-                    const text = paragraph.replace(/^#+\s/, '');
-                    const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
-                    
+                    const text = paragraph.replace(/^#+\s/, "");
+                    const HeadingTag =
+                      `h${level}` as keyof JSX.IntrinsicElements;
+
                     return (
                       <HeadingTag
                         key={index}
                         className={`font-bold text-white ${
-                          level === 1 ? 'text-4xl mb-6' :
-                          level === 2 ? 'text-3xl mb-4 mt-8' :
-                          'text-2xl mb-3 mt-6'
+                          level === 1
+                            ? "text-4xl mb-6"
+                            : level === 2
+                              ? "text-3xl mb-4 mt-8"
+                              : "text-2xl mb-3 mt-6"
                         }`}
                       >
                         {text}
                       </HeadingTag>
                     );
-                  } else if (paragraph.trim().startsWith('```')) {
+                  } else if (paragraph.trim().startsWith("```")) {
                     return null; // Skip code block markers for now
                   } else if (paragraph.trim()) {
                     return (
@@ -135,11 +145,11 @@ export default function BlogPostPage() {
             {/* Related Posts */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-6">
-                {t('relatedTitle')}
+                {t("relatedTitle")}
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {blogPosts
-                  .filter(p => p.id !== post.id)
+                  .filter((p) => p.id !== post.id)
                   .slice(0, 2)
                   .map((relatedPost) => (
                     <Link
