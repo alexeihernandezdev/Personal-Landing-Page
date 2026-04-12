@@ -1,41 +1,33 @@
-import { Navigation } from '@components/Navigation';
-import { Footer } from '@components/Footer';
-import { MouseGlow } from '@components/MouseGlow';
-import { BlogComingSoon } from '@components/BlogComingSoon';
-// import { blogPosts } from '@data/blogPosts';
-// import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-// import { Link } from '@/i18n/navigation';
+import { Link } from "@/i18n/navigation";
+import { Footer } from "@components/Footer";
+import { MouseGlow } from "@components/MouseGlow";
+import { Navigation } from "@components/Navigation";
+import { blogPosts } from "@data/blogPosts";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function BlogPage() {
-  const t = useTranslations('blog');
+  const t = useTranslations("blog");
 
   return (
     <div className="min-h-screen bg-[#090E1B] relative">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
-        
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-6 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06B6D4] rounded-full blur-[120px]"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-[120px]"></div>
           </div>
-          
+
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              {t('listHeroTitle')}
+              {t("listHeroTitle")}
             </h1>
-            <p className="text-xl text-gray-400">
-              {t('listHeroSubtitle')}
-            </p>
+            <p className="text-xl text-gray-400">{t("listHeroSubtitle")}</p>
           </div>
         </section>
-
-        <BlogComingSoon />
-
-        {/*
         Blog Posts Grid (restaurar cuando haya contenido publicado)
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
@@ -63,11 +55,13 @@ export default function BlogPage() {
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
-                        <span>{new Date(post.date).toLocaleDateString('es-ES', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}</span>
+                        <span>
+                          {new Date(post.date).toLocaleDateString("es-ES", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
@@ -95,7 +89,7 @@ export default function BlogPage() {
                     </div>
 
                     <div className="flex items-center text-[#06B6D4] font-semibold group-hover:gap-2 transition-all">
-                      <span>{t('readMore')}</span>
+                      <span>{t("readMore")}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -104,8 +98,6 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
-        */}
-
         <Footer />
       </div>
     </div>
