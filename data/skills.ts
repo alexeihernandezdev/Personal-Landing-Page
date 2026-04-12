@@ -52,6 +52,6 @@ export const skillGroups: {
   {
     key: "devops",
     icon: "code2",
-    technologies: ["Git", "Docker", "AWS", "CI/CD"],
+    technologies: ["Git", "Docker", "AWS", "CI/CD", ""],
   },
 ];
