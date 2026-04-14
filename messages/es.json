@@ -78,7 +78,13 @@
       "emailPlaceholder": "tu@email.com",
       "messageLabel": "Mensaje",
       "messagePlaceholder": "Cuéntame sobre tu proyecto...",
-      "submit": "Enviar mensaje"
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando…",
+      "successTitle": "Mensaje enviado",
+      "successBody": "Gracias por contactarme. Te responderé lo antes posible.",
+      "sendAnother": "Enviar otro mensaje",
+      "errorToast": "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+      "dismissToast": "Cerrar aviso"
     }
   },
   "footer": {
