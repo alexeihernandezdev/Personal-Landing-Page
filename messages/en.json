@@ -78,7 +78,13 @@
       "emailPlaceholder": "you@email.com",
       "messageLabel": "Message",
       "messagePlaceholder": "Tell me about your project...",
-      "submit": "Send message"
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Message sent",
+      "successBody": "Thanks for reaching out. I'll get back to you as soon as I can.",
+      "sendAnother": "Send another message",
+      "errorToast": "Couldn't send your message. Please try again.",
+      "dismissToast": "Dismiss notification"
     }
   },
   "footer": {
