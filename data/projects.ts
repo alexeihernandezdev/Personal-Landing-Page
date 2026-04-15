@@ -252,7 +252,7 @@ const iceClimberEs: Project = {
     },
   ],
   github: "https://github.com/alexei2000/Ice-climber",
-  demo: "https://usuario.github.io/ice-climber/",
+  demo: "https://alexei2000.github.io/Ice-climber/",
   category: "Desarrollo de videojuegos",
   year: "2020",
   role: "Desarrollador de juegos",
