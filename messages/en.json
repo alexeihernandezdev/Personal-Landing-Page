@@ -45,20 +45,18 @@
     "sectionSubtitle": "Some of my recent work",
     "codeLink": "Code",
     "demoLink": "Demo",
-    "items": {
-      "1": {
-        "title": "E-commerce platform",
-        "description": "Full e-commerce platform with admin panel, payment gateway, and inventory management."
-      },
-      "2": {
-        "title": "Task management app",
-        "description": "Task management app with real-time collaboration, notifications, and analytics."
-      },
-      "3": {
-        "title": "Portfolio generator",
-        "description": "Custom portfolio generator with multiple templates and code export."
-      }
-    }
+    "demoLinkProduction": "View",
+    "notFoundTitle": "Project not found",
+    "backToProjects": "Back to projects",
+    "relatedTitle": "Other projects",
+    "descriptionHeading": "Project description",
+    "technologiesHeading": "Technologies used",
+    "featuresHeading": "Key features",
+    "challengesHeading": "Challenges and solutions",
+    "screenshotsHeading": "Screenshots",
+    "detailCodeCta": "View code",
+    "detailDemoCta": "View demo",
+    "detailDemoCtaProduction": "View"
   },
   "contact": {
     "pageTitle": "Contact",

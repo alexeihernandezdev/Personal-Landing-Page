@@ -3,12 +3,15 @@
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./atoms/ImageWithFallback";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
-import { projects } from "@data/projects";
+import { useLocale, useTranslations } from "next-intl";
+import { getProjects, projectHasGithubLink } from "@data/projects";
 import { sectionIds } from "@data/sectionIds";
+import { Link } from "@/i18n/navigation";
 
 export function Projects() {
   const t = useTranslations("projects");
+  const locale = useLocale();
+  const projects = getProjects(locale);
 
   return (
     <section id={sectionIds.projects} className="py-20 px-6 bg-[#090E1B]">
@@ -45,73 +48,77 @@ export function Projects() {
                 transition: { duration: 0.3 },
               }}
             >
-              <div className="relative h-48 overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={t(`items.${project.id}.title`)}
-                    className="w-full h-full object-cover"
-                    width={600}
-                    height={400}
-                  />
-                </motion.div>
-              </div>
+              <Link href={`/project/${project.slug}`} className="block">
+                <div className="relative h-48 overflow-hidden">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <ImageWithFallback
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      width={600}
+                      height={400}
+                    />
+                  </motion.div>
+                </div>
 
-              <div className="p-6">
-                <motion.h3
-                  className="text-xl font-semibold text-white mb-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
-                >
-                  {t(`items.${project.id}.title`)}
-                </motion.h3>
-                <motion.p
-                  className="text-gray-400 mb-4 line-clamp-3"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
-                >
-                  {t(`items.${project.id}.description`)}
-                </motion.p>
+                <div className="px-6 pt-6">
+                  <motion.h3
+                    className="text-xl font-semibold text-white mb-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-400 mb-4 line-clamp-3"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
+                  >
+                    {project.shortDescription}
+                  </motion.p>
 
-                <motion.div
-                  className="flex flex-wrap gap-2 mb-4"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.15 + 0.4 }}
-                >
-                  {project.technologies.map((tech, techIndex) => (
-                    <motion.span
-                      key={tech}
-                      className="px-3 py-1 bg-[#06B6D4]/20 text-[#06B6D4] rounded-full text-sm"
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.15 + 0.5 + techIndex * 0.05,
-                      }}
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </motion.div>
+                  <motion.div
+                    className="flex flex-wrap gap-2 mb-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.4 }}
+                  >
+                    {project.technologies.map((tech, techIndex) => (
+                      <motion.span
+                        key={tech}
+                        className="px-3 py-1 bg-[#06B6D4]/20 text-[#06B6D4] rounded-full text-sm"
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.3,
+                          delay: index * 0.15 + 0.5 + techIndex * 0.05,
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </div>
+              </Link>
 
-                <motion.div
-                  className="flex gap-4"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.15 + 0.6 }}
-                >
+              <motion.div
+                className="flex flex-wrap gap-4 px-6 pb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.15 + 0.6 }}
+              >
+                {projectHasGithubLink(project) ? (
                   <motion.a
                     href={project.github}
                     target="_blank"
@@ -123,19 +130,23 @@ export function Projects() {
                     <Github className="w-5 h-5" />
                     <span className="text-sm">{t("codeLink")}</span>
                   </motion.a>
-                  <motion.a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#06B6D4] hover:text-[#0EA5E9] transition-colors"
-                    whileHover={{ x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    <span className="text-sm">{t("demoLink")}</span>
-                  </motion.a>
-                </motion.div>
-              </div>
+                ) : null}
+                <motion.a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-[#06B6D4] hover:text-[#0EA5E9] transition-colors"
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  <span className="text-sm">
+                    {project.demoIsProduction
+                      ? t("demoLinkProduction")
+                      : t("demoLink")}
+                  </span>
+                </motion.a>
+              </motion.div>
             </motion.div>
           ))}
         </div>
