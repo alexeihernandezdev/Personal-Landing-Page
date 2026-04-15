@@ -45,6 +45,16 @@
     "sectionSubtitle": "Some of my recent work",
     "codeLink": "Code",
     "demoLink": "Demo",
+    "notFoundTitle": "Project not found",
+    "backToProjects": "Back to projects",
+    "relatedTitle": "Other projects",
+    "descriptionHeading": "Project description",
+    "technologiesHeading": "Technologies used",
+    "featuresHeading": "Key features",
+    "challengesHeading": "Challenges and solutions",
+    "screenshotsHeading": "Screenshots",
+    "detailCodeCta": "View code",
+    "detailDemoCta": "View demo",
     "items": {
       "1": {
         "title": "E-commerce platform",

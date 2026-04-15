@@ -45,6 +45,16 @@
     "sectionSubtitle": "Algunos de mis trabajos recientes",
     "codeLink": "Código",
     "demoLink": "Demo",
+    "notFoundTitle": "Proyecto no encontrado",
+    "backToProjects": "Volver a proyectos",
+    "relatedTitle": "Otros proyectos",
+    "descriptionHeading": "Descripción del proyecto",
+    "technologiesHeading": "Tecnologías utilizadas",
+    "featuresHeading": "Características principales",
+    "challengesHeading": "Desafíos y soluciones",
+    "screenshotsHeading": "Capturas de pantalla",
+    "detailCodeCta": "Ver código",
+    "detailDemoCta": "Ver demo",
     "items": {
       "1": {
         "title": "Plataforma E-Commerce",
