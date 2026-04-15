@@ -11,173 +11,309 @@ export interface Project {
     title: string;
     description: string;
   }[];
-  github: string;
+  /** Si está vacío o ausente, no se muestra el botón de código. */
+  github?: string;
   demo: string;
+  /** Si es true, el enlace de demo usa el texto "Ver" / "View" (producción) en lugar de "Demo". */
+  demoIsProduction?: boolean;
   category: string;
   year: string;
   role: string;
   screenshots: string[];
 }
 
-export const projects: Project[] = [
-  {
-    id: "1",
-    slug: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    shortDescription:
-      "Plataforma de comercio electrónico completa con panel de administración, pasarela de pagos y gestión de inventario.",
-    fullDescription:
-      "Una plataforma de comercio electrónico full-stack diseñada para pequeñas y medianas empresas. El sistema incluye un panel de administración robusto, integración con múltiples pasarelas de pago, gestión avanzada de inventario, y un sistema de recomendaciones basado en el comportamiento del usuario.",
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redis", "Docker"],
-    features: [
-      "Carrito de compras en tiempo real con sincronización multi-dispositivo",
-      "Panel de administración con analytics y reportes detallados",
-      "Sistema de gestión de inventario con alertas automáticas",
-      "Integración con Stripe para pagos seguros",
-      "Sistema de recomendaciones basado en ML",
-      "Notificaciones push para ofertas y actualizaciones",
-      "API RESTful documentada con Swagger",
-      "Autenticación JWT con refresh tokens",
-    ],
-    challenges: [
-      {
-        title: "Optimización de rendimiento en catálogo grande",
-        description:
-          "Con más de 50,000 productos, implementé virtualización de listas, lazy loading de imágenes y caché inteligente con Redis, reduciendo el tiempo de carga en un 70%.",
-      },
-      {
-        title: "Manejo de transacciones concurrentes",
-        description:
-          "Diseñé un sistema de bloqueo optimista para prevenir over-selling durante picos de tráfico, garantizando la integridad de las transacciones.",
-      },
-      {
-        title: "Sincronización en tiempo real",
-        description:
-          "Implementé WebSockets para sincronizar el carrito entre dispositivos, permitiendo a los usuarios continuar su compra desde cualquier lugar.",
-      },
-    ],
-    github: "https://github.com",
-    demo: "https://example.com",
-    category: "E-commerce",
-    year: "2024",
-    role: "Full Stack Developer",
-    screenshots: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    ],
-  },
-  {
-    id: "2",
-    slug: "task-management-app",
-    title: "Task Management App",
-    shortDescription:
-      "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones y analytics.",
-    fullDescription:
-      "Una aplicación moderna de gestión de proyectos diseñada para equipos remotos. Incluye tableros Kanban personalizables, colaboración en tiempo real, seguimiento de tiempo, y potentes herramientas de análisis para medir la productividad del equipo.",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Tailwind",
-      "Prisma",
-      "WebSockets",
-    ],
-    features: [
-      "Tableros Kanban con drag & drop fluido",
-      "Colaboración en tiempo real con presencia de usuarios",
-      "Sistema de comentarios y menciones",
-      "Seguimiento de tiempo integrado",
-      "Notificaciones inteligentes por email y push",
-      "Dashboard de analytics con métricas de productividad",
-      "Etiquetas y filtros personalizables",
-      "Integraciones con Slack y GitHub",
-    ],
-    challenges: [
-      {
-        title: "Sincronización de estado en tiempo real",
-        description:
-          "Implementé un sistema de Operational Transformation para resolver conflictos cuando múltiples usuarios editan simultáneamente, similar a Google Docs.",
-      },
-      {
-        title: "Rendimiento con datasets grandes",
-        description:
-          "Optimicé las queries de PostgreSQL y añadí índices estratégicos, logrando respuestas sub-100ms incluso con más de 100,000 tareas.",
-      },
-      {
-        title: "Sistema de notificaciones escalable",
-        description:
-          "Diseñé un sistema de cola con Bull para procesar notificaciones de forma asíncrona, manejando picos de hasta 10,000 notificaciones por minuto.",
-      },
-    ],
-    github: "https://github.com",
-    demo: "https://example.com",
-    category: "Productivity",
-    year: "2024",
-    role: "Lead Developer",
-    screenshots: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-    ],
-  },
-  {
-    id: "3",
-    slug: "portfolio-generator",
-    title: "Portfolio Generator",
-    shortDescription:
-      "Generador de portfolios personalizados con múltiples plantillas y exportación a código.",
-    fullDescription:
-      "Una herramienta SaaS que permite a desarrolladores y diseñadores crear portfolios profesionales sin código. Incluye un editor visual drag-and-drop, múltiples plantillas personalizables, y la capacidad de exportar el código final para hosting propio.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-    technologies: [
-      "React",
-      "Firebase",
-      "Tailwind CSS",
-      "Vite",
-      "Monaco Editor",
-    ],
-    features: [
-      "Editor visual drag-and-drop intuitivo",
-      "12+ plantillas profesionales prediseñadas",
-      "Personalización completa de colores y tipografía",
-      "Exportación a código React/HTML limpio",
-      "Sistema de temas con preview en tiempo real",
-      "Optimización automática de imágenes",
-      "SEO integrado con meta tags personalizables",
-      "Hosting gratuito con subdominio personalizado",
-    ],
-    challenges: [
-      {
-        title: "Editor visual complejo",
-        description:
-          "Construí un sistema de componentes flexible que permite arrastrar, soltar y reorganizar secciones mientras se mantiene el código generado limpio y semántico.",
-      },
-      {
-        title: "Generación de código optimizado",
-        description:
-          "Desarrollé un sistema de templates que genera código React moderno, tree-shakeable y accesible, con un bundle size 40% menor que alternativas similares.",
-      },
-      {
-        title: "Preview en tiempo real",
-        description:
-          "Implementé un iframe sandbox con comunicación bidireccional para preview en vivo sin afectar el rendimiento del editor principal.",
-      },
-    ],
-    github: "https://github.com",
-    demo: "https://example.com",
-    category: "SaaS",
-    year: "2023",
-    role: "Solo Developer",
-    screenshots: [
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
-    ],
-  },
-];
+const leberpEcosystemEs: Project = {
+  id: "3",
+  slug: "leberp-erp-ecosystem",
+  title: "Leberp — ecosistema ERP",
+  shortDescription:
+    "ERP cloud B2B (ventas, almacén, logística, tesorería, compras, analítica y POS): SPA en React, cliente de mostrador en Electron y backend .NET en Azure.",
+  fullDescription:
+    "Participación en el desarrollo de un ERP / plataforma de gestión orientada a operaciones de ventas, almacén, logística, tesorería, compras, catálogo, analítica y punto de venta, con cliente web (SPA), cliente POS multiplataforma (Electron) y monorepo backend en .NET con API, Azure Functions, integraciones y componentes de datos tabulares configurables e histórico.",
+  image: "/projects/l1.png",
+  technologies: [
+    "TypeScript",
+    "React 18",
+    "Vite",
+    "Redux Toolkit",
+    "TanStack Query",
+    "MUI",
+    "React Hook Form",
+    "Zod",
+    "Electron",
+    ".NET 8",
+    "ASP.NET Core",
+    "Entity Framework Core",
+    "Azure Functions",
+    "Azure",
+  ],
+  features: [
+    "Frontend enterprise a gran escala: dominios de negocio amplios (pedidos, almacén, envíos, facturación, compras, analítica, RRHH, configuración), tablas y formularios complejos, informes y visualización (ECharts, Nivo, ApexCharts, entre otros)",
+    "Cliente web con React, Vite, React Router, estado con Redux Toolkit / Zustand / TanStack Query, validación con Zod, UI con MUI, Radix, dnd-kit y piezas de datos muy densas (tablas virtuales, hojas tipo spreadsheet)",
+    "Cliente POS en Electron (Windows, macOS, Linux): empaquetado con electron-builder, actualizaciones automáticas, protocolo propio para deep links, IPC tipado e impresión térmica para entorno retail",
+    "Backend de dominio rico en .NET 8: ASP.NET Core con OpenAPI, EF Core, Azure Functions (HTTP, Service Bus, temporizadores, Durable Functions), Redis, integración con servicios Azure y pipelines con artefactos privados",
+    "Integración entre capas: cliente API versionado frente a la API de Leberp, flujos desacoplados con colas y tareas masivas, telemetría con Application Insights en web, POS y componentes cloud",
+    "Calidad de producto: ESLint, Prettier, Vitest, Testing Library, Playwright, Storybook y análisis de bundle en el ecosistema frontend",
+  ],
+  challenges: [
+    {
+      title: "Complejidad funcional y consistencia",
+      description:
+        "Mantener coherencia UX y de datos entre módulos muy distintos (ventas, almacén, tesorería, POS) y entre canales web y escritorio, con reglas de negocio cambiantes y alto volumen de pantallas.",
+    },
+    {
+      title: "Rendimiento en interfaces densas",
+      description:
+        "Listados y grillas con mucho volumen de información requieren virtualización, consultas bien acotadas con TanStack Query y cuidado del bundle en una base de código muy amplia.",
+    },
+  ],
+  demo: "https://leberp.com/",
+  demoIsProduction: true,
+  category: "Software empresarial",
+  year: "2020 – actualidad",
+  role: "Desarrollador full stack",
+  screenshots: ["/projects/l1.png", "/projects/l2.png", "/projects/l3.png"],
+};
+
+const leberpEcosystemEn: Project = {
+  ...leberpEcosystemEs,
+  title: "Leberp — ERP ecosystem",
+  shortDescription:
+    "B2B cloud ERP (sales, warehouse, logistics, treasury, purchasing, analytics, and POS): React SPA, Electron desktop client, and .NET backend on Azure.",
+  fullDescription:
+    "Contributing to the development of an ERP / business management platform focused on sales, warehouse, logistics, treasury, purchasing, catalog, analytics, and point-of-sale operations, with a web (SPA) client, a cross-platform Electron POS client, and a .NET backend monorepo with APIs, Azure Functions, integrations, and configurable tabular data components and history.",
+  features: [
+    "Large-scale enterprise frontend: broad business domains (orders, warehouse, shipping, invoicing, purchasing, analytics, HR, settings), complex tables and forms, reporting and charts (ECharts, Nivo, ApexCharts, among others)",
+    "Web client with React, Vite, React Router, Redux Toolkit / Zustand / TanStack Query, Zod validation, MUI and Radix, dnd-kit, and very dense data UIs (virtualized tables, spreadsheet-style views)",
+    "Electron POS for Windows, macOS, and Linux: electron-builder packaging, auto-updates, custom protocol for deep links, typed IPC, and thermal printing for retail",
+    "Rich .NET 8 backend: ASP.NET Core with OpenAPI, EF Core, Azure Functions (HTTP, Service Bus, timers, Durable Functions), Redis, Azure integrations, and private artifact pipelines",
+    "Cross-layer integration: versioned API client against the Leberp API, decoupled flows with queues and bulk jobs, Application Insights across web, POS, and cloud components",
+    "Product quality: ESLint, Prettier, Vitest, Testing Library, Playwright, Storybook, and bundle analysis on the frontend side",
+  ],
+  challenges: [
+    {
+      title: "Functional complexity and consistency",
+      description:
+        "Keeping UX and data consistency across very different modules (sales, warehouse, treasury, POS) and between web and desktop channels, with evolving rules and a huge screen surface.",
+    },
+    {
+      title: "Performance for dense UIs",
+      description:
+        "Large grids and heavy lists need virtualization, well-scoped TanStack Query usage, and careful bundle strategy in a very large codebase.",
+    },
+  ],
+  category: "Enterprise software",
+  year: "2020 – present",
+  role: "Full stack developer",
+};
+
+const lashExtensionsEs: Project = {
+  id: "1",
+  slug: "beauty-lash-extensions-site",
+  title: "Sitio web — extensiones de pestañas",
+  shortDescription:
+    "Web estática y marketing local para un negocio de belleza: servicios, precios, contacto, mapa y contenido bilingüe (inglés / español).",
+  fullDescription:
+    "Plantilla y demo de sitio promocional centrado en extensiones de pestañas. Incluye catálogo de servicios con precios de ejemplo, formulario de contacto, mapa interactivo con OpenStreetMap y navegación responsive. Los textos de negocio, coordenadas y destino del formulario son configurables en un módulo de datos con placeholders, carrusel en la home y pie de página con contacto y redes.",
+  image: "/projects/m1.png",
+  technologies: [
+    "Next.js 13",
+    "React 18",
+    "TypeScript",
+    "Tailwind CSS",
+    "CSS Modules",
+    "Leaflet",
+    "React Leaflet",
+    "react-icons",
+    "next/font",
+    "Middleware i18n",
+    "FormSubmit",
+  ],
+  features: [
+    "App Router de Next.js con rutas localizadas `[lang]` y `generateStaticParams` para inglés y español",
+    "Detección de idioma con middleware (`Accept-Language`) y prefijos de URL explícitos",
+    "Diccionarios JSON por locale y contenido de servicios generado en servidor",
+    "Mapa embebido con Leaflet y OSM; carga solo en cliente para evitar problemas de SSR",
+    "Formulario de contacto con POST a FormSubmit (destino configurable en datos)",
+    "UI responsive: navegación sticky, menú móvil, grid de servicios y carrusel animado en la home",
+    "Metadatos SEO por página con `generateMetadata` y prefijos de título configurables",
+    "Estilos con Tailwind CSS y CSS Modules en componentes puntuales; tipografía Inter vía `next/font`",
+  ],
+  challenges: [
+    {
+      title: "Internacionalización y rutas",
+      description:
+        "Coordinar redirección inicial de locale, rutas estables `/en` y `/es`, y textos desde JSON sin duplicar layout, manteniendo buen SEO y enlaces compartibles.",
+    },
+    {
+      title: "Leaflet fuera de SSR",
+      description:
+        "El mapa requiere DOM y no convive bien con el render en servidor; se encapsuló la carga con import dinámico y `ssr: false` para montar React Leaflet solo en el cliente.",
+    },
+    {
+      title: "Contacto sin backend propio",
+      description:
+        "El envío del formulario se externaliza a FormSubmit para no mantener API Routes ni servidor de correo en el proyecto, documentando el destino en el módulo de datos.",
+    },
+  ],
+  github: "https://github.com/alexei2000/MV-Eyelashes",
+  demo: "https://mv-eyelashes.vercel.app",
+  demoIsProduction: true,
+  category: "Desarrollo web",
+  year: "2023",
+  role: "Desarrollador frontend",
+  screenshots: ["/projects/m1.png", "/projects/m2.png"],
+};
+
+const lashExtensionsEn: Project = {
+  ...lashExtensionsEs,
+  title: "Beauty website — lash extensions",
+  shortDescription:
+    "Static marketing site for a beauty business: services, pricing, contact, map, and bilingual content (English / Spanish).",
+  fullDescription:
+    "Promotional site template focused on lash extensions. It includes a service catalog with sample prices, a contact form, an interactive OpenStreetMap map, and responsive navigation. Business copy, map coordinates, and form destination are configurable via a data module with placeholders, a carousel on the home page, and a footer with contact and social links.",
+  features: [
+    "Next.js App Router with `[lang]` routes and `generateStaticParams` for English and Spanish",
+    "Locale detection via middleware (`Accept-Language`) and explicit URL prefixes",
+    "Per-locale JSON dictionaries and server-oriented service content",
+    "Embedded map with Leaflet and OSM; client-only loading to avoid SSR issues",
+    "Contact form posting to FormSubmit (configurable destination in data)",
+    "Responsive UI: sticky nav, mobile menu, service grid, and animated home carousel",
+    "Per-page SEO metadata via `generateMetadata` and configurable title prefixes",
+    "Tailwind CSS plus CSS Modules where needed; Inter via `next/font`",
+  ],
+  challenges: [
+    {
+      title: "Internationalization and routing",
+      description:
+        "Aligning initial locale redirects, stable `/en` and `/es` routes, and JSON-driven copy without duplicating layout, while keeping SEO and shareable URLs in good shape.",
+    },
+    {
+      title: "Leaflet without SSR",
+      description:
+        "The map needs the DOM and does not play well with server rendering; it is loaded with dynamic import and `ssr: false` so React Leaflet mounts only on the client.",
+    },
+    {
+      title: "Contact without a custom backend",
+      description:
+        "Form submission is delegated to FormSubmit to avoid API routes or a mail server in the repo, with the destination documented in the data module.",
+    },
+  ],
+  category: "Web development",
+  year: "2023",
+  role: "Frontend developer",
+};
+
+const iceClimberEs: Project = {
+  id: "2",
+  slug: "ice-climber-libgdx",
+  title: "Ice Climber Remake",
+  shortDescription:
+    "Remake multiplataforma del clásico Ice Climber de NES, con física 2D avanzada, iluminación dinámica y despliegue automatizado.",
+  fullDescription:
+    "Proyecto de videojuego 2D inspirado en el clásico Ice Climber. Desarrollado originalmente hace años y actualizado recientemente para demostrar el uso de tecnologías modernas como LibGDX y TeaVM. El juego presenta una mecánica de ascenso vertical, bloques destructibles, enemigos con IA simple y un sistema de iluminación basado en Box2D. Incluye tres niveles completos, persistencia de puntuaciones mediante JSON y una arquitectura modular que permite la ejecución tanto en escritorio como en navegadores web. Las texturas fueron elaboradas en Adobe Illustrator.",
+  image: "/projects/s2.png",
+  technologies: [
+    "Java",
+    "LibGDX",
+    "Box2D",
+    "Box2DLights",
+    "TeaVM",
+    "Gradle",
+    "GitHub Actions",
+    "Adobe Illustrator",
+  ],
+  features: [
+    "Texturas y assets gráficos creados en Adobe Illustrator",
+    "Física 2D realista mediante el motor Box2D integrado",
+    "Sistema de iluminación dinámica en tiempo real con Box2DLights",
+    "Tres mundos jugables con progresión de dificultad y transiciones animadas",
+    "Compilación cruzada a JavaScript para ejecución en navegador sin plugins",
+    "Persistencia de récords y puntuaciones en formato JSON",
+    "Interfaz de usuario personalizada (Freezing UI) con Scene2D",
+    "Automatización de despliegue mediante CI/CD a GitHub Pages",
+    "IA de enemigos (Yeti y Oso) integrada con gdx-ai",
+  ],
+  challenges: [
+    {
+      title: "Portabilidad Web con TeaVM",
+      description:
+        "El mayor reto fue migrar un código base antiguo de Java a un entorno web. Utilicé TeaVM para transpilar el bytecode a JavaScript, resolviendo incompatibilidades de reflexión y ajustando el manejo de assets para entornos de red.",
+    },
+    {
+      title: "Mantenimiento y Refactorización",
+      description:
+        "Actualicé el proyecto de versiones obsoletas a LibGDX 1.14.0 y Gradle 9.4.0, implementando una arquitectura modular (core, desktop, teavm) para separar la lógica de negocio del renderizado específico de plataforma.",
+    },
+    {
+      title: "Física e Iluminación en 2D",
+      description:
+        "Integré un ciclo de día/noche simplificado (Sun + RayHandler) sincronizado con el mundo físico de Box2D para crear una atmósfera invernal inmersiva.",
+    },
+  ],
+  github: "https://github.com/alexei2000/Ice-climber",
+  demo: "https://usuario.github.io/ice-climber/",
+  category: "Desarrollo de videojuegos",
+  year: "2020",
+  role: "Desarrollador de juegos",
+  screenshots: ["/projects/s1.png", "/projects/s2.png", "/projects/s3.png"],
+};
+
+const iceClimberEn: Project = {
+  ...iceClimberEs,
+  title: "Ice Climber Remake",
+  shortDescription:
+    "Cross-platform remake of the classic NES Ice Climber, with advanced 2D physics, dynamic lighting, and automated deployment.",
+  fullDescription:
+    "A 2D game project inspired by the classic Ice Climber. Originally built years ago and recently updated to showcase modern tooling with LibGDX and TeaVM. The game features vertical climbing mechanics, destructible blocks, simple enemy AI, and Box2D-based lighting. It includes three full levels, JSON score persistence, and a modular architecture that runs on desktop and in the browser. Textures were created in Adobe Illustrator.",
+  features: [
+    "Textures and graphic assets made in Adobe Illustrator",
+    "Realistic 2D physics using the integrated Box2D engine",
+    "Real-time dynamic lighting with Box2DLights",
+    "Three playable worlds with difficulty progression and animated transitions",
+    "Cross-compilation to JavaScript for plugin-free browser play",
+    "High-score and record persistence in JSON",
+    "Custom UI (Freezing UI) built with Scene2D",
+    "Automated CI/CD deployment to GitHub Pages",
+    "Enemy AI (Yeti and Bear) powered by gdx-ai",
+  ],
+  challenges: [
+    {
+      title: "Web portability with TeaVM",
+      description:
+        "The hardest part was migrating legacy Java to the web. I used TeaVM to transpile bytecode to JavaScript, fixing reflection issues and tuning asset loading for network environments.",
+    },
+    {
+      title: "Maintenance and refactoring",
+      description:
+        "I upgraded the project to LibGDX 1.14.0 and Gradle 9.4.0 with a modular layout (core, desktop, teavm) separating business logic from platform-specific rendering.",
+    },
+    {
+      title: "2D physics and lighting",
+      description:
+        "I wired a simplified day/night cycle (Sun + RayHandler) to the Box2D world for an immersive winter atmosphere.",
+    },
+  ],
+  category: "Game development",
+  year: "2020",
+  role: "Game developer",
+};
+
+export type AppLocale = "es" | "en";
+
+export const projectsByLocale: Record<AppLocale, Project[]> = {
+  es: [leberpEcosystemEs, lashExtensionsEs, iceClimberEs],
+  en: [leberpEcosystemEn, lashExtensionsEn, iceClimberEn],
+};
+
+export function getProjects(locale: string): Project[] {
+  if (locale === "en") return projectsByLocale.en;
+  return projectsByLocale.es;
+}
+
+export function projectHasGithubLink(
+  project: Project,
+): project is Project & { github: string } {
+  const g = project.github;
+  return typeof g === "string" && g.trim().length > 0;
+}

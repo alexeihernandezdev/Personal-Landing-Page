@@ -45,6 +45,7 @@
     "sectionSubtitle": "Algunos de mis trabajos recientes",
     "codeLink": "Código",
     "demoLink": "Demo",
+    "demoLinkProduction": "Ver",
     "notFoundTitle": "Proyecto no encontrado",
     "backToProjects": "Volver a proyectos",
     "relatedTitle": "Otros proyectos",
@@ -55,20 +56,7 @@
     "screenshotsHeading": "Capturas de pantalla",
     "detailCodeCta": "Ver código",
     "detailDemoCta": "Ver demo",
-    "items": {
-      "1": {
-        "title": "Plataforma E-Commerce",
-        "description": "Plataforma de comercio electrónico completa con panel de administración, pasarela de pagos y gestión de inventario."
-      },
-      "2": {
-        "title": "App de gestión de tareas",
-        "description": "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones y analytics."
-      },
-      "3": {
-        "title": "Generador de portfolios",
-        "description": "Generador de portfolios personalizados con múltiples plantillas y exportación a código."
-      }
-    }
+    "detailDemoCtaProduction": "Ver"
   },
   "contact": {
     "pageTitle": "Contacto",

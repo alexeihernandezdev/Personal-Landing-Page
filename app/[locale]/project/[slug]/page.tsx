@@ -4,7 +4,7 @@ import { Navigation } from "@components/Navigation";
 import { Footer } from "@components/Footer";
 import { MouseGlow } from "@components/MouseGlow";
 import { ImageWithFallback } from "@/components/atoms/ImageWithFallback";
-import { projects } from "@/data/projects";
+import { getProjects, projectHasGithubLink } from "@/data/projects";
 import { sectionIds } from "@/data/sectionIds";
 import {
   ArrowLeft,
@@ -18,11 +18,13 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export default function ProjectDetailPage() {
   const t = useTranslations("projects");
+  const locale = useLocale();
+  const projects = getProjects(locale);
   const params = useParams();
   const slugParam = params.slug;
   const slug =
@@ -49,7 +51,7 @@ export default function ProjectDetailPage() {
   }
 
   const related = projects.filter((p) => p.id !== project.id).slice(0, 2);
-  const title = t(`items.${project.id}.title`);
+  const title = project.title;
 
   return (
     <div className="relative min-h-screen bg-[#090E1B]">
@@ -101,17 +103,19 @@ export default function ProjectDetailPage() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg border border-[#1E293B] bg-[#0F172A] px-6 py-3 text-white transition-colors hover:bg-[#1E293B]"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Github className="h-5 w-5" />
-                  <span>{t("detailCodeCta")}</span>
-                </motion.a>
+                {projectHasGithubLink(project) ? (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg border border-[#1E293B] bg-[#0F172A] px-6 py-3 text-white transition-colors hover:bg-[#1E293B]"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="h-5 w-5" />
+                    <span>{t("detailCodeCta")}</span>
+                  </motion.a>
+                ) : null}
                 <motion.a
                   href={project.demo}
                   target="_blank"
@@ -121,7 +125,11 @@ export default function ProjectDetailPage() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <ExternalLink className="h-5 w-5" />
-                  <span>{t("detailDemoCta")}</span>
+                  <span>
+                    {project.demoIsProduction
+                      ? t("detailDemoCtaProduction")
+                      : t("detailDemoCta")}
+                  </span>
                 </motion.a>
               </div>
             </motion.div>
@@ -303,7 +311,7 @@ export default function ProjectDetailPage() {
                     <div className="relative h-48 overflow-hidden">
                       <ImageWithFallback
                         src={p.image}
-                        alt={t(`items.${p.id}.title`)}
+                        alt={p.title}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                         width={600}
                         height={384}
@@ -314,10 +322,10 @@ export default function ProjectDetailPage() {
                         {p.category}
                       </span>
                       <h3 className="mb-2 text-lg font-bold text-white transition-colors group-hover:text-[#06B6D4]">
-                        {t(`items.${p.id}.title`)}
+                        {p.title}
                       </h3>
                       <p className="mb-4 line-clamp-2 text-sm text-gray-400">
-                        {t(`items.${p.id}.description`)}
+                        {p.shortDescription}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {p.technologies.slice(0, 3).map((tech) => (

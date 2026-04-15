@@ -3,13 +3,15 @@
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./atoms/ImageWithFallback";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
-import { projects } from "@data/projects";
+import { useLocale, useTranslations } from "next-intl";
+import { getProjects, projectHasGithubLink } from "@data/projects";
 import { sectionIds } from "@data/sectionIds";
 import { Link } from "@/i18n/navigation";
 
 export function Projects() {
   const t = useTranslations("projects");
+  const locale = useLocale();
+  const projects = getProjects(locale);
 
   return (
     <section id={sectionIds.projects} className="py-20 px-6 bg-[#090E1B]">
@@ -54,7 +56,7 @@ export function Projects() {
                   >
                     <ImageWithFallback
                       src={project.image}
-                      alt={t(`items.${project.id}.title`)}
+                      alt={project.title}
                       className="w-full h-full object-cover"
                       width={600}
                       height={400}
@@ -70,7 +72,7 @@ export function Projects() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
                   >
-                    {t(`items.${project.id}.title`)}
+                    {project.title}
                   </motion.h3>
                   <motion.p
                     className="text-gray-400 mb-4 line-clamp-3"
@@ -79,7 +81,7 @@ export function Projects() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
                   >
-                    {t(`items.${project.id}.description`)}
+                    {project.shortDescription}
                   </motion.p>
 
                   <motion.div
@@ -110,23 +112,25 @@ export function Projects() {
               </Link>
 
               <motion.div
-                className="flex gap-4 px-6 pb-6"
+                className="flex flex-wrap gap-4 px-6 pb-6"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.15 + 0.6 }}
               >
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Github className="w-5 h-5" />
-                  <span className="text-sm">{t("codeLink")}</span>
-                </motion.a>
+                {projectHasGithubLink(project) ? (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                    whileHover={{ x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="w-5 h-5" />
+                    <span className="text-sm">{t("codeLink")}</span>
+                  </motion.a>
+                ) : null}
                 <motion.a
                   href={project.demo}
                   target="_blank"
@@ -136,7 +140,11 @@ export function Projects() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <ExternalLink className="w-5 h-5" />
-                  <span className="text-sm">{t("demoLink")}</span>
+                  <span className="text-sm">
+                    {project.demoIsProduction
+                      ? t("demoLinkProduction")
+                      : t("demoLink")}
+                  </span>
                 </motion.a>
               </motion.div>
             </motion.div>
