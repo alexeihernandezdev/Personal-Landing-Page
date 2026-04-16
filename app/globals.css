@@ -68,8 +68,10 @@ body {
   }
 }
 
-.skill-dot-pulse {
-  animation: skill-dot-pulse 2s ease-in-out infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .skill-dot-pulse {
+    animation: skill-dot-pulse 2s ease-in-out infinite;
+  }
 }
 
 @keyframes footer-heart {
@@ -84,5 +86,10 @@ body {
 
 .footer-heart-pulse {
   display: inline-flex;
-  animation: footer-heart 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .footer-heart-pulse {
+    animation: footer-heart 1.5s ease-in-out infinite;
+  }
 }

@@ -180,6 +180,12 @@ export async function ProfileSection() {
           animation: wave-morph-3 10s ease-in-out infinite;
           animation-delay: -2s;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .wave-path {
+            animation: none;
+          }
+        }
       `}</style>
     </section>
   );
