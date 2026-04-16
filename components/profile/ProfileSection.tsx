@@ -60,9 +60,11 @@ export async function ProfileSection() {
               <ImageWithFallback
                 src={personal.profileImageUrl}
                 alt={tHero("profileImageAlt", { name: personal.fullName })}
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
                 width={600}
                 height={600}
+                sizes="(max-width: 639px) 176px, (max-width: 767px) 224px, 288px"
+                priority
               />
             </div>
           </FadeInView>
