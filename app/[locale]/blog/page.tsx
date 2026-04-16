@@ -1,7 +1,9 @@
-import { Navigation } from '@components/Navigation';
-import { Footer } from '@components/Footer';
-import { MouseGlow } from '@components/MouseGlow';
-import { BlogComingSoon } from '@components/BlogComingSoon';
+"use client";
+
+import { Navigation } from '@components/layout/Navigation';
+import { FooterClient } from '@components/layout/FooterClient';
+import { MouseGlow } from '@components/layout/MouseGlow';
+import { BlogComingSoon } from '@components/blog/BlogComingSoon';
 // import { blogPosts } from '@data/blogPosts';
 // import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -15,7 +17,7 @@ export default function BlogPage() {
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
-        
+        <main id="main-content" tabIndex={-1} className="outline-none">
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-6 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -106,7 +108,8 @@ export default function BlogPage() {
         </section>
         */}
 
-        <Footer />
+        <FooterClient />
+        </main>
       </div>
     </div>
   );

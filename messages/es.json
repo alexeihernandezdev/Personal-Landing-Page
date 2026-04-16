@@ -1,18 +1,28 @@
 {
   "metadata": {
     "title": "Alexei Hernández — Portfolio",
-    "description": "Desarrollador web full stack: proyectos, blog y contacto."
+    "description": "Desarrollador web full stack: proyectos, blog y contacto.",
+    "siteName": "Alexei Hernández",
+    "openGraphTitle": "Alexei Hernández — Portfolio",
+    "ogImageAlt": "Vista previa del portfolio de Alexei Hernández"
   },
   "locale": {
     "es": "ES",
-    "en": "EN"
+    "en": "EN",
+    "switchLabel": "Idioma",
+    "switchToEs": "Cambiar a español",
+    "switchToEn": "Cambiar a inglés"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido"
   },
   "nav": {
     "home": "Inicio",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "blog": "Blog",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "mobileMenuButton": "Abrir y cerrar el menú principal"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -23,7 +33,10 @@
     "cvEn": "CV (inglés)",
     "cvEs": "CV (español)",
     "heroImageAlt": "Espacio de trabajo de desarrollador",
-    "profileImageAlt": "{name} — Desarrollador web"
+    "profileImageAlt": "{name} — Desarrollador web",
+    "socialGithub": "Perfil de GitHub",
+    "socialLinkedin": "Perfil de LinkedIn",
+    "socialEmail": "Enviar correo"
   },
   "about": {
     "title": "Sobre mí",

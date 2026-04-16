@@ -1,134 +1,106 @@
-"use client";
+import { getTranslations } from "next-intl/server";
+import { personal } from "@data/personal";
+import { ImageWithFallback } from "../atoms/ImageWithFallback";
+import { ProfileAmbientOrbs } from "./ProfileAmbientOrbs";
+import { FadeInView } from "../motion/thin";
 
-import { ImageWithFallback } from './atoms/ImageWithFallback';
-import { motion } from 'motion/react';
-import { useTranslations } from 'next-intl';
-import { personal } from '@data/personal';
+export async function ProfileSection() {
+  const t = await getTranslations("about");
+  const tHero = await getTranslations("hero");
 
-export function ProfileSection() {
-  const t = useTranslations('about');
-  const tHero = useTranslations('hero');
   return (
     <section className="py-[7.5rem] px-9 bg-[#090E1B] relative overflow-hidden">
-      {/* Background decoration */}
-      <motion.div 
-        className="absolute inset-0 opacity-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-      >
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06B6D4] rounded-full blur-[150px]"
-          animate={{ 
-            x: [0, 45, -30, 0],
-            y: [0, -30, 45, 0]
-          }}
-          transition={{ 
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        ></motion.div>
-        <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-[150px]"
-          animate={{ 
-            x: [0, -45, 30, 0],
-            y: [0, 30, -45, 0]
-          }}
-          transition={{ 
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        ></motion.div>
-      </motion.div>
+      <ProfileAmbientOrbs />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col items-center text-center">
-          {/* Profile Image with Animated Waves */}
-          <motion.div 
+          <FadeInView
             className="relative mb-24"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Animated irregular waves */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <svg className="wave-container" width="600" height="600" viewBox="0 0 400 400">
-                <path className="wave-path wave-path-1" 
-                  d="M 200,50 C 280,50 320,90 350,150 C 380,210 380,240 350,300 C 320,360 280,400 200,400 C 120,400 80,360 50,300 C 20,240 20,210 50,150 C 80,90 120,50 200,50" 
-                  fill="none" 
-                  stroke="#06B6D4" 
-                  strokeWidth="3.75" 
+              <svg
+                className="wave-container"
+                width="600"
+                height="600"
+                viewBox="0 0 400 400"
+              >
+                <path
+                  className="wave-path wave-path-1"
+                  d="M 200,50 C 280,50 320,90 350,150 C 380,210 380,240 350,300 C 320,360 280,400 200,400 C 120,400 80,360 50,300 C 20,240 20,210 50,150 C 80,90 120,50 200,50"
+                  fill="none"
+                  stroke="#06B6D4"
+                  strokeWidth="3.75"
                   opacity="0.7"
-                  strokeLinecap="round"/>
-                <path className="wave-path wave-path-2" 
-                  d="M 200,80 C 270,80 300,110 325,160 C 350,210 350,240 325,290 C 300,340 270,370 200,370 C 130,370 100,340 75,290 C 50,240 50,210 75,160 C 100,110 130,80 200,80" 
-                  fill="none" 
-                  stroke="#06B6D4" 
-                  strokeWidth="3" 
+                  strokeLinecap="round"
+                />
+                <path
+                  className="wave-path wave-path-2"
+                  d="M 200,80 C 270,80 300,110 325,160 C 350,210 350,240 325,290 C 300,340 270,370 200,370 C 130,370 100,340 75,290 C 50,240 50,210 75,160 C 100,110 130,80 200,80"
+                  fill="none"
+                  stroke="#06B6D4"
+                  strokeWidth="3"
                   opacity="0.5"
-                  strokeLinecap="round"/>
-                <path className="wave-path wave-path-3" 
-                  d="M 200,110 C 260,110 285,130 305,170 C 325,210 325,240 305,280 C 285,320 260,340 200,340 C 140,340 115,320 95,280 C 75,240 75,210 95,170 C 115,130 140,110 200,110" 
-                  fill="none" 
-                  stroke="#0EA5E9" 
-                  strokeWidth="2.25" 
+                  strokeLinecap="round"
+                />
+                <path
+                  className="wave-path wave-path-3"
+                  d="M 200,110 C 260,110 285,130 305,170 C 325,210 325,240 305,280 C 285,320 260,340 200,340 C 140,340 115,320 95,280 C 75,240 75,210 95,170 C 115,130 140,110 200,110"
+                  fill="none"
+                  stroke="#0EA5E9"
+                  strokeWidth="2.25"
                   opacity="0.4"
-                  strokeLinecap="round"/>
+                  strokeLinecap="round"
+                />
               </svg>
             </div>
 
-            {/* Profile Image */}
             <div className="relative w-72 h-72 rounded-full overflow-hidden border-[6px] border-[#06B6D4] shadow-2xl shadow-[#06B6D4]/50 z-10">
-              <ImageWithFallback 
+              <ImageWithFallback
                 src={personal.profileImageUrl}
-                alt={tHero('profileImageAlt', { name: personal.fullName })}
+                alt={tHero("profileImageAlt", { name: personal.fullName })}
                 className="w-full h-full object-cover"
                 width={600}
                 height={600}
               />
             </div>
-          </motion.div>
+          </FadeInView>
 
-          {/* Text Content */}
-          <motion.div 
+          <FadeInView
             className="space-y-6"
             initial={{ opacity: 0, y: 45 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.h2 
-              className="text-3xl font-bold text-white mt-3"
+            <FadeInView
+              className="block"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {t('title')}
-            </motion.h2>
-            <motion.p 
+              <h2 className="text-3xl font-bold text-white mt-3">
+                {t("title")}
+              </h2>
+            </FadeInView>
+            <FadeInView
               className="text-lg text-gray-400 max-w-2xl leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              {t('bio1', { years: personal.yearsExperience })}
-            </motion.p>
-            <motion.p 
+              {t("bio1", { years: personal.yearsExperience })}
+            </FadeInView>
+            <FadeInView
               className="text-lg text-gray-400 max-w-2xl leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {t('bio2')}
-            </motion.p>
-          </motion.div>
+              {t("bio2")}
+            </FadeInView>
+          </FadeInView>
         </div>
       </div>
 

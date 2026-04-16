@@ -1,8 +1,8 @@
 "use client";
 
-import { Navigation } from "@components/Navigation";
-import { Footer } from "@components/Footer";
-import { MouseGlow } from "@components/MouseGlow";
+import { Navigation } from "@components/layout/Navigation";
+import { FooterClient } from "@components/layout/FooterClient";
+import { MouseGlow } from "@components/layout/MouseGlow";
 import { ImageWithFallback } from "@/components/atoms/ImageWithFallback";
 import { getProjects, projectHasGithubLink } from "@/data/projects";
 import { sectionIds } from "@/data/sectionIds";
@@ -28,14 +28,18 @@ export default function ProjectDetailPage() {
   const params = useParams();
   const slugParam = params.slug;
   const slug =
-    typeof slugParam === "string" ? slugParam : slugParam?.[0] ?? "";
+    typeof slugParam === "string" ? slugParam : (slugParam?.[0] ?? "");
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
       <div className="relative flex min-h-screen items-center justify-center bg-[#090E1B]">
         <MouseGlow />
-        <div className="relative z-10 text-center">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="relative z-10 text-center outline-none"
+        >
           <h1 className="mb-4 text-4xl font-bold text-white">
             {t("notFoundTitle")}
           </h1>
@@ -45,7 +49,7 @@ export default function ProjectDetailPage() {
           >
             {t("backToProjects")}
           </Link>
-        </div>
+        </main>
       </div>
     );
   }
@@ -59,6 +63,11 @@ export default function ProjectDetailPage() {
       <div className="relative z-10">
         <Navigation />
 
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="outline-none"
+        >
         <article className="px-6 pb-16 pt-32">
           <div className="mx-auto max-w-6xl">
             <motion.div
@@ -344,8 +353,9 @@ export default function ProjectDetailPage() {
             </motion.div>
           </div>
         </article>
+        </main>
 
-        <Footer />
+        <FooterClient />
       </div>
     </div>
   );

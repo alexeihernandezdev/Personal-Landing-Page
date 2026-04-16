@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { CheckCircle2, Mail, MapPin, Phone, X } from "lucide-react";
-import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import {
   contactInfo,
@@ -11,6 +10,13 @@ import {
 } from "@data/contact";
 import { sectionIds } from "@data/sectionIds";
 import createMessage from "@/api/messages/createMessage";
+import {
+  FadeInView,
+  FadeOnMount,
+  HoverSpinIcon,
+  PressableButton,
+  SlideHoverRow,
+} from "../motion/thin";
 
 const iconByKind: Record<ContactMethodKind, typeof Mail> = {
   email: Mail,
@@ -75,25 +81,23 @@ export function Contact() {
   return (
     <section id={sectionIds.contact} className="py-20 px-6 bg-[#0F172A]">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <FadeInView
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-4xl font-bold text-white mb-4">
             {t("pageTitle")}
           </h2>
           <p className="text-lg text-gray-400">{t("pageSubtitle")}</p>
-        </motion.div>
+        </FadeInView>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
+          <FadeInView
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             <div>
@@ -107,22 +111,14 @@ export function Contact() {
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (
-                  <motion.div
+                  <SlideHoverRow
                     key={method.kind}
                     className="flex items-start gap-4"
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ x: 10 }}
+                    delayIndex={index}
                   >
-                    <motion.div
-                      className="w-12 h-12 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center flex-shrink-0"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                    >
+                    <HoverSpinIcon className="w-12 h-12 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-[#06B6D4]" />
-                    </motion.div>
+                    </HoverSpinIcon>
                     <div>
                       <h4 className="font-semibold text-white mb-1">
                         {method.title}
@@ -138,21 +134,20 @@ export function Contact() {
                         <p className="text-gray-400">{method.value}</p>
                       )}
                     </div>
-                  </motion.div>
+                  </SlideHoverRow>
                 );
               })}
             </div>
-          </motion.div>
+          </FadeInView>
 
-          <motion.div
+          <FadeInView
             className="bg-[#1E293B] p-8 rounded-xl border border-[#334155] relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             {sent ? (
-              <motion.div
+              <FadeOnMount
                 className="flex flex-col items-center justify-center text-center py-6 gap-4"
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -181,13 +176,12 @@ export function Contact() {
                 >
                   {t("form.sendAnother")}
                 </button>
-              </motion.div>
+              </FadeOnMount>
             ) : (
               <form className="space-y-6" onSubmit={handleSubmit}>
-                <motion.div
+                <FadeInView
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
                   <label
@@ -205,12 +199,11 @@ export function Contact() {
                     className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent disabled:opacity-60"
                     placeholder={t("form.namePlaceholder")}
                   />
-                </motion.div>
+                </FadeInView>
 
-                <motion.div
+                <FadeInView
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <label
@@ -228,12 +221,11 @@ export function Contact() {
                     className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent disabled:opacity-60"
                     placeholder={t("form.emailPlaceholder")}
                   />
-                </motion.div>
+                </FadeInView>
 
-                <motion.div
+                <FadeInView
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   <label
@@ -251,21 +243,21 @@ export function Contact() {
                     className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent resize-none disabled:opacity-60"
                     placeholder={t("form.messagePlaceholder")}
                   />
-                </motion.div>
+                </FadeInView>
 
-                <motion.button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full px-8 py-3 bg-[#06B6D4] text-[#090E1B] rounded-lg hover:bg-[#0EA5E9] transition-colors font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                <FadeInView
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  whileHover={submitting ? undefined : { scale: 1.05 }}
-                  whileTap={submitting ? undefined : { scale: 0.95 }}
                 >
-                  {submitting ? t("form.submitting") : t("form.submit")}
-                </motion.button>
+                  <PressableButton
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full px-8 py-3 bg-[#06B6D4] text-[#090E1B] rounded-lg hover:bg-[#0EA5E9] transition-colors font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? t("form.submitting") : t("form.submit")}
+                  </PressableButton>
+                </FadeInView>
               </form>
             )}
 
@@ -286,7 +278,7 @@ export function Contact() {
                 </button>
               </div>
             ) : null}
-          </motion.div>
+          </FadeInView>
         </div>
       </div>
     </section>
