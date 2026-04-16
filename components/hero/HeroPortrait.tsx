@@ -23,9 +23,10 @@ export function HeroPortrait({ src, alt }: Props) {
         <ImageWithFallback
           src={src}
           alt={alt}
-          className="rounded-2xl shadow-2xl w-full h-auto"
+          className="h-auto w-full rounded-2xl shadow-2xl"
           width={800}
           height={533}
+          sizes="(max-width: 1200px) 50vw, 600px"
         />
       </motion.div>
     </motion.div>

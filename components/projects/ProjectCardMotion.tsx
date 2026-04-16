@@ -46,9 +46,10 @@ export function ProjectImageMotion({ src, alt }: ImageProps) {
         <ImageWithFallback
           src={src}
           alt={alt}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           width={600}
           height={400}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </motion.div>
     </div>

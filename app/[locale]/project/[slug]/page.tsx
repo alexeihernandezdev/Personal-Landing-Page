@@ -155,6 +155,8 @@ export default function ProjectDetailPage() {
                 className="h-full w-full object-cover"
                 width={1200}
                 height={600}
+                sizes="(max-width: 1280px) calc(100vw - 3rem), 1152px"
+                priority
               />
             </motion.div>
 
@@ -261,6 +263,7 @@ export default function ProjectDetailPage() {
                           className="h-full w-full object-cover"
                           width={800}
                           height={450}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </motion.div>
                     ))}
@@ -324,6 +327,7 @@ export default function ProjectDetailPage() {
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                         width={600}
                         height={384}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                     <div className="p-6">

@@ -83,7 +83,7 @@ export function CodeConsole() {
             </div>
           </div>
 
-          <div className="p-6 font-mono text-sm h-[400px] overflow-hidden">
+          <div className="h-[400px] overflow-hidden break-words p-6 font-mono text-sm">
             {displayedLines.map((line, index) => (
               <div key={index} className="mb-1">
                 {line.startsWith('$') ? (
