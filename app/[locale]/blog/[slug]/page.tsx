@@ -1,8 +1,8 @@
 "use client";
 import type { JSX } from "react";
-import { Navigation } from "@components/Navigation";
-import { Footer } from "@components/Footer";
-import { MouseGlow } from "@components/MouseGlow";
+import { Navigation } from "@components/layout/Navigation";
+import { FooterClient } from "@components/layout/FooterClient";
+import { MouseGlow } from "@components/layout/MouseGlow";
 import { blogPosts } from "@data/blogPosts";
 import { Calendar, Clock, ArrowLeft, Tag } from "lucide-react";
 import { useParams } from "next/navigation";
@@ -18,14 +18,18 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen bg-[#090E1B] flex items-center justify-center relative">
         <MouseGlow />
-        <div className="text-center relative z-10">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="text-center relative z-10 outline-none"
+        >
           <h1 className="text-4xl font-bold text-white mb-4">
             {t("notFoundTitle")}
           </h1>
           <Link href="/blog" className="text-[#06B6D4] hover:underline">
             {t("backToBlog")}
           </Link>
-        </div>
+        </main>
       </div>
     );
   }
@@ -36,6 +40,7 @@ export default function BlogPostPage() {
       <div className="relative z-10">
         <Navigation />
 
+        <main id="main-content" tabIndex={-1} className="outline-none">
         {/* Hero Section */}
         <article className="pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto">
@@ -181,8 +186,9 @@ export default function BlogPostPage() {
             </div>
           </div>
         </article>
+        </main>
 
-        <Footer />
+        <FooterClient />
       </div>
     </div>
   );

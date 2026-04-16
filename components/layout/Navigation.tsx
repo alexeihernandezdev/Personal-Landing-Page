@@ -1,13 +1,16 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { useLocale, useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { navItems } from '@data/navigation';
-import { personal } from '@data/personal';
-import { sectionIds } from '@data/sectionIds';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { LocaleSwitcher } from "./LocaleSwitcher";
+import { navItems } from "@data/navigation";
+import { personal } from "@data/personal";
+import { sectionIds } from "@data/sectionIds";
+
+const MOBILE_NAV_PANEL_ID = "mobile-navigation-menu";
 
 /** Hover lift: quick return to rest; slightly slower on hover-in. */
 const navHoverLift = {
@@ -43,8 +46,8 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleLinkClick = () => {
@@ -53,10 +56,11 @@ export function Navigation() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-[#0F172A]/95 backdrop-blur-2xl shadow-lg border-b border-[#1E293B]'
-          : 'bg-transparent'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#0F172A]/95 backdrop-blur-2xl shadow-lg border-b border-[#1E293B]"
+          : "bg-transparent"
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -76,7 +80,9 @@ export function Navigation() {
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-[#090E1B] font-bold text-xl">{personal.initials}</span>
+              <span className="text-[#090E1B] font-bold text-xl">
+                {personal.initials}
+              </span>
             </motion.div>
             <span className="text-white font-semibold text-lg hidden sm:block">
               {personal.fullName}
@@ -125,17 +131,22 @@ export function Navigation() {
                     {t(`nav.${item.navKey}`)}
                   </motion.a>
                 </motion.div>
-              )
+              ),
             )}
+            <LocaleSwitcher className="ml-2" />
           </div>
 
           <motion.button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-white hover:text-[#06B6D4] transition-colors"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileTap={{ scale: 0.9 }}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls={MOBILE_NAV_PANEL_ID}
+            aria-label={t("nav.mobileMenuButton")}
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -163,16 +174,21 @@ export function Navigation() {
           </motion.button>
         </div>
 
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="md:hidden mt-4 py-4 border-t border-[#1E293B]"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex flex-col gap-4">
+        <div
+          id={MOBILE_NAV_PANEL_ID}
+          className="md:hidden"
+          aria-hidden={!isMobileMenuOpen}
+        >
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                className="mt-4 py-4 border-t border-[#1E293B]"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex flex-col gap-4">
                 {navItems.map((item, index) =>
                   item.type === "path" ? (
                     <motion.div
@@ -210,12 +226,16 @@ export function Navigation() {
                         {t(`nav.${item.navKey}`)}
                       </motion.a>
                     </motion.div>
-                  )
+                  ),
                 )}
+                <div className="pt-2 border-t border-[#1E293B] flex justify-center">
+                  <LocaleSwitcher onNavigate={handleLinkClick} />
+                </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </motion.nav>
   );
