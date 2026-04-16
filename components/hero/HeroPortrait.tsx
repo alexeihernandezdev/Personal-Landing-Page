@@ -25,7 +25,7 @@ export function HeroPortrait({ src, alt }: Props) {
           alt={alt}
           className="rounded-2xl shadow-2xl w-full h-auto"
           width={800}
-          height={600}
+          height={533}
         />
       </motion.div>
     </motion.div>
