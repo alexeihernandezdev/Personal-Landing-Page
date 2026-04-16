@@ -60,6 +60,14 @@ export function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  /** Hash navigation must not close the panel synchronously — that unmounts the anchor before the browser follows the hash. */
+  const handleMobileHashNav = (section: keyof typeof sectionIds) => {
+    const id = sectionIds[section];
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", `/${locale}#${id}`);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -222,7 +230,10 @@ export function Navigation() {
                     >
                       <motion.a
                         href={`/${locale}#${sectionIds[item.section]}`}
-                        onClick={handleLinkClick}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleMobileHashNav(item.section);
+                        }}
                         className="inline-block text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
                         variants={navMobileSlide}
                         initial="rest"
