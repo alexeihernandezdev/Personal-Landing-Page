@@ -8,9 +8,29 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { StructuredData } from "@/components/seo/StructuredData";
 
-/** Base URL for absolute metadata (OG, Twitter). In production, set NEXT_PUBLIC_SITE_URL to your canonical HTTPS origin. */
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+/**
+ * Base URL for absolute metadata (OG, Twitter). Without a public HTTPS origin,
+ * crawlers (LinkedIn, etc.) receive `localhost` and cannot load the preview image.
+ *
+ * 1. Prefer `NEXT_PUBLIC_SITE_URL` (e.g. https://www.alexeihernandez.com) in Vercel env.
+ * 2. On Vercel builds, `VERCEL_URL` is set — use it so OG tags work even without (1).
+ */
+function getSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (explicit) {
+    return explicit.replace(/\/$/, "");
+  }
+  const vercel = process.env.VERCEL_URL?.trim();
+  if (vercel) {
+    return `https://${vercel.replace(/^https?:\/\//, "")}`;
+  }
+  return "http://localhost:3000";
+}
+
+const siteUrl = getSiteUrl();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,9 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/og.png",
-          width: 1200,
-          height: 630,
+          url: "/cap.png",
           alt: ogImageAlt,
         },
       ],
@@ -66,7 +84,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: ogTitle,
       description,
-      images: ["/og.png"],
+      images: ["/cap.png"],
     },
   };
 }
@@ -86,15 +104,20 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <StructuredData locale={locale} siteUrl={siteUrl} />
+      </head>
       <body className="min-h-full bg-background font-sans text-foreground">
         <NextIntlClientProvider messages={messages}>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#06B6D4] focus:px-4 focus:py-3 focus:text-[#090E1B] focus:font-medium focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#090E1B]"
-          >
-            {tA11y("skipToContent")}
-          </a>
-          <div className="flex min-h-full flex-col">{children}</div>
+          <MotionProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#06B6D4] focus:px-4 focus:py-3 focus:text-[#090E1B] focus:font-medium focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#090E1B]"
+            >
+              {tA11y("skipToContent")}
+            </a>
+            <div className="flex min-h-full flex-col">{children}</div>
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

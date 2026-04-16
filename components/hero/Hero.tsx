@@ -13,9 +13,9 @@ const mailHref = `mailto:${contactInfo.email}`;
 export async function Hero() {
   const t = await getTranslations("hero");
   const socialLinks = [
-    { href: social.github, icon: Github },
-    { href: social.linkedin, icon: Linkedin },
-    { href: mailHref, icon: Mail },
+    { href: social.github, icon: Github, labelKey: "socialGithub" as const },
+    { href: social.linkedin, icon: Linkedin, labelKey: "socialLinkedin" as const },
+    { href: mailHref, icon: Mail, labelKey: "socialEmail" as const },
   ] as const;
 
   return (
@@ -102,6 +102,7 @@ export async function Hero() {
               <SocialIconAnchor
                 key={item.href}
                 href={item.href}
+                aria-label={t(item.labelKey)}
                 target={item.href.startsWith("mailto") ? undefined : "_blank"}
                 rel={
                   item.href.startsWith("mailto")
@@ -111,7 +112,10 @@ export async function Hero() {
                 index={index}
                 className="p-3 bg-[#0F172A] rounded-full hover:bg-[#1E293B] transition-colors shadow-md"
               >
-                <item.icon className="w-6 h-6 text-[#06B6D4]" />
+                <item.icon
+                  className="w-6 h-6 text-[#06B6D4]"
+                  aria-hidden
+                />
               </SocialIconAnchor>
             ))}
           </FadeOnMount>
