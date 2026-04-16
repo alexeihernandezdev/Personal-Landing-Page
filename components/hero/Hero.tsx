@@ -21,11 +21,11 @@ export async function Hero() {
   return (
     <section
       id={sectionIds.hero}
-      className="min-h-screen flex items-center justify-center px-6 py-20 bg-[#090E1B]"
+      className="min-h-screen flex w-full min-w-0 items-center justify-center px-6 py-20 bg-[#090E1B]"
     >
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid w-full min-w-0 max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
         <FadeOnMount
-          className="space-y-4"
+          className="min-w-0 space-y-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export async function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-[#06B6D4] font-medium">{t("greeting")}</p>
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
+            <h1 className="break-words text-5xl font-bold text-white md:text-6xl">
               {personal.fullName}
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-300">{t("role")}</h2>
