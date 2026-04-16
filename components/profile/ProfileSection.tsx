@@ -22,10 +22,9 @@ export async function ProfileSection() {
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
-                className="wave-container"
-                width="600"
-                height="600"
+                className="wave-container h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[400px] md:w-[400px] lg:h-[600px] lg:w-[600px]"
                 viewBox="0 0 400 400"
+                aria-hidden
               >
                 <path
                   className="wave-path wave-path-1"
@@ -57,7 +56,7 @@ export async function ProfileSection() {
               </svg>
             </div>
 
-            <div className="relative w-72 h-72 rounded-full overflow-hidden border-[6px] border-[#06B6D4] shadow-2xl shadow-[#06B6D4]/50 z-10">
+            <div className="relative z-10 h-44 w-44 overflow-hidden rounded-full border-4 border-[#06B6D4] shadow-2xl shadow-[#06B6D4]/50 sm:h-56 sm:w-56 sm:border-[5px] md:h-72 md:w-72 md:border-[6px]">
               <ImageWithFallback
                 src={personal.profileImageUrl}
                 alt={tHero("profileImageAlt", { name: personal.fullName })}
