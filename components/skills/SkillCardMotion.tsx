@@ -10,7 +10,7 @@ type Props = {
 export function SkillCardMotion({ index, children }: Props) {
   return (
     <motion.div
-      className="p-6 rounded-xl bg-[#1E293B]/80 backdrop-blur-sm border-2 border-[#334155] hover:border-[#06B6D4] hover:shadow-lg hover:shadow-[#06B6D4]/20 hover:bg-[#1E293B]"
+      className="flex flex-col p-5 rounded-xl bg-[#1E293B]/80 backdrop-blur-sm border-2 border-[#334155] hover:border-[#06B6D4] hover:shadow-lg hover:shadow-[#06B6D4]/20 hover:bg-[#1E293B]"
       initial={{ opacity: 0, y: 90 }}
       whileInView={{
         opacity: 1,
@@ -37,7 +37,7 @@ export function SkillCardMotion({ index, children }: Props) {
 export function SkillIconMotion({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      className="w-12 h-12 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center mb-4"
+      className="w-11 h-11 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center mb-3 shrink-0"
       whileHover={{ rotate: 360, scale: 1.1 }}
       transition={{ duration: 0.6 }}
     >
@@ -56,17 +56,17 @@ export function SkillListItemMotion({
   children: React.ReactNode;
 }) {
   return (
-    <motion.li
-      className="text-gray-400 flex items-center gap-2"
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+    <motion.span
+      className="inline-flex items-center gap-1.5 rounded-md border border-[#334155]/70 bg-[#0F172A]/60 px-2 py-1 text-xs text-gray-300"
+      initial={{ opacity: 0, y: 6 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{
-        duration: 0.3,
-        delay: groupIndex * 0.1 + techIndex * 0.05,
+        duration: 0.25,
+        delay: groupIndex * 0.08 + techIndex * 0.03,
       }}
     >
       {children}
-    </motion.li>
+    </motion.span>
   );
 }

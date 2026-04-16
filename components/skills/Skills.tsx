@@ -44,10 +44,10 @@ export async function Skills() {
                 <SkillIconMotion>
                   <Icon className="w-6 h-6 text-[#06B6D4]" />
                 </SkillIconMotion>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-2.5">
                   {t(`groups.${skill.icon}.title`)}
                 </h3>
-                <ul className="space-y-2">
+                <div className="flex flex-wrap gap-1.5">
                   {skill.technologies.map((tech, techIndex) => (
                     <SkillListItemMotion
                       key={tech}
@@ -55,15 +55,15 @@ export async function Skills() {
                       techIndex={techIndex}
                     >
                       <span
-                        className="w-1.5 h-1.5 bg-[#06B6D4] rounded-full skill-dot-pulse"
+                        className="h-1 w-1 shrink-0 rounded-full bg-[#06B6D4] skill-dot-pulse"
                         style={{
-                          animationDelay: `${techIndex * 0.3}s`,
+                          animationDelay: `${techIndex * 0.25}s`,
                         }}
                       />
                       {tech}
                     </SkillListItemMotion>
                   ))}
-                </ul>
+                </div>
               </SkillCardMotion>
             );
           })}
