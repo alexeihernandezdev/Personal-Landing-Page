@@ -24,6 +24,8 @@ const iconByKind: Record<ContactMethodKind, typeof Mail> = {
   location: MapPin,
 };
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrerlela";
+
 export function Contact() {
   const t = useTranslations("contact");
   const [sent, setSent] = useState(false);
@@ -67,8 +69,20 @@ export function Contact() {
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
     setSubmitting(true);
+    void createMessage({ name, email, message }).catch(() => {});
     try {
-      await createMessage({ name, email, message });
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) {
+        setErrorToast(t("form.errorToast"));
+        return;
+      }
       form.reset();
       setSent(true);
     } catch {
@@ -267,7 +281,9 @@ export function Contact() {
                 role="alert"
                 aria-live="assertive"
               >
-                <p className="flex-1 text-sm text-red-100 pt-0.5">{errorToast}</p>
+                <p className="flex-1 text-sm text-red-100 pt-0.5">
+                  {errorToast}
+                </p>
                 <button
                   type="button"
                   onClick={() => setErrorToast(null)}
