@@ -14,7 +14,11 @@ export async function Hero() {
   const t = await getTranslations("hero");
   const socialLinks = [
     { href: social.github, icon: Github, labelKey: "socialGithub" as const },
-    { href: social.linkedin, icon: Linkedin, labelKey: "socialLinkedin" as const },
+    {
+      href: social.linkedin,
+      icon: Linkedin,
+      labelKey: "socialLinkedin" as const,
+    },
     { href: mailHref, icon: Mail, labelKey: "socialEmail" as const },
   ] as const;
 
@@ -79,15 +83,7 @@ export async function Hero() {
                 rel="noopener noreferrer"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden />
-                {t("cvEn")}
-              </PressableAnchor>
-              <PressableAnchor
-                href={cvUrls.es}
-                download
-                className="inline-flex items-center gap-2 px-5 py-3 border border-[#06B6D4]/60 text-[#06B6D4] rounded-lg hover:bg-[#06B6D4]/10 transition-colors font-medium text-sm sm:text-base"
-              >
-                <Download className="w-4 h-4 shrink-0" aria-hidden />
-                {t("cvEs")}
+                {t("cv")}
               </PressableAnchor>
             </div>
           </FadeOnMount>
@@ -112,10 +108,7 @@ export async function Hero() {
                 index={index}
                 className="p-3 bg-[#0F172A] rounded-full hover:bg-[#1E293B] transition-colors shadow-md"
               >
-                <item.icon
-                  className="w-6 h-6 text-[#06B6D4]"
-                  aria-hidden
-                />
+                <item.icon className="w-6 h-6 text-[#06B6D4]" aria-hidden />
               </SocialIconAnchor>
             ))}
           </FadeOnMount>
