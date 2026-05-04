@@ -20,6 +20,7 @@
     "home": "Home",
     "skills": "Skills",
     "projects": "Projects",
+    "services": "Services",
     "blog": "Blog",
     "contact": "Contact",
     "mobileMenuButton": "Open and close main menu"
@@ -121,5 +122,290 @@
     "passion": "Building amazing web experiences",
     "status": "Ready to create! 🚀",
     "magicComment": "developer.code(); // ✨ Magic happens here"
+  },
+  "services": {
+    "pageTitle": "Professional Services",
+    "pageSubtitle": "Complete tech solutions to bring your ideas from concept to reality",
+    "viewDetails": "View details",
+    "weeks": "{range} weeks",
+    "ctaTitle": "Ready to start your project?",
+    "ctaSubtitle": "Schedule a free consultation to discuss how I can help you achieve your goals",
+    "ctaButton": "Contact Now",
+    "includesDocumentation": "Documentation included",
+    "includesTraining": "Training sessions included",
+    "detail": {
+      "backToServices": "Back to services",
+      "featuredBadge": "Featured service",
+      "whoIsForHeading": "Who is this for?",
+      "howItHelpsHeading": "How it helps",
+      "keyFeaturesHeading": "Key features",
+      "aiSectionHeading": "AI & automation",
+      "benefitsHeading": "Benefits",
+      "processHeading": "Our process",
+      "technologiesHeading": "Technologies",
+      "deliverablesHeading": "What you get",
+      "notFoundTitle": "Service not found"
+    },
+    "categories": {
+      "webapps": "Web Applications",
+      "modernization": "Modernization",
+      "seo": "SEO & Optimization",
+      "automation": "Automation",
+      "support": "Support"
+    },
+    "webapps": {
+      "title": "Web Applications",
+      "shortDescription": "Powerful web apps for your business: online stores, CRM systems, AI-powered tools, and custom software.",
+      "fullDescription": "Custom web applications that grow with your business. From e-commerce platforms to CRM systems, customer portals, and AI-powered chatbots. I build scalable solutions that automate processes, increase sales, and delight your customers.",
+      "whoIsFor": "Businesses that need more than a website: online stores, SaaS platforms, internal tools, CRM systems, customer portals, and intelligent automation.",
+      "howItHelps": "Automate your processes, sell online, manage your team efficiently, and delight customers with AI-powered features like intelligent chatbots and smart recommendations.",
+      "features": [
+        "E-commerce & online stores with payment gateway integration (PayPal, Stripe, cards)",
+        "CRM & business management systems",
+        "AI-powered chatbots & virtual assistants (web & WhatsApp)",
+        "Customer & user portals with dashboards",
+        "Inventory & order management",
+        "Custom API integrations",
+        "Real-time data & reporting dashboards",
+        "WhatsApp Business integration for customer communication",
+        "Secure authentication, roles & permissions (RBAC) tailored to your business"
+      ],
+      "aiFeatures": [
+        "Intelligent chatbots for customer support (web & WhatsApp)",
+        "Automated responses & lead qualification",
+        "Smart search & product recommendations",
+        "AI-powered process automation",
+        "WhatsApp Business integration for orders & notifications"
+      ],
+      "benefits": [
+        "Scale your business with automated processes",
+        "Increase sales with AI-powered recommendation engines",
+        "Reduce operational costs through automation",
+        "Better customer experience with 24/7 AI support",
+        "All-in-one solution: store, CRM, and AI in one platform",
+        "Complete documentation and training sessions"
+      ],
+      "process": [
+        { "title": "Discovery", "description": "Requirements analysis, goals definition, and technical planning" },
+        { "title": "Design", "description": "UI/UX design, wireframes, and interactive prototypes" },
+        { "title": "Development", "description": "Agile development with continuous feedback" },
+        { "title": "AI Integration", "description": "Implementation of chatbots, automation, and smart features" },
+        { "title": "Testing", "description": "Comprehensive functionality and performance testing" },
+        { "title": "Deploy & Train", "description": "Production deployment and training sessions" }
+      ],
+      "deliverables": [
+        "Fully functional web application deployed and running",
+        "Complete source code with documentation",
+        "Technical documentation and user guides",
+        "Training sessions for your team",
+        "1 month of included support"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    },
+    "presencia": {
+      "title": "Digital Presence",
+      "shortDescription": "Landing pages, professional portfolios, and institutional websites that capture leads and showcase your work.",
+      "fullDescription": "Create a powerful digital presence for your brand. Whether you need a high-converting landing page, a professional portfolio to showcase your work, or a complete institutional website. I help entrepreneurs, freelancers, and small businesses make an impact online.",
+      "whoIsFor": "Entrepreneurs needing fast lead capture, independent professionals (architects, photographers, coaches) showcasing their work, and small businesses needing a professional online presence.",
+      "howItHelps": "Attract more clients with optimized landing pages, showcase your work beautifully with custom portfolios, and build trust with professional institutional websites.",
+      "features": [
+        "High-converting landing pages for campaigns",
+        "Professional portfolios with gallery layouts",
+        "Institutional websites (About, Services, Contact)",
+        "Mobile-first responsive design",
+        "SEO optimized structure",
+        "Content creation guidance and support",
+        "Contact forms and lead capture",
+        "Social media integration"
+      ],
+      "benefits": [
+        "Capture more leads with optimized pages",
+        "Professional image that builds trust",
+        "Mobile-friendly experience for all visitors",
+        "Better Google ranking with SEO optimization",
+        "Fast loading and excellent performance",
+        "Complete documentation and training"
+      ],
+      "process": [
+        { "title": "Consultation", "description": "Understanding your goals, audience, and brand" },
+        { "title": "Content Planning", "description": "Content guidance and structure planning" },
+        { "title": "Design", "description": "Visual design and prototype creation" },
+        { "title": "Development", "description": "Responsive development with animations" },
+        { "title": "Testing", "description": "Cross-device testing and optimization" },
+        { "title": "Launch", "description": "Deployment and training sessions" }
+      ],
+      "deliverables": [
+        "Fully functional website deployed and running",
+        "Responsive design for all devices",
+        "SEO optimized structure and content",
+        "User guide and documentation",
+        "Training sessions included"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    },
+    "modernizacion": {
+      "title": "Website Modernization",
+      "shortDescription": "Transform your outdated website into a modern, fast, and high-converting digital asset.",
+      "fullDescription": "Is your website outdated, slow, or not converting? I specialize in modernizing existing websites. Complete visual redesign, migration to modern technologies, speed optimization, and mobile experience improvements to turn your website into a powerful business asset.",
+      "whoIsFor": "Businesses with existing websites that are slow, outdated, not mobile-friendly, or not generating the expected results.",
+      "howItHelps": "Transform your outdated site into a modern, fast, high-converting website that represents your brand properly and generates real business results.",
+      "features": [
+        "Complete visual redesign with conversion focus",
+        "Migration to modern technologies (Next.js, React)",
+        "Speed optimization and Core Web Vitals improvement",
+        "Mobile-first responsive redesign",
+        "Content and structure update",
+        "SEO preservation and improvement",
+        "Performance monitoring setup",
+        "Analytics and tracking configuration"
+      ],
+      "benefits": [
+        "Up to 80% faster loading times",
+        "Significantly better Google ranking",
+        "Higher conversion rates with modern UX",
+        "Excellent mobile experience",
+        "Preserved SEO value during migration",
+        "Complete documentation and training"
+      ],
+      "process": [
+        { "title": "Audit", "description": "Current site analysis, performance metrics, and SEO audit" },
+        { "title": "Planning", "description": "Migration strategy and redesign planning" },
+        { "title": "Design", "description": "New visual design and user experience" },
+        { "title": "Development", "description": "Modern stack implementation and migration" },
+        { "title": "Optimization", "description": "Speed, SEO, and Core Web Vitals optimization" },
+        { "title": "Launch & Training", "description": "Production deployment and team training" }
+      ],
+      "deliverables": [
+        "Completely modernized website deployed",
+        "Modern, fast, responsive design",
+        "SEO audit report and implementation",
+        "Performance monitoring setup",
+        "Training and documentation included"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    },
+    "seo": {
+      "title": "SEO & Optimization",
+      "shortDescription": "Improve your search engine visibility and attract more organic traffic to your website.",
+      "fullDescription": "Get found online with professional SEO services. Keyword research, on-page optimization, technical SEO, and performance tuning to improve your Google ranking and attract more organic traffic. I help small businesses and entrepreneurs increase their online visibility without paid ads.",
+      "whoIsFor": "Any business with a website that wants to attract more organic traffic, improve Google ranking, and reduce dependence on paid advertising.",
+      "howItHelps": "Appear on the first page of Google for relevant searches, attract more qualified visitors, and grow your business through organic traffic.",
+      "features": [
+        "Comprehensive keyword research and analysis",
+        "On-page SEO optimization (meta tags, headings, structure)",
+        "Speed optimization and Core Web Vitals tuning",
+        "Sitemap and robots.txt configuration",
+        "Google Search Console setup and analysis",
+        "Positioning reports and monthly tracking",
+        "Content optimization recommendations",
+        "Local SEO setup (when applicable)"
+      ],
+      "benefits": [
+        "Better Google ranking for relevant keywords",
+        "More organic traffic without paid ads",
+        "Faster website with better user experience",
+        "Higher conversion rates from qualified traffic",
+        "Reduced dependence on paid advertising",
+        "Detailed reports and documentation"
+      ],
+      "process": [
+        { "title": "Audit", "description": "Current SEO analysis and keyword research" },
+        { "title": "Strategy", "description": "SEO strategy and implementation plan" },
+        { "title": "On-Page", "description": "On-page optimization and content improvements" },
+        { "title": "Technical", "description": "Technical SEO and speed optimization" },
+        { "title": "Monitoring", "description": "Google Search Console setup and tracking" },
+        { "title": "Reports", "description": "Monthly reports and ongoing recommendations" }
+      ],
+      "deliverables": [
+        "Complete SEO audit report",
+        "Optimized website with improved rankings",
+        "Sitemap and robots.txt configuration",
+        "Google Search Console setup and training",
+        "Monthly positioning reports"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    },
+    "automation": {
+      "title": "Business Automation",
+      "shortDescription": "Automate your processes and reduce manual work with intelligent workflows and chatbots.",
+      "fullDescription": "Streamline your business operations with automation. Intelligent chatbots (web and WhatsApp), workflow integrations, automated notifications, and lead qualification systems. I help small businesses save time, reduce costs, and improve customer service with smart automation.",
+      "whoIsFor": "Small businesses and entrepreneurs looking to automate repetitive tasks, improve customer service, and optimize their business processes.",
+      "howItHelps": "Save hours of manual work every week, respond to customers instantly with AI chatbots, and focus on what really matters: growing your business.",
+      "features": [
+        "Intelligent chatbots for web and WhatsApp Business",
+        "Workflow automation (Zapier, Make, n8n)",
+        "Google Sheets, Notion, and Slack integrations",
+        "Automated email and SMS notifications",
+        "Lead qualification and CRM integration",
+        "Appointment and reservation systems",
+        "Customer support automation",
+        "Custom API integrations"
+      ],
+      "benefits": [
+        "Save hours of manual work every week",
+        "Instant customer responses 24/7 with AI chatbots",
+        "Reduce operational costs through automation",
+        "Fewer errors compared to manual processes",
+        "Better customer experience with faster responses",
+        "Complete documentation and training"
+      ],
+      "process": [
+        { "title": "Analysis", "description": "Process mapping and automation opportunities" },
+        { "title": "Design", "description": "Workflow design and chatbot logic" },
+        { "title": "Integration", "description": "Tool connections and API integrations" },
+        { "title": "Development", "description": "Automation rules and chatbot training" },
+        { "title": "Testing", "description": "Testing and optimization of automations" },
+        { "title": "Training", "description": "Team training and documentation" }
+      ],
+      "deliverables": [
+        "Configured automation workflows",
+        "Trained chatbot for web and/or WhatsApp",
+        "Integrated tools and systems",
+        "Operation documentation and guides",
+        "Training sessions included"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    },
+    "maintenance": {
+      "title": "Web Maintenance",
+      "shortDescription": "Keep your website secure, updated, and running smoothly with ongoing maintenance.",
+      "fullDescription": "Worry-free website maintenance for small businesses. Security updates, performance monitoring, content updates, and technical support to keep your website running smoothly. I provide ongoing maintenance plans that include everything you need to keep your online presence active and secure.",
+      "whoIsFor": "Small businesses and entrepreneurs who need reliable website maintenance without the hassle of managing it themselves.",
+      "howItHelps": "Keep your website secure, updated, and performing at its best while you focus on your business. No more worrying about updates, backups, or technical issues.",
+      "features": [
+        "Security updates and monitoring",
+        "Performance monitoring and optimization",
+        "Content updates (text, images, new sections)",
+        "Regular backups and disaster recovery",
+        "Domain and hosting management",
+        "Uptime monitoring and alerts",
+        "Technical support and troubleshooting",
+        "Monthly performance reports"
+      ],
+      "benefits": [
+        "Always secure and updated website",
+        "No more technical worries or stress",
+        "Fast response to issues and outages",
+        "Regular updates without your involvement",
+        "Predictable monthly costs",
+        "Complete documentation and reports"
+      ],
+      "process": [
+        { "title": "Assessment", "description": "Current site audit and maintenance plan" },
+        { "title": "Setup", "description": "Monitoring tools and backup systems" },
+        { "title": "Updates", "description": "Security updates and optimization" },
+        { "title": "Monitoring", "description": "Continuous performance monitoring" },
+        { "title": "Support", "description": "Technical support as needed" },
+        { "title": "Reports", "description": "Monthly maintenance reports" }
+      ],
+      "deliverables": [
+        "24/7 security monitoring",
+        "Monthly performance reports",
+        "Content update service",
+        "Backup management and disaster recovery",
+        "Technical support included"
+      ],
+      "freeConsultationCta": "Request a free consultation"
+    }
   }
 }
