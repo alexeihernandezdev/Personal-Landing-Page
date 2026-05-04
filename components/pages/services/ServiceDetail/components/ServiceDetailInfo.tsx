@@ -18,7 +18,7 @@ export function ServiceDetailInfo({
   return (
     <section className="py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2  gap-8">
           <FadeInView
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

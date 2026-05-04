@@ -1,5 +1,6 @@
 "use client";
 
+import { IconTextCard } from "@/components/atoms/IconTextCard";
 import { FadeInView } from "@components/motion/thin";
 import { Code2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -35,12 +36,16 @@ export function ServiceDetailDeliverables({
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               viewport={{ once: true }}
             >
-              <div className="bg-[#0F172A] rounded-xl p-6 border border-[#1E293B] flex items-start gap-4">
-                <div className="w-10 h-10 bg-[#06B6D4] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Code2 className="w-5 h-5 text-[#090E1B]" />
-                </div>
-                <p className="text-gray-300">{t(`${deliverableKey}` as any)}</p>
-              </div>
+              <IconTextCard
+                icon={
+                  <div className="w-10 h-10 bg-[#06B6D4] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Code2 className="w-5 h-5 text-[#090E1B]" />
+                  </div>
+                }
+                hoverable
+              >
+                {t(`${deliverableKey}` as any)}
+              </IconTextCard>
             </FadeInView>
           ))}
         </div>
