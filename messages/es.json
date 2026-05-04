@@ -4,7 +4,7 @@
     "description": "Desarrollador web full stack: proyectos, blog y contacto.",
     "siteName": "Alexei Hernández",
     "openGraphTitle": "Alexei Hernández — Portfolio",
-    "ogImageAlt": "Vista previa del portfolio de Alexei Hernández"
+    "ogImageAlt": "Vista previa del portafolio de Alexei Hernández"
   },
   "locale": {
     "es": "ES",
@@ -20,6 +20,7 @@
     "home": "Inicio",
     "skills": "Habilidades",
     "projects": "Proyectos",
+    "services": "Servicios",
     "blog": "Blog",
     "contact": "Contacto",
     "mobileMenuButton": "Abrir y cerrar el menú principal"
@@ -72,8 +73,8 @@
   },
   "contact": {
     "pageTitle": "Contacto",
-    "pageSubtitle": "¿Tienes un proyecto en mente? Hablemos",
-    "infoHeading": "Información de Contacto",
+    "pageSubtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "infoHeading": "Información de contacto",
     "availability": "Estoy disponible para proyectos freelance y oportunidades laborales. No dudes en contactarme.",
     "locationValue": "Bolívar, Venezuela",
     "methods": {
@@ -87,7 +88,7 @@
       "emailLabel": "Email",
       "emailPlaceholder": "tu@email.com",
       "messageLabel": "Mensaje",
-      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto…",
       "submit": "Enviar mensaje",
       "submitting": "Enviando…",
       "successTitle": "Mensaje enviado",
@@ -116,10 +117,295 @@
   "codeConsole": {
     "windowTitle": "terminal — bash — 80×24",
     "lineInstall": "$ npm install passion dedication creativity",
-    "lineOk": "✓ Installing packages...",
+    "lineOk": "✓ Instalando paquetes…",
     "role": "Desarrollador Full Stack",
     "passion": "Crear experiencias web increíbles",
     "status": "¡Listo para crear! 🚀",
-    "magicComment": "developer.code(); // ✨ Aquí ocurre la magia"
+    "magicComment": "developer.code(); // ¡Aquí ocurre la magia!"
+  },
+  "services": {
+    "pageTitle": "Servicios profesionales",
+    "pageSubtitle": "Soluciones tecnológicas completas para llevar tus ideas del concepto a la realidad.",
+    "viewDetails": "Ver detalles",
+    "weeks": "{range} semanas",
+    "ctaTitle": "¿Listo para comenzar tu proyecto?",
+    "ctaSubtitle": "Agenda una consulta gratuita para ver cómo puedo ayudarte a alcanzar tus objetivos.",
+    "ctaButton": "Contactar ahora",
+    "includesDocumentation": "Documentación incluida",
+    "includesTraining": "Sesiones de capacitación incluidas",
+    "detail": {
+      "backToServices": "Volver a servicios",
+      "featuredBadge": "Servicio destacado",
+      "whoIsForHeading": "¿Para quién es?",
+      "howItHelpsHeading": "Cómo te ayuda",
+      "keyFeaturesHeading": "Características principales",
+      "aiSectionHeading": "IA y automatización",
+      "benefitsHeading": "Beneficios",
+      "processHeading": "Nuestro proceso",
+      "technologiesHeading": "Tecnologías",
+      "deliverablesHeading": "Qué incluye",
+      "notFoundTitle": "Servicio no encontrado"
+    },
+    "categories": {
+      "webapps": "Aplicaciones web",
+      "modernization": "Modernización",
+      "seo": "SEO y optimización",
+      "automation": "Automatización",
+      "support": "Soporte"
+    },
+    "webapps": {
+      "title": "Aplicaciones web",
+      "shortDescription": "Potentes aplicaciones web para tu negocio: tiendas online, sistemas CRM, herramientas con IA y software personalizado.",
+      "fullDescription": "Aplicaciones web personalizadas que crecen con tu negocio. Desde plataformas de comercio electrónico hasta sistemas CRM, portales de clientes y chatbots con IA. Construyo soluciones escalables que automatizan procesos, aumentan ventas y deleitan a tus clientes.",
+      "whoIsFor": "Negocios que necesitan más que un sitio web: tiendas online, plataformas SaaS, herramientas internas, sistemas CRM, portales de clientes y automatización inteligente.",
+      "howItHelps": "Automatiza tus procesos, vende online, gestiona tu equipo eficientemente y deleita a los clientes con funciones potenciadas por IA como chatbots inteligentes y recomendaciones inteligentes.",
+      "features": [
+        "Comercio electrónico y tiendas online con integración de pasarelas de pago (PayPal, Stripe, tarjetas)",
+        "Sistemas CRM y gestión empresarial",
+        "Chatbots y asistentes virtuales con IA (web y WhatsApp)",
+        "Portales de clientes y usuarios con paneles de control",
+        "Gestión de inventario y pedidos",
+        "Integraciones personalizadas con APIs",
+        "Dashboards de datos en tiempo real",
+        "Integración con WhatsApp Business para comunicación con clientes",
+        "Autenticación segura, roles y permisos (RBAC) según tu modelo de negocio"
+      ],
+      "aiFeatures": [
+        "Chatbots inteligentes para atención al cliente (web y WhatsApp)",
+        "Respuestas automáticas y cualificación de leads",
+        "Búsqueda inteligente y recomendaciones de productos",
+        "Automatización de procesos con IA",
+        "Integración con WhatsApp Business para pedidos y notificaciones"
+      ],
+      "benefits": [
+        "Escala tu negocio con procesos automatizados",
+        "Aumenta tus ventas con motores de recomendación potenciados por IA",
+        "Reduce costos operativos mediante automatización",
+        "Mejor experiencia del cliente con soporte de IA 24/7",
+        "Solución todo en uno: tienda, CRM e IA en una plataforma",
+        "Documentación completa y sesiones de capacitación"
+      ],
+      "process": [
+        { "title": "Descubrimiento", "description": "Análisis de requisitos, definición de objetivos y planificación técnica" },
+        { "title": "Diseño", "description": "Diseño UI/UX, wireframes y prototipos interactivos" },
+        { "title": "Desarrollo", "description": "Desarrollo ágil con retroalimentación continua" },
+        { "title": "Integración de IA", "description": "Implementación de chatbots, automatización y funciones inteligentes" },
+        { "title": "Pruebas", "description": "Pruebas exhaustivas de funcionalidad y rendimiento" },
+        { "title": "Despliegue y capacitación", "description": "Despliegue en producción y sesiones de capacitación" }
+      ],
+      "deliverables": [
+        "Aplicación web completamente funcional desplegada y en funcionamiento",
+        "Código fuente completo con documentación",
+        "Documentación técnica y guías de usuario",
+        "Sesiones de capacitación para tu equipo",
+        "1 mes de soporte incluido"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    },
+    "presencia": {
+      "title": "Presencia digital",
+      "shortDescription": "Landing pages, portafolios profesionales y sitios institucionales que capturan leads y muestran tu trabajo.",
+      "fullDescription": "Crea una poderosa presencia digital para tu marca. Ya sea que necesites una landing page de alta conversión, un portafolio profesional para mostrar tu trabajo o un sitio web institucional completo. Ayudo a emprendedores, freelancers y pequeños negocios a impactar online.",
+      "whoIsFor": "Emprendedores que necesitan capturar leads rápidamente, profesionales independientes (arquitectos, fotógrafos, coaches) que quieren mostrar su trabajo, y pequeños negocios que necesitan una presencia digital profesional.",
+      "howItHelps": "Atrae más clientes con landing pages optimizadas, muestra tu trabajo con portafolios personalizados y genera confianza con sitios web institucionales profesionales.",
+      "features": [
+        "Landing pages de alta conversión para campañas",
+        "Portafolios profesionales con diseño de galería",
+        "Sitios web institucionales (Nosotros, Servicios, Contacto)",
+        "Diseño responsive mobile-first",
+        "Estructura optimizada para SEO",
+        "Asesoría en creación de contenido y estructura",
+        "Formularios de contacto y captación de leads",
+        "Integración con redes sociales"
+      ],
+      "benefits": [
+        "Captura más leads con páginas optimizadas",
+        "Imagen profesional que genera confianza",
+        "Experiencia móvil para todos los visitantes",
+        "Mejor posicionamiento en Google con optimización SEO",
+        "Carga rápida y excelente rendimiento",
+        "Documentación completa y capacitación"
+      ],
+      "process": [
+        { "title": "Consulta", "description": "Entender tus objetivos, audiencia y marca" },
+        { "title": "Planificación de contenido", "description": "Asesoría de contenido y planificación de estructura" },
+        { "title": "Diseño", "description": "Diseño visual y creación de prototipos" },
+        { "title": "Desarrollo", "description": "Desarrollo responsive con animaciones" },
+        { "title": "Pruebas", "description": "Pruebas en múltiples dispositivos y optimización" },
+        { "title": "Lanzamiento", "description": "Despliegue y sesiones de capacitación" }
+      ],
+      "deliverables": [
+        "Sitio web completamente funcional desplegado",
+        "Diseño responsive para todos los dispositivos",
+        "Estructura y contenido optimizados para SEO",
+        "Guía de usuario y documentación",
+        "Sesiones de capacitación incluidas"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    },
+    "modernizacion": {
+      "title": "Modernización y rediseño",
+      "shortDescription": "Transforma tu sitio web desactualizado en un activo digital moderno, rápido y de alta conversión.",
+      "fullDescription": "¿Tu sitio web está desactualizado, es lento o no convierte? Me especializo en modernizar sitios web existentes. Rediseño visual completo, migración a tecnologías modernas, optimización de velocidad y mejora de la experiencia móvil para convertir tu sitio en un activo de negocio poderoso.",
+      "whoIsFor": "Negocios con sitios web existentes que son lentos, desactualizados, no son amigables para móviles o no generan los resultados esperados.",
+      "howItHelps": "Transforma tu sitio desactualizado en un sitio web moderno, rápido y de alta conversión que represente adecuadamente tu marca y genere resultados reales de negocio.",
+      "features": [
+        "Rediseño visual completo con enfoque en conversión",
+        "Migración a tecnologías modernas (Next.js, React)",
+        "Optimización de velocidad y mejora de Core Web Vitals",
+        "Rediseño responsive mobile-first",
+        "Actualización de contenido y estructura",
+        "Preservación y mejora de SEO",
+        "Configuración de monitoreo de rendimiento",
+        "Configuración de analíticas y seguimiento"
+      ],
+      "benefits": [
+        "Hasta un 80 % más rápido en tiempos de carga",
+        "Mejor posicionamiento significativo en Google",
+        "Mayores tasas de conversión con UX moderno",
+        "Excelente experiencia en dispositivos móviles",
+        "Valor SEO preservado durante la migración",
+        "Documentación completa y capacitación"
+      ],
+      "process": [
+        { "title": "Auditoría", "description": "Análisis del sitio actual, métricas de rendimiento y auditoría SEO" },
+        { "title": "Planificación", "description": "Estrategia de migración y planificación del rediseño" },
+        { "title": "Diseño", "description": "Nuevo diseño visual y experiencia de usuario" },
+        { "title": "Desarrollo", "description": "Implementación con stack moderno y migración" },
+        { "title": "Optimización", "description": "Velocidad, SEO y optimización de Core Web Vitals" },
+        { "title": "Lanzamiento y capacitación", "description": "Despliegue en producción y capacitación del equipo" }
+      ],
+      "deliverables": [
+        "Sitio web completamente modernizado desplegado",
+        "Diseño moderno, rápido y responsive",
+        "Reporte de auditoría SEO e implementación",
+        "Configuración de monitoreo de rendimiento",
+        "Capacitación y documentación incluidas"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    },
+    "seo": {
+      "title": "SEO y optimización",
+      "shortDescription": "Mejora tu visibilidad en buscadores y atrae más tráfico orgánico a tu sitio web.",
+      "fullDescription": "Encuentra tu negocio en línea con servicios profesionales de SEO. Investigación de palabras clave, optimización on-page, SEO técnico y ajuste de rendimiento para mejorar tu posicionamiento en Google y atraer más tráfico orgánico. Ayudo a pequeños negocios y emprendedores a aumentar su visibilidad en línea sin anuncios pagados.",
+      "whoIsFor": "Cualquier negocio con un sitio web que quiera atraer más tráfico orgánico, mejorar su posicionamiento en Google y reducir la dependencia de la publicidad pagada.",
+      "howItHelps": "Aparece en la primera página de Google para búsquedas relevantes, atrae más visitantes calificados y haz crecer tu negocio a través del tráfico orgánico.",
+      "features": [
+        "Investigación y análisis exhaustivos de palabras clave",
+        "Optimización SEO on-page (meta tags, encabezados, estructura)",
+        "Optimización de velocidad y ajuste de Core Web Vitals",
+        "Configuración de sitemap y robots.txt",
+        "Configuración y análisis de Google Search Console",
+        "Reportes de posicionamiento y seguimiento mensual",
+        "Recomendaciones de optimización de contenido",
+        "Configuración de SEO local (cuando aplique)"
+      ],
+      "benefits": [
+        "Mejor posicionamiento en Google para palabras clave relevantes",
+        "Más tráfico orgánico sin anuncios pagados",
+        "Sitio web más rápido con mejor experiencia de usuario",
+        "Mayores tasas de conversión de tráfico calificado",
+        "Reducida dependencia de la publicidad pagada",
+        "Reportes detallados y documentación"
+      ],
+      "process": [
+        { "title": "Auditoría", "description": "Análisis SEO actual e investigación de palabras clave" },
+        { "title": "Estrategia", "description": "Plan de estrategia e implementación SEO" },
+        { "title": "On-page", "description": "Optimización on-page y mejoras de contenido" },
+        { "title": "Técnico", "description": "SEO técnico y optimización de velocidad" },
+        { "title": "Monitoreo", "description": "Configuración de Google Search Console y seguimiento" },
+        { "title": "Reportes", "description": "Reportes mensuales y recomendaciones continuas" }
+      ],
+      "deliverables": [
+        "Reporte completo de auditoría SEO",
+        "Sitio web optimizado con mejores rankings",
+        "Configuración de sitemap y robots.txt",
+        "Configuración de Google Search Console y capacitación",
+        "Reportes mensuales de posicionamiento"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    },
+    "automation": {
+      "title": "Automatización de negocio",
+      "shortDescription": "Automatiza tus procesos y reduce el trabajo manual con flujos de trabajo inteligentes y chatbots.",
+      "fullDescription": "Optimiza las operaciones de tu negocio con automatización. Chatbots inteligentes (web y WhatsApp), integraciones de flujos de trabajo, notificaciones automáticas y sistemas de cualificación de leads. Ayudo a pequeños negocios a ahorrar tiempo, reducir costos y mejorar el servicio al cliente con automatización inteligente.",
+      "whoIsFor": "Pequeños negocios y emprendedores que buscan automatizar tareas repetitivas, mejorar el servicio al cliente y optimizar sus procesos de negocio.",
+      "howItHelps": "Ahorra horas de trabajo manual cada semana, responde a los clientes al instante con chatbots de IA y concéntrate en lo que realmente importa: ¡hacer crecer tu negocio!",
+      "features": [
+        "Chatbots inteligentes para web y WhatsApp Business",
+        "Automatización de flujos de trabajo (Zapier, Make, n8n)",
+        "Integraciones con Google Sheets, Notion y Slack",
+        "Notificaciones automáticas por email y SMS",
+        "Cualificación de leads e integración con CRM",
+        "Sistemas de citas y reservas",
+        "Automatización de atención al cliente",
+        "Integraciones personalizadas con APIs"
+      ],
+      "benefits": [
+        "Ahorra horas de trabajo manual cada semana",
+        "Respuestas instantáneas a clientes 24/7 con chatbots de IA",
+        "Reduce costos operativos mediante automatización",
+        "Menos errores comparados con procesos manuales",
+        "Mejor experiencia del cliente con respuestas más rápidas",
+        "Documentación completa y capacitación"
+      ],
+      "process": [
+        { "title": "Análisis", "description": "Mapeo de procesos y oportunidades de automatización" },
+        { "title": "Diseño", "description": "Diseño de flujos de trabajo y lógica del chatbot" },
+        { "title": "Integración", "description": "Conexión de herramientas e integraciones de API" },
+        { "title": "Desarrollo", "description": "Reglas de automatización y entrenamiento del chatbot" },
+        { "title": "Pruebas", "description": "Pruebas y optimización de automatizaciones" },
+        { "title": "Capacitación", "description": "Capacitación del equipo y documentación" }
+      ],
+      "deliverables": [
+        "Flujos de trabajo de automatización configurados",
+        "Chatbot entrenado para web y/o WhatsApp",
+        "Herramientas y sistemas integrados",
+        "Documentación de operación y guías",
+        "Sesiones de capacitación incluidas"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    },
+    "maintenance": {
+      "title": "Mantenimiento web",
+      "shortDescription": "Mantén tu sitio web seguro, actualizado y funcionando sin problemas con mantenimiento continuo.",
+      "fullDescription": "Mantenimiento de sitio web sin preocupaciones para pequeños negocios. Actualizaciones de seguridad, monitoreo de rendimiento, actualizaciones de contenido y soporte técnico para mantener tu sitio web funcionando sin problemas. Ofrezco planes de mantenimiento que incluyen todo lo que necesitas para mantener tu presencia en línea activa y segura.",
+      "whoIsFor": "Pequeños negocios y emprendedores que necesitan un mantenimiento fiable de su sitio web sin la complicación de gestionarlo ellos mismos.",
+      "howItHelps": "Mantén tu sitio web seguro, actualizado y con el mejor rendimiento mientras tú te enfocas en tu negocio. ¡No más preocupaciones por actualizaciones, respaldos o problemas técnicos!",
+      "features": [
+        "Actualizaciones y monitoreo de seguridad",
+        "Monitoreo y optimización de rendimiento",
+        "Actualizaciones de contenido (texto, imágenes, nuevas secciones)",
+        "Respaldos regulares y recuperación ante desastres",
+        "Gestión de dominio y hosting",
+        "Monitoreo de disponibilidad y alertas",
+        "Soporte técnico y resolución de problemas",
+        "Reportes mensuales de rendimiento"
+      ],
+      "benefits": [
+        "Sitio web siempre seguro y actualizado",
+        "Sin preocupaciones ni estrés técnico",
+        "Respuesta rápida a problemas y caídas",
+        "Actualizaciones regulares sin tu participación",
+        "Costos mensuales predecibles",
+        "Documentación y reportes completos"
+      ],
+      "process": [
+        { "title": "Evaluación", "description": "Auditoría del sitio actual y plan de mantenimiento" },
+        { "title": "Configuración", "description": "Herramientas de monitoreo y sistemas de respaldo" },
+        { "title": "Actualizaciones", "description": "Actualizaciones de seguridad y optimización" },
+        { "title": "Monitoreo", "description": "Monitoreo continuo del rendimiento" },
+        { "title": "Soporte", "description": "Soporte técnico según se necesite" },
+        { "title": "Reportes", "description": "Reportes mensuales de mantenimiento" }
+      ],
+      "deliverables": [
+        "Monitoreo de seguridad 24/7",
+        "Reportes mensuales de rendimiento",
+        "Servicio de actualización de contenido",
+        "Gestión de respaldos y recuperación ante desastres",
+        "Soporte técnico incluido"
+      ],
+      "freeConsultationCta": "Solicitar consulta gratuita"
+    }
   }
 }

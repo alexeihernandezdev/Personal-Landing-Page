@@ -1,16 +1,17 @@
 "use client";
 
-import { Navigation } from '@components/layout/Navigation';
-import { FooterClient } from '@components/layout/FooterClient';
-import { MouseGlow } from '@components/layout/MouseGlow';
-import { BlogComingSoon } from '@components/blog/BlogComingSoon';
+import { Navigation } from "@components/layout/Navigation";
+import { FooterClient } from "@components/layout/FooterClient";
+import { MouseGlow } from "@components/layout/MouseGlow";
+import { BlogComingSoon } from "@/components/pages/blog/BlogComingSoon";
+import { SectionHeader } from "@components/ui/SectionHeader";
 // import { blogPosts } from '@data/blogPosts';
 // import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 // import { Link } from '@/i18n/navigation';
 
 export default function BlogPage() {
-  const t = useTranslations('blog');
+  const t = useTranslations("blog");
 
   return (
     <div className="min-h-screen bg-[#090E1B] relative">
@@ -18,26 +19,25 @@ export default function BlogPage() {
       <div className="relative z-10">
         <Navigation />
         <main id="main-content" tabIndex={-1} className="outline-none">
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 px-6 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06B6D4] rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-[120px]"></div>
-          </div>
-          
-          <div className="max-w-4xl mx-auto relative z-10">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              {t('listHeroTitle')}
-            </h1>
-            <p className="text-xl text-gray-400">
-              {t('listHeroSubtitle')}
-            </p>
-          </div>
-        </section>
+          {/* Hero Section */}
+          <section className="pt-32 pb-16 px-6 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06B6D4] rounded-full blur-[120px]"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-[120px]"></div>
+            </div>
 
-        <BlogComingSoon />
+            <div className="max-w-4xl mx-auto relative z-10">
+              <SectionHeader
+                title={t("listHeroTitle")}
+                subtitle={t("listHeroSubtitle")}
+                titleSize="xl"
+              />
+            </div>
+          </section>
 
-        {/*
+          <BlogComingSoon />
+
+          {/*
         Blog Posts Grid (restaurar cuando haya contenido publicado)
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
@@ -108,7 +108,7 @@ export default function BlogPage() {
         </section>
         */}
 
-        <FooterClient />
+          <FooterClient />
         </main>
       </div>
     </div>

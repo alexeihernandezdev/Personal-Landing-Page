@@ -6,7 +6,7 @@ import { social } from "@data/social";
 import { contactInfo } from "@data/contact";
 import { cvUrls } from "@data/cv";
 import { HeroPortrait } from "./HeroPortrait";
-import { FadeOnMount, PressableAnchor, SocialIconAnchor } from "../motion/thin";
+import { FadeOnMount, PressableAnchor, SocialIconAnchor } from "@/components/motion/thin";
 
 const mailHref = `mailto:${contactInfo.email}`;
 

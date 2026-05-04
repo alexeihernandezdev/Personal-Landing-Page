@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { personal } from "@data/personal";
-import { ImageWithFallback } from "../atoms/ImageWithFallback";
+import { ImageWithFallback } from "@/components/atoms/ImageWithFallback";
 import { ProfileAmbientOrbs } from "./ProfileAmbientOrbs";
-import { FadeInView } from "../motion/thin";
+import { FadeInView } from "@/components/motion/thin";
 
 export async function ProfileSection() {
   const t = await getTranslations("about");

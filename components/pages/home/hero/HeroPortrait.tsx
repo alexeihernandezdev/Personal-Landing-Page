@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ImageWithFallback } from "../atoms/ImageWithFallback";
+import { ImageWithFallback } from "@/components/atoms/ImageWithFallback";
 
 type Props = {
   src: string;
