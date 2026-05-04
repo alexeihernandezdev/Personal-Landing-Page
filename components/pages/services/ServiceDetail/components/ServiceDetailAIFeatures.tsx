@@ -1,5 +1,6 @@
 "use client";
 
+import { IconTextCard } from "@/components/atoms/IconTextCard";
 import { FadeInView } from "@components/motion/thin";
 import { Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -38,10 +39,12 @@ export function ServiceDetailAIFeatures({
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               viewport={{ once: true }}
             >
-              <div className="bg-[#0F172A] rounded-xl p-6 border border-[#06B6D4]/30 hover:border-[#06B6D4]/60 transition-colors">
-                <Sparkles className="w-6 h-6 text-[#06B6D4] mb-4" />
-                <p className="text-gray-300">{t(`${featureKey}` as any)}</p>
-              </div>
+              <IconTextCard
+                icon={<Sparkles className="w-6 h-6 text-[#06B6D4]" />}
+                hoverable
+              >
+                {t(`${featureKey}` as any)}
+              </IconTextCard>
             </FadeInView>
           ))}
         </div>
