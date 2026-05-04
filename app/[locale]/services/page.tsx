@@ -1,4 +1,4 @@
-import Services from "@/components/services/Services";
+import Services from "@/components/pages/services/Services";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

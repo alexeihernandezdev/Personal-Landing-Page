@@ -1,4 +1,4 @@
-import { ServiceCta } from "@/components/contact/ServiceCta";
+import { ServiceCta } from "@/components/pages/home/contact/ServiceCta";
 import { FooterClient } from "@/components/layout/FooterClient";
 import { MouseGlow } from "@/components/layout/MouseGlow";
 import { Navigation } from "@/components/layout/Navigation";

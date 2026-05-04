@@ -8,7 +8,7 @@ import {
   SkillIconMotion,
   SkillListItemMotion,
 } from "./SkillCardMotion";
-import { FadeInView } from "../motion/thin";
+import { FadeInView } from "@/components/motion/thin";
 
 const iconByKey: Record<SkillIconKey, typeof Layout> = {
   layout: Layout,

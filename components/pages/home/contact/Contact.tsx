@@ -10,13 +10,7 @@ import {
 } from "@data/contact";
 import { sectionIds } from "@data/sectionIds";
 import createMessage from "@/api/messages/createMessage";
-import {
-  FadeInView,
-  FadeOnMount,
-  HoverSpinIcon,
-  PressableButton,
-  SlideHoverRow,
-} from "../motion/thin";
+import { FadeInView, FadeOnMount, HoverSpinIcon, PressableButton, SlideHoverRow } from "@/components/motion/thin";
 
 const iconByKind: Record<ContactMethodKind, typeof Mail> = {
   email: Mail,

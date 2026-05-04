@@ -1,4 +1,4 @@
-import { ServiceCta } from "@/components/contact/ServiceCta";
+import { ServiceCta } from "@/components/pages/home/contact/ServiceCta";
 import { ServiceDetailAIFeatures } from "./components/ServiceDetailAIFeatures";
 import { ServiceDetailBenefits } from "./components/ServiceDetailBenefits";
 import { ServiceDetailDeliverables } from "./components/ServiceDetailDeliverables";

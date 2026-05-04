@@ -9,7 +9,7 @@ import {
   ProjectLinksMotion,
   ProjectExternalLinkMotion,
 } from "./ProjectCardMotion";
-import { FadeInView } from "../motion/thin";
+import { FadeInView } from "@/components/motion/thin";
 
 export async function Projects() {
   const t = await getTranslations("projects");

@@ -3,7 +3,7 @@
 import { Navigation } from "@components/layout/Navigation";
 import { FooterClient } from "@components/layout/FooterClient";
 import { MouseGlow } from "@components/layout/MouseGlow";
-import { BlogComingSoon } from "@components/blog/BlogComingSoon";
+import { BlogComingSoon } from "@/components/pages/blog/BlogComingSoon";
 import { SectionHeader } from "@components/ui/SectionHeader";
 // import { blogPosts } from '@data/blogPosts';
 // import { Calendar, Clock, ArrowRight } from 'lucide-react';
