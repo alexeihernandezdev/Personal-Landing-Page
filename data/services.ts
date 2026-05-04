@@ -56,13 +56,12 @@ export const iconMap: Record<string, LucideIcon> = {
 export const services: Service[] = [
   {
     id: "1",
-    slug: "aplicaciones-web",
+    slug: "web-applications",
     iconName: "Monitor",
     titleKey: "webapps.title",
     shortDescriptionKey: "webapps.shortDescription",
     fullDescriptionKey: "webapps.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+    image: "/images/services/webapps.jpg",
     features: [
       "webapps.features.0",
       "webapps.features.1",
@@ -157,13 +156,12 @@ export const services: Service[] = [
   },
   {
     id: "2",
-    slug: "presencia-digital",
+    slug: "digital-presence",
     iconName: "Globe",
     titleKey: "presencia.title",
     shortDescriptionKey: "presencia.shortDescription",
     fullDescriptionKey: "presencia.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80",
+    image: "/images/services/presencia.jpg",
     features: [
       "presencia.features.0",
       "presencia.features.1",
@@ -229,7 +227,7 @@ export const services: Service[] = [
       "presencia.deliverables.3",
       "presencia.deliverables.4",
     ],
-    timeline: "1-4",
+    timeline: "1-2",
     categoryKey: "categories.webapps",
     whoIsForKey: "presencia.whoIsFor",
     howItHelpsKey: "presencia.howItHelps",
@@ -239,13 +237,12 @@ export const services: Service[] = [
   },
   {
     id: "3",
-    slug: "modernizacion-rediseño",
+    slug: "modernization-redesign",
     iconName: "RefreshCw",
     titleKey: "modernizacion.title",
     shortDescriptionKey: "modernizacion.shortDescription",
     fullDescriptionKey: "modernizacion.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80",
+    image: "/images/services/modernizacion.jpg",
     features: [
       "modernizacion.features.0",
       "modernizacion.features.1",
@@ -321,13 +318,12 @@ export const services: Service[] = [
   },
   {
     id: "4",
-    slug: "seo-optimizacion",
+    slug: "seo-optimization",
     iconName: "Search",
     titleKey: "seo.title",
     shortDescriptionKey: "seo.shortDescription",
     fullDescriptionKey: "seo.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&q=80",
+    image: "/images/services/seo.jpg",
     features: [
       "seo.features.0",
       "seo.features.1",
@@ -403,13 +399,12 @@ export const services: Service[] = [
   },
   {
     id: "5",
-    slug: "automatizacion-negocio",
+    slug: "business-automation",
     iconName: "Workflow",
     titleKey: "automation.title",
     shortDescriptionKey: "automation.shortDescription",
     fullDescriptionKey: "automation.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+    image: "/images/services/automation.jpg",
     features: [
       "automation.features.0",
       "automation.features.1",
@@ -486,13 +481,12 @@ export const services: Service[] = [
   },
   {
     id: "6",
-    slug: "mantenimiento-web",
+    slug: "web-maintenance",
     iconName: "Wrench",
     titleKey: "maintenance.title",
     shortDescriptionKey: "maintenance.shortDescription",
     fullDescriptionKey: "maintenance.fullDescription",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "/images/services/maintenance.jpg",
     features: [
       "maintenance.features.0",
       "maintenance.features.1",
@@ -511,13 +505,7 @@ export const services: Service[] = [
       "maintenance.benefits.4",
       "maintenance.benefits.5",
     ],
-    technologies: [
-      "Next.js",
-      "Vercel",
-      "GitHub",
-      "Cloudflare",
-      "Node.js",
-    ],
+    technologies: ["Next.js", "Vercel", "GitHub", "Cloudflare", "Node.js"],
     process: [
       {
         step: 1,
@@ -557,7 +545,7 @@ export const services: Service[] = [
       "maintenance.deliverables.3",
       "maintenance.deliverables.4",
     ],
-    timeline: "ongoing",
+    timeline: "1-4",
     categoryKey: "categories.support",
     whoIsForKey: "maintenance.whoIsFor",
     howItHelpsKey: "maintenance.howItHelps",
