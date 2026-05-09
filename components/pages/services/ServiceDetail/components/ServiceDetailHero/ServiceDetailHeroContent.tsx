@@ -29,7 +29,7 @@ export function ServiceDetailHeroContent({
       transition={{ duration: 0.6 }}
     >
       {isFeatured && (
-        <span className="inline-block bg-[#06B6D4]/20 text-[#06B6D4] px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+        <span className="inline-block bg-brand/20 text-brand px-4 py-1.5 rounded-full text-sm font-medium mb-4">
           {t("detail.featuredBadge")}
         </span>
       )}

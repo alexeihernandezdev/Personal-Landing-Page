@@ -16,7 +16,7 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#090E1B] flex items-center justify-center relative">
+      <div className="min-h-screen bg-canvas flex items-center justify-center relative">
         <MouseGlow />
         <main
           id="main-content"
@@ -26,7 +26,7 @@ export default function BlogPostPage() {
           <h1 className="text-4xl font-bold text-white mb-4">
             {t("notFoundTitle")}
           </h1>
-          <Link href="/blog" className="text-[#06B6D4] hover:underline">
+          <Link href="/blog" className="text-brand hover:underline">
             {t("backToBlog")}
           </Link>
         </main>
@@ -35,7 +35,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#090E1B] relative">
+    <div className="min-h-screen bg-canvas relative">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
@@ -47,7 +47,7 @@ export default function BlogPostPage() {
             {/* Back Button */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[#06B6D4] hover:text-[#0EA5E9] transition-colors mb-8 group"
+              className="inline-flex items-center gap-2 text-brand hover:text-brand-hover transition-colors mb-8 group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span>{t("backToBlog")}</span>
@@ -55,7 +55,7 @@ export default function BlogPostPage() {
 
             {/* Category Badge */}
             <div className="mb-6">
-              <span className="bg-[#06B6D4] text-[#090E1B] px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-brand text-canvas px-4 py-2 rounded-full text-sm font-semibold">
                 {post.category}
               </span>
             </div>
@@ -66,7 +66,7 @@ export default function BlogPostPage() {
             </h1>
 
             {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-8 pb-8 border-b border-[#1E293B]">
+            <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-8 pb-8 border-b border-surface-elevated">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
                 <span>
@@ -133,13 +133,13 @@ export default function BlogPostPage() {
             </div>
 
             {/* Tags */}
-            <div className="flex items-center gap-3 mb-12 pb-12 border-b border-[#1E293B]">
+            <div className="flex items-center gap-3 mb-12 pb-12 border-b border-surface-elevated">
               <Tag className="w-5 h-5 text-gray-400" />
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-sm text-gray-400 bg-[#1E293B] px-3 py-1 rounded-full hover:bg-[#06B6D4] hover:text-[#090E1B] transition-colors cursor-pointer"
+                    className="text-sm text-gray-400 bg-surface-elevated px-3 py-1 rounded-full hover:bg-brand hover:text-canvas transition-colors cursor-pointer"
                   >
                     {tag}
                   </span>
@@ -160,7 +160,7 @@ export default function BlogPostPage() {
                     <Link
                       key={relatedPost.id}
                       href={`/blog/${relatedPost.slug}`}
-                      className="group bg-[#0F172A] rounded-xl overflow-hidden border border-[#1E293B] hover:border-[#06B6D4] transition-all duration-300"
+                      className="group bg-surface rounded-xl overflow-hidden border border-surface-elevated hover:border-brand transition-all duration-300"
                     >
                       <div className="relative h-40 overflow-hidden">
                         <img
@@ -170,10 +170,10 @@ export default function BlogPostPage() {
                         />
                       </div>
                       <div className="p-5">
-                        <span className="text-xs text-[#06B6D4] font-semibold mb-2 block">
+                        <span className="text-xs text-brand font-semibold mb-2 block">
                           {relatedPost.category}
                         </span>
-                        <h3 className="text-lg font-bold text-white group-hover:text-[#06B6D4] transition-colors mb-2">
+                        <h3 className="text-lg font-bold text-white group-hover:text-brand transition-colors mb-2">
                           {relatedPost.title}
                         </h3>
                         <p className="text-sm text-gray-400 line-clamp-2">

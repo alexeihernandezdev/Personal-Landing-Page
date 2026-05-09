@@ -17,7 +17,7 @@ export async function Projects() {
   const projects = getProjects(locale);
 
   return (
-    <section id={sectionIds.projects} className="py-20 px-6 bg-[#090E1B]">
+    <section id={sectionIds.projects} className="py-20 px-6 bg-canvas">
       <div className="max-w-6xl mx-auto">
         <FadeInView
           className="text-center mb-16"
@@ -49,7 +49,7 @@ export async function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-[#06B6D4]/20 text-[#06B6D4] rounded-full text-sm transition-transform hover:scale-105"
+                        className="px-3 py-1 bg-brand/20 text-brand rounded-full text-sm transition-transform hover:scale-105"
                       >
                         {tech}
                       </span>
@@ -74,7 +74,7 @@ export async function Projects() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#06B6D4] hover:text-[#0EA5E9] transition-colors"
+                  className="flex items-center gap-2 text-brand hover:text-brand-hover transition-colors"
                 >
                   <ExternalLink className="w-5 h-5" />
                   <span className="text-sm">

@@ -15,7 +15,7 @@ export function ServiceDetailAIFeatures({
   const t = useTranslations("services");
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-[#06B6D4]/10 to-transparent">
+    <section className="py-16 px-6 bg-gradient-to-b from-brand/10 to-transparent">
       <div className="max-w-6xl mx-auto">
         <FadeInView
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export function ServiceDetailAIFeatures({
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3 justify-center mb-8">
-            <Sparkles className="w-8 h-8 text-[#06B6D4]" />
+            <Sparkles className="w-8 h-8 text-brand" />
             <h2 className="text-3xl font-bold text-white">
               {t("detail.aiSectionHeading")}
             </h2>
@@ -40,7 +40,7 @@ export function ServiceDetailAIFeatures({
               viewport={{ once: true }}
             >
               <IconTextCard
-                icon={<Sparkles className="w-6 h-6 text-[#06B6D4]" />}
+                icon={<Sparkles className="w-6 h-6 text-brand" />}
                 hoverable
               >
                 {t(`${featureKey}` as any)}

@@ -63,7 +63,7 @@ export function Navigation() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? "bg-[#0F172A]/95 backdrop-blur-2xl shadow-lg border-b border-[#1E293B]"
+          ? "bg-surface/95 backdrop-blur-2xl shadow-lg border-b border-surface-elevated"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -81,11 +81,11 @@ export function Navigation() {
           >
             <Link href={`/#${sectionIds.hero}`} className="flex items-center gap-2">
               <motion.div
-                className="w-10 h-10 bg-[#06B6D4] rounded-lg flex items-center justify-center"
+                className="w-10 h-10 bg-brand rounded-lg flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-[#090E1B] font-bold text-xl">
+                <span className="text-canvas font-bold text-xl">
                   {personal.initials}
                 </span>
               </motion.div>
@@ -113,7 +113,7 @@ export function Navigation() {
                   >
                     <Link
                       href={item.path}
-                      className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
+                      className="text-gray-300 hover:text-brand transition-colors font-medium"
                     >
                       {t(`nav.${item.navKey}`)}
                     </Link>
@@ -135,7 +135,7 @@ export function Navigation() {
                   >
                     <Link
                       href={`/#${sectionIds[item.section]}`}
-                      className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
+                      className="text-gray-300 hover:text-brand transition-colors font-medium"
                     >
                       {t(`nav.${item.navKey}`)}
                     </Link>
@@ -149,7 +149,7 @@ export function Navigation() {
           <motion.button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-[#06B6D4] transition-colors"
+            className="md:hidden p-2 text-white hover:text-brand transition-colors"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -192,7 +192,7 @@ export function Navigation() {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
-                className="mt-4 py-4 border-t border-[#1E293B]"
+                className="mt-4 py-4 border-t border-surface-elevated"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
@@ -211,7 +211,7 @@ export function Navigation() {
                         <Link
                           href={item.path}
                           onClick={handleLinkClick}
-                          className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium block"
+                          className="text-gray-300 hover:text-brand transition-colors font-medium block"
                         >
                           {t(`nav.${item.navKey}`)}
                         </Link>
@@ -234,7 +234,7 @@ export function Navigation() {
                           <Link
                             href={`/#${sectionIds[item.section]}`}
                             onClick={handleLinkClick}
-                            className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
+                            className="text-gray-300 hover:text-brand transition-colors font-medium"
                           >
                             {t(`nav.${item.navKey}`)}
                           </Link>
@@ -242,7 +242,7 @@ export function Navigation() {
                       </motion.div>
                     ),
                   )}
-                  <div className="pt-2 border-t border-[#1E293B] flex justify-center">
+                  <div className="pt-2 border-t border-surface-elevated flex justify-center">
                     <LocaleSwitcher onNavigate={handleLinkClick} />
                   </div>
                 </div>

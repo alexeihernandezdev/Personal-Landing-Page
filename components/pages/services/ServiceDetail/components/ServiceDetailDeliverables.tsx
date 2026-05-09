@@ -15,7 +15,7 @@ export function ServiceDetailDeliverables({
   const t = useTranslations("services");
 
   return (
-    <section className="py-16 px-6 bg-[#0F172A]/50">
+    <section className="py-16 px-6 bg-surface/50">
       <div className="max-w-6xl mx-auto">
         <FadeInView
           initial={{ opacity: 0, y: 20 }}
@@ -38,8 +38,8 @@ export function ServiceDetailDeliverables({
             >
               <IconTextCard
                 icon={
-                  <div className="w-10 h-10 bg-[#06B6D4] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Code2 className="w-5 h-5 text-[#090E1B]" />
+                  <div className="w-10 h-10 bg-brand rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Code2 className="w-5 h-5 text-canvas" />
                   </div>
                 }
                 hoverable

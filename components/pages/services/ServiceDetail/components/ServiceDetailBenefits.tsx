@@ -38,7 +38,7 @@ export function ServiceDetailBenefits({
             >
               <IconTextCard
                 iconVariant="boxed"
-                icon={<CheckCircle2 className="w-5 h-5 text-[#06B6D4]" />}
+                icon={<CheckCircle2 className="w-5 h-5 text-brand" />}
               >
                 {t(`${benefitKey}` as any)}
               </IconTextCard>

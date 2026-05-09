@@ -112,7 +112,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <MotionProvider>
             <a
               href="#main-content"
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#06B6D4] focus:px-4 focus:py-3 focus:text-[#090E1B] focus:font-medium focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#090E1B]"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-3 focus:text-canvas focus:font-medium focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-canvas"
             >
               {tA11y("skipToContent")}
             </a>

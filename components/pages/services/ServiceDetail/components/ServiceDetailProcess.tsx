@@ -17,7 +17,7 @@ export function ServiceDetailProcess({ process }: ServiceDetailProcessProps) {
   const t = useTranslations("services");
 
   return (
-    <section className="py-16 px-6 bg-[#0F172A]/50">
+    <section className="py-16 px-6 bg-surface/50">
       <div className="max-w-6xl mx-auto">
         <FadeInView
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export function ServiceDetailProcess({ process }: ServiceDetailProcessProps) {
               viewport={{ once: true }}
             >
               <div className="relative">
-                <div className="text-6xl font-bold text-[#06B6D4]/20 absolute -top-4 -left-2">
+                <div className="text-6xl font-bold text-brand/20 absolute -top-4 -left-2">
                   {step.step.toString().padStart(2, "0")}
                 </div>
                 <div className="relative pt-8">

@@ -10,7 +10,7 @@ type Props = {
 export function SkillCardMotion({ index, children }: Props) {
   return (
     <motion.div
-      className="flex flex-col p-5 rounded-xl bg-[#1E293B]/80 backdrop-blur-sm border-2 border-[#334155] hover:border-[#06B6D4] hover:shadow-lg hover:shadow-[#06B6D4]/20 hover:bg-[#1E293B]"
+      className="flex flex-col p-5 rounded-xl bg-surface-elevated/80 backdrop-blur-sm border-2 border-surface-strong hover:border-brand hover:shadow-lg hover:shadow-brand/20 hover:bg-surface-elevated"
       initial={{ opacity: 0, y: 90 }}
       whileInView={{
         opacity: 1,
@@ -37,7 +37,7 @@ export function SkillCardMotion({ index, children }: Props) {
 export function SkillIconMotion({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      className="w-11 h-11 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center mb-3 shrink-0"
+      className="w-11 h-11 bg-brand/20 rounded-lg flex items-center justify-center mb-3 shrink-0"
       whileHover={{ rotate: 360, scale: 1.1 }}
       transition={{ duration: 0.6 }}
     >
@@ -57,7 +57,7 @@ export function SkillListItemMotion({
 }) {
   return (
     <motion.span
-      className="inline-flex items-center gap-1.5 rounded-md border border-[#334155]/70 bg-[#0F172A]/60 px-2 py-1 text-xs text-gray-300"
+      className="inline-flex items-center gap-1.5 rounded-md border border-surface-strong/70 bg-surface/60 px-2 py-1 text-xs text-gray-300"
       initial={{ opacity: 0, y: 6 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

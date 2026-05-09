@@ -21,7 +21,7 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
       transition={{ duration: 0.6, delay: 0.1 }}
     >
       <div className="mb-6">
-        <span className="rounded-full bg-[#06B6D4] px-4 py-2 text-sm font-semibold text-[#090E1B]">
+        <span className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-canvas">
           {project.category}
         </span>
       </div>
@@ -47,7 +47,7 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-[#1E293B] bg-[#0F172A] px-6 py-3 text-white transition-colors hover:bg-[#1E293B]"
+            className="flex items-center gap-2 rounded-lg border border-surface-elevated bg-surface px-6 py-3 text-white transition-colors hover:bg-surface-elevated"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -59,7 +59,7 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
           href={project.demo}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-lg bg-[#06B6D4] px-6 py-3 font-semibold text-[#090E1B] transition-colors hover:bg-[#0EA5E9]"
+          className="flex items-center gap-2 rounded-lg bg-brand px-6 py-3 font-semibold text-canvas transition-colors hover:bg-brand-hover"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

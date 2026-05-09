@@ -14,7 +14,7 @@ export default function BlogPage() {
   const t = useTranslations("blog");
 
   return (
-    <div className="min-h-screen bg-[#090E1B] relative">
+    <div className="min-h-screen bg-canvas relative">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
@@ -22,8 +22,8 @@ export default function BlogPage() {
           {/* Hero Section */}
           <section className="pt-32 pb-16 px-6 relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#06B6D4] rounded-full blur-[120px]"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-[120px]"></div>
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand rounded-full blur-[120px]"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-hover rounded-full blur-[120px]"></div>
             </div>
 
             <div className="max-w-4xl mx-auto relative z-10">
@@ -46,7 +46,7 @@ export default function BlogPage() {
                 <Link
                   key={post.id}
                   href={`/blog/${post.slug}`}
-                  className="group bg-[#0F172A] rounded-xl overflow-hidden border border-[#1E293B] hover:border-[#06B6D4] transition-all duration-300 hover:transform hover:scale-[1.02]"
+                  className="group bg-surface rounded-xl overflow-hidden border border-surface-elevated hover:border-brand transition-all duration-300 hover:transform hover:scale-[1.02]"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -55,7 +55,7 @@ export default function BlogPage() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-[#06B6D4] text-[#090E1B] px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-brand text-canvas px-3 py-1 rounded-full text-sm font-semibold">
                         {post.category}
                       </span>
                     </div>
@@ -77,7 +77,7 @@ export default function BlogPage() {
                       </div>
                     </div>
 
-                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#06B6D4] transition-colors">
+                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-brand transition-colors">
                       {post.title}
                     </h2>
 
@@ -89,14 +89,14 @@ export default function BlogPage() {
                       {post.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-gray-500 bg-[#1E293B] px-2 py-1 rounded"
+                          className="text-xs text-gray-500 bg-surface-elevated px-2 py-1 rounded"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center text-[#06B6D4] font-semibold group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-brand font-semibold group-hover:gap-2 transition-all">
                       <span>{t('readMore')}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>

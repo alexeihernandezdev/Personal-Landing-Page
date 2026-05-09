@@ -25,7 +25,7 @@ export function ProjectDetailScreenshots({ project }: ProjectDetailScreenshotsPr
         {project.screenshots.map((screenshot, index) => (
           <motion.div
             key={screenshot}
-            className="relative h-64 overflow-hidden rounded-xl border border-[#1E293B]"
+            className="relative h-64 overflow-hidden rounded-xl border border-surface-elevated"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

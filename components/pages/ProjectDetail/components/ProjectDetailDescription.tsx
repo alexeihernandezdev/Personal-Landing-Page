@@ -19,7 +19,7 @@ export function ProjectDetailDescription({ project }: ProjectDetailDescriptionPr
       transition={{ duration: 0.6, delay: 0.3 }}
     >
       <h2 className="mb-4 flex items-center gap-3 text-2xl font-bold text-white">
-        <Code className="h-6 w-6 text-[#06B6D4]" />
+        <Code className="h-6 w-6 text-brand" />
         {t("descriptionHeading")}
       </h2>
       <p className="leading-relaxed text-gray-300">

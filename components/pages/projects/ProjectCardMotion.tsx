@@ -11,7 +11,7 @@ type CardProps = {
 export function ProjectCardMotion({ index, children }: CardProps) {
   return (
     <motion.div
-      className="bg-[#0F172A] rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-[#06B6D4]/20 border border-[#1E293B]"
+      className="bg-surface rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-brand/20 border border-surface-elevated"
       initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
       viewport={{ once: true }}

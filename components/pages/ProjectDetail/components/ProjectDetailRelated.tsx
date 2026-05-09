@@ -27,7 +27,7 @@ export function ProjectDetailRelated({ related }: ProjectDetailRelatedProps) {
           <Link
             key={p.id}
             href={`/project/${p.slug}`}
-            className="group overflow-hidden rounded-xl border border-[#1E293B] bg-[#0F172A] transition-all duration-300 hover:border-[#06B6D4]"
+            className="group overflow-hidden rounded-xl border border-surface-elevated bg-surface transition-all duration-300 hover:border-brand"
           >
             <div className="relative h-48 overflow-hidden">
               <ImageWithFallback
@@ -40,10 +40,10 @@ export function ProjectDetailRelated({ related }: ProjectDetailRelatedProps) {
               />
             </div>
             <div className="p-6">
-              <span className="mb-2 block text-xs font-semibold text-[#06B6D4]">
+              <span className="mb-2 block text-xs font-semibold text-brand">
                 {p.category}
               </span>
-              <h3 className="mb-2 text-lg font-bold text-white transition-colors group-hover:text-[#06B6D4]">
+              <h3 className="mb-2 text-lg font-bold text-white transition-colors group-hover:text-brand">
                 {p.title}
               </h3>
               <p className="mb-4 line-clamp-2 text-sm text-gray-400">
@@ -53,7 +53,7 @@ export function ProjectDetailRelated({ related }: ProjectDetailRelatedProps) {
                 {p.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="rounded bg-[#1E293B] px-2 py-1 text-xs text-gray-400"
+                    className="rounded bg-surface-elevated px-2 py-1 text-xs text-gray-400"
                   >
                     {tech}
                   </span>

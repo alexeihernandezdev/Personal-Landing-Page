@@ -14,7 +14,7 @@ export function ServicesGridItemFeatures({ features }: ServicesGridItemFeaturesP
     <ul className="space-y-2 mb-6">
       {features.slice(0, 3).map((featureKey, idx) => (
         <li key={idx} className="flex items-start gap-2 text-sm text-gray-500">
-          <CheckCircle2 className="w-4 h-4 text-[#06B6D4] flex-shrink-0 mt-0.5" />
+          <CheckCircle2 className="w-4 h-4 text-brand flex-shrink-0 mt-0.5" />
           <span className="line-clamp-1">
             {t(`${featureKey}` as any)}
           </span>

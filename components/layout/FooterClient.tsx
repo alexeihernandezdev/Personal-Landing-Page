@@ -10,7 +10,7 @@ export function FooterClient() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="py-8 px-6 bg-[#090E1B] border-t border-[#1E293B]">
+    <footer className="py-8 px-6 bg-canvas border-t border-surface-elevated">
       <div className="max-w-6xl mx-auto text-center">
         <FadeInView
           className="flex items-center justify-center gap-2 text-gray-400 flex-wrap"
@@ -20,7 +20,7 @@ export function FooterClient() {
         >
           {t("developedWith")}{" "}
           <span className="footer-heart-pulse inline-flex">
-            <Heart className="w-4 h-4 text-[#06B6D4] fill-[#06B6D4]" />
+            <Heart className="w-4 h-4 text-brand fill-brand" />
           </span>{" "}
           {t("byAuthor", { name: personal.fullName })}
         </FadeInView>

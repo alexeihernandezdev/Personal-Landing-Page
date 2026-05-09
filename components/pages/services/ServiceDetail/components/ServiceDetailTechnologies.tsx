@@ -28,7 +28,7 @@ export function ServiceDetailTechnologies({
             {technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 bg-[#0F172A] border border-[#1E293B] rounded-full text-gray-300 hover:border-[#06B6D4] transition-colors"
+                className="px-4 py-2 bg-surface border border-surface-elevated rounded-full text-gray-300 hover:border-brand transition-colors"
               >
                 {tech}
               </span>

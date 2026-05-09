@@ -23,7 +23,7 @@ export function ProjectDetailChallenges({
       transition={{ duration: 0.6, delay: 0.6 }}
     >
       <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-white">
-        <Lightbulb className="h-6 w-6 text-[#06B6D4]" />
+        <Lightbulb className="h-6 w-6 text-brand" />
         {t("challengesHeading")}
       </h2>
       <div className="space-y-6">

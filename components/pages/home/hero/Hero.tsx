@@ -25,7 +25,7 @@ export async function Hero() {
   return (
     <section
       id={sectionIds.hero}
-      className="min-h-screen flex w-full min-w-0 items-center justify-center px-6 py-20 bg-[#090E1B]"
+      className="min-h-screen flex w-full min-w-0 items-center justify-center px-6 py-20 bg-canvas"
     >
       <div className="grid w-full min-w-0 max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
         <FadeOnMount
@@ -40,7 +40,7 @@ export async function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-[#06B6D4] font-medium">{t("greeting")}</p>
+            <p className="text-brand font-medium">{t("greeting")}</p>
             <h1 className="break-words text-5xl font-bold text-white md:text-6xl">
               {personal.fullName}
             </h1>
@@ -64,13 +64,13 @@ export async function Hero() {
           >
             <PressableAnchor
               href={`#${sectionIds.contact}`}
-              className="px-8 py-3 bg-[#06B6D4] text-[#090E1B] rounded-lg hover:bg-[#0EA5E9] transition-colors font-medium"
+              className="px-8 py-3 bg-brand text-canvas rounded-lg hover:bg-brand-hover transition-colors font-medium"
             >
               {t("primaryCta")}
             </PressableAnchor>
             <PressableAnchor
               href={`#${sectionIds.projects}`}
-              className="px-8 py-3 border-2 border-[#06B6D4] text-[#06B6D4] rounded-lg hover:bg-[#06B6D4]/10 transition-colors font-medium"
+              className="px-8 py-3 border-2 border-brand text-brand rounded-lg hover:bg-brand/10 transition-colors font-medium"
             >
               {t("secondaryCta")}
             </PressableAnchor>
@@ -78,7 +78,7 @@ export async function Hero() {
               <PressableAnchor
                 href={cvUrls.en}
                 download
-                className="inline-flex items-center gap-2 px-5 py-3 border border-[#06B6D4]/60 text-[#06B6D4] rounded-lg hover:bg-[#06B6D4]/10 transition-colors font-medium text-sm sm:text-base"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-brand/60 text-brand rounded-lg hover:bg-brand/10 transition-colors font-medium text-sm sm:text-base"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -106,9 +106,9 @@ export async function Hero() {
                     : "noopener noreferrer"
                 }
                 index={index}
-                className="p-3 bg-[#0F172A] rounded-full hover:bg-[#1E293B] transition-colors shadow-md"
+                className="p-3 bg-surface rounded-full hover:bg-surface-elevated transition-colors shadow-md"
               >
-                <item.icon className="w-6 h-6 text-[#06B6D4]" aria-hidden />
+                <item.icon className="w-6 h-6 text-brand" aria-hidden />
               </SocialIconAnchor>
             ))}
           </FadeOnMount>

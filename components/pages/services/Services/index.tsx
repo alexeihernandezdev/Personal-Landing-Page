@@ -7,7 +7,7 @@ import { ServicesHero } from "./ServicesHero";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-[#090E1B] relative">
+    <div className="min-h-screen bg-canvas relative">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />

@@ -9,7 +9,7 @@ export async function ProfileSection() {
   const tHero = await getTranslations("hero");
 
   return (
-    <section className="py-[7.5rem] px-9 bg-[#090E1B] relative overflow-hidden">
+    <section className="py-[7.5rem] px-9 bg-canvas relative overflow-hidden">
       <ProfileAmbientOrbs />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -30,7 +30,7 @@ export async function ProfileSection() {
                   className="wave-path wave-path-1"
                   d="M 200,50 C 280,50 320,90 350,150 C 380,210 380,240 350,300 C 320,360 280,400 200,400 C 120,400 80,360 50,300 C 20,240 20,210 50,150 C 80,90 120,50 200,50"
                   fill="none"
-                  stroke="#06B6D4"
+                  stroke="var(--brand)"
                   strokeWidth="3.75"
                   opacity="0.7"
                   strokeLinecap="round"
@@ -39,7 +39,7 @@ export async function ProfileSection() {
                   className="wave-path wave-path-2"
                   d="M 200,80 C 270,80 300,110 325,160 C 350,210 350,240 325,290 C 300,340 270,370 200,370 C 130,370 100,340 75,290 C 50,240 50,210 75,160 C 100,110 130,80 200,80"
                   fill="none"
-                  stroke="#06B6D4"
+                  stroke="var(--brand)"
                   strokeWidth="3"
                   opacity="0.5"
                   strokeLinecap="round"
@@ -48,7 +48,7 @@ export async function ProfileSection() {
                   className="wave-path wave-path-3"
                   d="M 200,110 C 260,110 285,130 305,170 C 325,210 325,240 305,280 C 285,320 260,340 200,340 C 140,340 115,320 95,280 C 75,240 75,210 95,170 C 115,130 140,110 200,110"
                   fill="none"
-                  stroke="#0EA5E9"
+                  stroke="var(--brand-hover)"
                   strokeWidth="2.25"
                   opacity="0.4"
                   strokeLinecap="round"
@@ -56,7 +56,7 @@ export async function ProfileSection() {
               </svg>
             </div>
 
-            <div className="relative z-10 h-44 w-44 overflow-hidden rounded-full border-4 border-[#06B6D4] shadow-2xl shadow-[#06B6D4]/50 sm:h-56 sm:w-56 sm:border-[5px] md:h-72 md:w-72 md:border-[6px]">
+            <div className="relative z-10 h-44 w-44 overflow-hidden rounded-full border-4 border-brand shadow-2xl shadow-brand/50 sm:h-56 sm:w-56 sm:border-[5px] md:h-72 md:w-72 md:border-[6px]">
               <ImageWithFallback
                 src={personal.profileImageUrl}
                 alt={tHero("profileImageAlt", { name: personal.fullName })}
@@ -111,7 +111,7 @@ export async function ProfileSection() {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.3));
+          filter: drop-shadow(0 0 12px color-mix(in srgb, var(--brand) 30%, transparent));
         }
 
         @keyframes wave-morph-1 {

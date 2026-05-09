@@ -87,7 +87,7 @@ export function Contact() {
   };
 
   return (
-    <section id={sectionIds.contact} className="py-20 px-6 bg-[#0F172A]">
+    <section id={sectionIds.contact} className="py-20 px-6 bg-surface">
       <div className="max-w-6xl mx-auto">
         <FadeInView
           className="text-center mb-16"
@@ -124,8 +124,8 @@ export function Contact() {
                     className="flex items-start gap-4"
                     delayIndex={index}
                   >
-                    <HoverSpinIcon className="w-12 h-12 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-[#06B6D4]" />
+                    <HoverSpinIcon className="w-12 h-12 bg-brand/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-brand" />
                     </HoverSpinIcon>
                     <div>
                       <h4 className="font-semibold text-white mb-1">
@@ -134,7 +134,7 @@ export function Contact() {
                       {method.href ? (
                         <a
                           href={method.href}
-                          className="text-gray-400 hover:text-[#06B6D4] transition-colors"
+                          className="text-gray-400 hover:text-brand transition-colors"
                         >
                           {method.value}
                         </a>
@@ -149,7 +149,7 @@ export function Contact() {
           </FadeInView>
 
           <FadeInView
-            className="bg-[#1E293B] p-8 rounded-xl border border-[#334155] relative"
+            className="bg-surface-elevated p-8 rounded-xl border border-surface-strong relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -163,9 +163,9 @@ export function Contact() {
                 role="status"
                 aria-live="polite"
               >
-                <div className="w-16 h-16 rounded-full bg-[#06B6D4]/15 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-brand/15 flex items-center justify-center">
                   <CheckCircle2
-                    className="w-9 h-9 text-[#06B6D4]"
+                    className="w-9 h-9 text-brand"
                     aria-hidden
                   />
                 </div>
@@ -180,7 +180,7 @@ export function Contact() {
                 <button
                   type="button"
                   onClick={() => setSent(false)}
-                  className="mt-2 px-6 py-2.5 rounded-lg border border-[#334155] text-gray-200 hover:bg-[#0F172A] hover:border-[#06B6D4]/50 transition-colors text-sm font-medium"
+                  className="mt-2 px-6 py-2.5 rounded-lg border border-surface-strong text-gray-200 hover:bg-surface hover:border-brand/50 transition-colors text-sm font-medium"
                 >
                   {t("form.sendAnother")}
                 </button>
@@ -204,7 +204,7 @@ export function Contact() {
                     name="name"
                     required
                     disabled={submitting}
-                    className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent disabled:opacity-60"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-surface-strong text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent disabled:opacity-60"
                     placeholder={t("form.namePlaceholder")}
                   />
                 </FadeInView>
@@ -226,7 +226,7 @@ export function Contact() {
                     name="email"
                     required
                     disabled={submitting}
-                    className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent disabled:opacity-60"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-surface-strong text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent disabled:opacity-60"
                     placeholder={t("form.emailPlaceholder")}
                   />
                 </FadeInView>
@@ -248,7 +248,7 @@ export function Contact() {
                     required
                     disabled={submitting}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg bg-[#0F172A] border border-[#334155] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent resize-none disabled:opacity-60"
+                    className="w-full px-4 py-3 rounded-lg bg-surface border border-surface-strong text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent resize-none disabled:opacity-60"
                     placeholder={t("form.messagePlaceholder")}
                   />
                 </FadeInView>
@@ -261,7 +261,7 @@ export function Contact() {
                   <PressableButton
                     type="submit"
                     disabled={submitting}
-                    className="w-full px-8 py-3 bg-[#06B6D4] text-[#090E1B] rounded-lg hover:bg-[#0EA5E9] transition-colors font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full px-8 py-3 bg-brand text-canvas rounded-lg hover:bg-brand-hover transition-colors font-medium disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {submitting ? t("form.submitting") : t("form.submit")}
                   </PressableButton>
@@ -271,7 +271,7 @@ export function Contact() {
 
             {errorToast ? (
               <div
-                className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 flex items-start gap-3 rounded-lg border border-red-500/40 bg-[#1E1B26] px-4 py-3 shadow-lg shadow-black/40"
+                className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 flex items-start gap-3 rounded-lg border border-red-500/40 bg-toast-error px-4 py-3 shadow-lg shadow-black/40"
                 role="alert"
                 aria-live="assertive"
               >

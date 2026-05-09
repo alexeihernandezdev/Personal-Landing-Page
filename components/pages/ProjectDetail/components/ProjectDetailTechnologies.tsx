@@ -13,7 +13,7 @@ export function ProjectDetailTechnologies({ project }: ProjectDetailTechnologies
 
   return (
     <motion.div
-      className="sticky top-24 rounded-xl border border-[#1E293B] bg-[#0F172A] p-6"
+      className="sticky top-24 rounded-xl border border-surface-elevated bg-surface p-6"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
@@ -25,7 +25,7 @@ export function ProjectDetailTechnologies({ project }: ProjectDetailTechnologies
         {project.technologies.map((tech, index) => (
           <motion.span
             key={tech}
-            className="rounded-lg bg-[#06B6D4]/20 px-3 py-2 text-sm font-medium text-[#06B6D4]"
+            className="rounded-lg bg-brand/20 px-3 py-2 text-sm font-medium text-brand"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

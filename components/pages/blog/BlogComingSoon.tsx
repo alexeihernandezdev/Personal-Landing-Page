@@ -9,8 +9,8 @@ export function BlogComingSoon() {
   return (
     <section className="py-24 px-6" aria-labelledby="blog-coming-soon-heading">
       <div className="max-w-2xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#06B6D4]/10 border border-[#06B6D4]/30 mb-8">
-          <Sparkles className="w-8 h-8 text-[#06B6D4]" aria-hidden />
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand/10 border border-brand/30 mb-8">
+          <Sparkles className="w-8 h-8 text-brand" aria-hidden />
         </div>
         <h2
           id="blog-coming-soon-heading"

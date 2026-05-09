@@ -37,7 +37,7 @@ export function ServiceDetailFeatures({
               viewport={{ once: true }}
             >
               <IconTextCard
-                icon={<CheckCircle2 className="w-6 h-6 text-[#06B6D4]" />}
+                icon={<CheckCircle2 className="w-6 h-6 text-brand" />}
                 hoverable
               >
                 {t(`${featureKey}` as any)}

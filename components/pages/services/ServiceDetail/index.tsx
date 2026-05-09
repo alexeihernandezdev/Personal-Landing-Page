@@ -23,14 +23,14 @@ export default function ServiceDetail({ service, locale }: ServiceDetailProps) {
   const hasAIFeatures = service.aiFeatures && service.aiFeatures.length > 0;
 
   return (
-    <div className="min-h-screen bg-[#090E1B] relative">
+    <div className="min-h-screen bg-canvas relative">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
         <main id="main-content" tabIndex={-1} className="outline-none">
           <ServiceDetailHero
             locale={locale}
-            icon={Icon && <Icon className="w-7 h-7 text-[#090E1B]" />}
+            icon={Icon && <Icon className="w-7 h-7 text-canvas" />}
             isFeatured={service.featured ?? false}
             titleKey={service.titleKey}
             shortDescriptionKey={service.shortDescriptionKey}

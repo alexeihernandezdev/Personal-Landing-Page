@@ -19,8 +19,8 @@ export function IconTextCard({
   className = "",
 }: IconTextCardProps) {
   const cardClass = [
-    "bg-[#0F172A] h-full flex gap-3 items-center rounded-xl p-6 border border-[#1E293B]",
-    hoverable ? "hover:border-[#06B6D4]/50 transition-colors" : "",
+    "bg-surface h-full flex gap-3 items-center rounded-xl p-6 border border-surface-elevated",
+    hoverable ? "hover:border-brand/50 transition-colors" : "",
     className,
   ]
     .filter(Boolean)
@@ -30,7 +30,7 @@ export function IconTextCard({
     <div className={cardClass}>
       <div className="mt-1">
         {iconVariant === "boxed" ? (
-          <div className="w-10 h-10 bg-[#06B6D4]/20 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-brand/20 rounded-lg flex items-center justify-center">
             {icon}
           </div>
         ) : (

@@ -20,7 +20,7 @@ export function LocaleSwitcher({ className = "", onNavigate }: LocaleSwitcherPro
     <div
       role="group"
       aria-label={t("switchLabel")}
-      className={`inline-flex items-center rounded-lg border border-[#06B6D4]/25 bg-[#0F172A]/60 p-0.5 ${className}`}
+      className={`inline-flex items-center rounded-lg border border-brand/25 bg-surface/60 p-0.5 ${className}`}
     >
       {routing.locales.map((loc) => {
         const isActive = loc === locale;
@@ -34,8 +34,8 @@ export function LocaleSwitcher({ className = "", onNavigate }: LocaleSwitcherPro
             aria-label={isActive ? undefined : t(localeAriaKey[loc])}
             className={`min-w-[2.25rem] rounded-md px-2 py-1 text-center text-xs font-semibold uppercase tracking-wide transition-colors ${
               isActive
-                ? "bg-[#06B6D4]/15 text-[#06B6D4]"
-                : "text-gray-400 hover:text-[#06B6D4]"
+                ? "bg-brand/15 text-brand"
+                : "text-gray-400 hover:text-brand"
             }`}
           >
             {loc === "es" ? t("es") : t("en")}

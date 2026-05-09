@@ -27,9 +27,9 @@ export function ServiceDetailHeroImage({
           alt={t(`${titleKey}` as any)}
           className="w-full h-80 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090E1B] via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-canvas via-transparent to-transparent opacity-60" />
         <div className="absolute bottom-6 left-6">
-          <div className="w-14 h-14 bg-[#06B6D4] rounded-xl flex items-center justify-center">
+          <div className="w-14 h-14 bg-brand rounded-xl flex items-center justify-center">
             {icon}
           </div>
         </div>

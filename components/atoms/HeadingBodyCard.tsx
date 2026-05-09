@@ -14,7 +14,7 @@ export function HeadingBodyCard({
   descriptionClassName = "",
 }: HeadingBodyCardProps) {
   return (
-    <div className="bg-[#0F172A] h-full rounded-xl p-8 border border-[#1E293B]">
+    <div className="bg-surface h-full rounded-xl p-8 border border-surface-elevated">
       <h2 className={`text-2xl font-bold text-white mb-4 ${headingClassName}`}>
         {heading}
       </h2>

@@ -23,7 +23,7 @@ export async function Skills() {
   return (
     <section
       id={sectionIds.skills}
-      className="py-20 px-6 bg-gradient-to-b from-[#0F172A] via-[#0F172A] to-[#090E1B]"
+      className="py-20 px-6 bg-gradient-to-b from-surface via-surface to-canvas"
     >
       <div className="max-w-6xl mx-auto">
         <FadeInView
@@ -42,7 +42,7 @@ export async function Skills() {
             return (
               <SkillCardMotion key={skill.icon} index={index}>
                 <SkillIconMotion>
-                  <Icon className="w-6 h-6 text-[#06B6D4]" />
+                  <Icon className="w-6 h-6 text-brand" />
                 </SkillIconMotion>
                 <h3 className="text-lg font-semibold text-white mb-2.5">
                   {t(`groups.${skill.icon}.title`)}
@@ -55,7 +55,7 @@ export async function Skills() {
                       techIndex={techIndex}
                     >
                       <span
-                        className="h-1 w-1 shrink-0 rounded-full bg-[#06B6D4] skill-dot-pulse"
+                        className="h-1 w-1 shrink-0 rounded-full bg-brand skill-dot-pulse"
                         style={{
                           animationDelay: `${techIndex * 0.25}s`,
                         }}

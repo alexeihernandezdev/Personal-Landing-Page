@@ -15,7 +15,7 @@ export function ServicesGridItemCta({ timeline }: ServicesGridItemCtaProps) {
       <span className="text-sm text-gray-500">
         {t("weeks", { range: timeline })}
       </span>
-      <div className="flex items-center gap-2 text-[#06B6D4] group-hover:text-[#0EA5E9] transition-colors font-medium">
+      <div className="flex items-center gap-2 text-brand group-hover:text-brand-hover transition-colors font-medium">
         <span className="text-sm">{t("viewDetails")}</span>
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </div>

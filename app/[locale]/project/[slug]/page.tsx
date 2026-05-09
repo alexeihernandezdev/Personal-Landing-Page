@@ -22,7 +22,7 @@ export default function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <div className="relative flex min-h-screen items-center justify-center bg-[#090E1B]">
+      <div className="relative flex min-h-screen items-center justify-center bg-canvas">
         <MouseGlow />
         <main
           id="main-content"
@@ -34,7 +34,7 @@ export default function ProjectDetailPage() {
           </h1>
           <Link
             href={`/#${sectionIds.projects}`}
-            className="text-[#06B6D4] hover:underline"
+            className="text-brand hover:underline"
           >
             {t("backToProjects")}
           </Link>
@@ -46,7 +46,7 @@ export default function ProjectDetailPage() {
   const related = projects.filter((p) => p.id !== project.id).slice(0, 2);
 
   return (
-    <div className="relative min-h-screen bg-[#090E1B]">
+    <div className="relative min-h-screen bg-canvas">
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
