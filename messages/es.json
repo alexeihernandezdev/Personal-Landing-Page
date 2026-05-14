@@ -26,22 +26,26 @@
     "mobileMenuButton": "Abrir y cerrar el menú principal"
   },
   "hero": {
-    "greeting": "Hola, soy",
     "role": "Desarrollador Web Full Stack",
-    "description": "Creo experiencias web modernas y funcionales. Especializado en React, Node.js y tecnologías web de vanguardia.",
+    "headlineLead": "Convierto tus ideas en",
+    "headlineHighlight": "productos web reales",
+    "descriptionLead": "Desarrollo aplicaciones web rápidas, escalables y bien construidas.",
+    "descriptionTech": "React · Next.js · Node.js",
+    "descriptionTail": "Desde la idea hasta el deploy, con código limpio y sin sorpresas.",
     "primaryCta": "Contactar",
     "secondaryCta": "Ver Proyectos",
     "cv": "CV",
     "heroImageAlt": "Espacio de trabajo de desarrollador",
     "profileImageAlt": "{name} — Desarrollador web",
+    "availabilityBadge": "Disponible para nuevos proyectos",
     "socialGithub": "Perfil de GitHub",
     "socialLinkedin": "Perfil de LinkedIn",
     "socialEmail": "Enviar correo"
   },
   "about": {
     "title": "Sobre mí",
-    "bio1": "Soy un desarrollador web apasionado por crear experiencias digitales excepcionales. Con más de {years} años de experiencia, me especializo en construir aplicaciones web modernas, escalables y centradas en el usuario.",
-    "bio2": "Mi objetivo es transformar ideas en soluciones digitales que generen un impacto real. Me encanta aprender nuevas tecnologías y enfrentar desafíos complejos."
+    "bio1": "Soy desarrollador web con más de {years} años de experiencia construyendo aplicaciones reales: ERPs, CRMs, tiendas, integraciones con APIs externas. Trabajo con React, Next.js y Node.js.",
+    "bio2": "Si tienes una idea o un negocio que necesita presencia digital o una herramienta a medida, puedo llevarlo del concepto a la realidad. Sin intermediarios, sin sorpresas, con código limpio que tú o tu equipo puedan mantener después."
   },
   "skills": {
     "title": "Habilidades & Tecnologías",
