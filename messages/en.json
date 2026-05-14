@@ -26,22 +26,26 @@
     "mobileMenuButton": "Open and close main menu"
   },
   "hero": {
-    "greeting": "Hi, I'm",
     "role": "Full Stack Web Developer",
-    "description": "I build modern, functional web experiences. Specialized in React, Node.js, and cutting-edge web technologies.",
+    "headlineLead": "I turn your ideas into",
+    "headlineHighlight": "real web products",
+    "descriptionLead": "I build fast, scalable, well-crafted web applications.",
+    "descriptionTech": "React · Next.js · Node.js",
+    "descriptionTail": "From idea to deploy, with clean code and no surprises.",
     "primaryCta": "Get in touch",
     "secondaryCta": "View projects",
     "cv": "CV",
     "heroImageAlt": "Developer workspace",
     "profileImageAlt": "{name} — Web developer",
+    "availabilityBadge": "Available for new projects",
     "socialGithub": "GitHub profile",
     "socialLinkedin": "LinkedIn profile",
     "socialEmail": "Send email"
   },
   "about": {
     "title": "About me",
-    "bio1": "I'm a web developer passionate about creating exceptional digital experiences. With more than {years} years of experience, I focus on modern, scalable, user-centered web applications.",
-    "bio2": "My goal is to turn ideas into digital solutions that make a real impact. I love learning new technologies and tackling complex challenges."
+    "bio1": "I'm a full stack developer with {years}+ years of experience building real-world applications: ERPs, CRMs, e-commerce platforms, and third-party API integrations. My main stack is React, Next.js, and Node.js",
+    "bio2": "If you have an idea or a business that needs a digital presence or a custom tool, I can take it from concept to reality. No middlemen, no surprises—just clean code that you or your team can maintain afterward."
   },
   "skills": {
     "title": "Skills & Technologies",
