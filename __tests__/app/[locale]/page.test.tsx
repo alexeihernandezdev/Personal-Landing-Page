@@ -25,6 +25,9 @@ vi.mock("@components/layout/Navigation", () => ({
 vi.mock("@components/layout/MouseGlow", () => ({
   MouseGlow: () => <div data-testid="mock-mouse-glow" />,
 }));
+vi.mock("@components/layout/MouseGlowStatic", () => ({
+  MouseGlowStatic: () => <div data-testid="mock-mouse-glow-static" />,
+}));
 vi.mock("@/components/pages/home/console/CodeConsole", () => ({
   CodeConsole: () => <div data-testid="mock-console">console</div>,
 }));
@@ -57,7 +60,8 @@ describe("app/[locale]/page.tsx (home)", () => {
     await renderHome("es");
 
     expect(screen.getByTestId("mock-navigation")).toBeInTheDocument();
-    expect(screen.getByTestId("mock-mouse-glow")).toBeInTheDocument();
+    expect(screen.getByTestId("mock-mouse-glow-static")).toBeInTheDocument();
+    expect(await screen.findByTestId("mock-mouse-glow")).toBeInTheDocument();
     expect(screen.getByTestId("mock-hero")).toBeInTheDocument();
     expect(screen.getByTestId("mock-profile")).toBeInTheDocument();
     expect(screen.getByTestId("mock-skills")).toBeInTheDocument();

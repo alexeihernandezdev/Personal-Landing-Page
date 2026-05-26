@@ -10,25 +10,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { StructuredData } from "@/components/seo/StructuredData";
-
-/**
- * Base URL for absolute metadata (OG, Twitter). Without a public HTTPS origin,
- * crawlers (LinkedIn, etc.) receive `localhost` and cannot load the preview image.
- *
- * 1. Prefer `NEXT_PUBLIC_SITE_URL` (e.g. https://www.alexeihernandez.com) in Vercel env.
- * 2. On Vercel builds, `VERCEL_URL` is set — use it so OG tags work even without (1).
- */
-function getSiteUrl(): string {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (explicit) {
-    return explicit.replace(/\/$/, "");
-  }
-  const vercel = process.env.VERCEL_URL?.trim();
-  if (vercel) {
-    return `https://${vercel.replace(/^https?:\/\//, "")}`;
-  }
-  return "http://localhost:3000";
-}
+import { getSiteUrl } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
 

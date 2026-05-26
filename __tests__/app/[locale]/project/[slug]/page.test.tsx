@@ -1,10 +1,11 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { screen } from "@testing-library/react";
-import { renderWithProviders } from "../../../../../test/renderWithProviders";
+import { render, screen } from "@testing-library/react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMockMessages } from "../../../../../test/messages";
 import {
+  notFound,
   resetNavigationMocks,
-  setMockParams,
-  useParams,
+  NextNotFoundError,
 } from "../../../../../test/mocks/next-navigation";
 import { getProjects } from "@/data/projects";
 
@@ -24,13 +25,20 @@ afterEach(() => {
   resetNavigationMocks();
 });
 
-describe("app/[locale]/project/[slug]/page.tsx", () => {
-  it("renders the project detail when slug exists (es)", () => {
-    const project = getProjects("es")[0];
-    setMockParams({ slug: project.slug });
-    useParams.mockReturnValue({ slug: project.slug });
+async function renderPage(locale: "es" | "en", slug: string) {
+  const params = Promise.resolve({ locale, slug });
+  const element = await ProjectDetailPage({ params });
+  return render(
+    <NextIntlClientProvider locale={locale} messages={getMockMessages(locale)}>
+      {element}
+    </NextIntlClientProvider>,
+  );
+}
 
-    renderWithProviders(<ProjectDetailPage />, { locale: "es" });
+describe("app/[locale]/project/[slug]/page.tsx", () => {
+  it("renders the project detail when slug exists (es)", async () => {
+    const project = getProjects("es")[0];
+    await renderPage("es", project.slug);
 
     expect(
       screen.getByRole("heading", { level: 1, name: project.title }),
@@ -43,40 +51,37 @@ describe("app/[locale]/project/[slug]/page.tsx", () => {
     }
   });
 
-  it("renders the english version using english data when locale is en", () => {
+  it("renders the english version using english data when locale is en", async () => {
     const project = getProjects("en")[0];
-    setMockParams({ slug: project.slug });
-    useParams.mockReturnValue({ slug: project.slug });
-
-    renderWithProviders(<ProjectDetailPage />, { locale: "en" });
+    await renderPage("en", project.slug);
 
     expect(
       screen.getByRole("heading", { level: 1, name: project.title }),
     ).toBeInTheDocument();
   });
 
-  it("renders the not-found state for an invalid slug", () => {
-    setMockParams({ slug: "this-slug-does-not-exist" });
-    useParams.mockReturnValue({ slug: "this-slug-does-not-exist" });
+  it("calls notFound for an invalid slug", async () => {
+    const params = Promise.resolve({ locale: "es", slug: "this-slug-does-not-exist" });
 
-    renderWithProviders(<ProjectDetailPage />, { locale: "es" });
-
-    expect(
-      screen.getByRole("heading", { level: 1, name: /no encontrado/i }),
-    ).toBeInTheDocument();
-    const back = screen.getByRole("link", { name: /volver a proyectos/i });
-    expect(back).toBeInTheDocument();
-    expect(back.getAttribute("href")).toMatch(/^\/es\/?#projects$/);
+    await expect(ProjectDetailPage({ params })).rejects.toThrow(NextNotFoundError);
+    expect(notFound).toHaveBeenCalledTimes(1);
   });
 
-  it("treats array slug params by reading the first element", () => {
-    const project = getProjects("es")[1];
-    useParams.mockReturnValue({ slug: [project.slug, "ignored"] });
+  it("emits SoftwareApplication + BreadcrumbList JSON-LD", async () => {
+    const project = getProjects("es")[0];
+    await renderPage("es", project.slug);
 
-    renderWithProviders(<ProjectDetailPage />, { locale: "es" });
+    const script = document.querySelector(
+      'script[type="application/ld+json"]',
+    ) as HTMLScriptElement | null;
+    expect(script).not.toBeNull();
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: project.title }),
-    ).toBeInTheDocument();
+    const json = JSON.parse(script!.innerHTML);
+    expect(json["@context"]).toBe("https://schema.org");
+    const types = (json["@graph"] as Array<{ "@type": string }>).map(
+      (n) => n["@type"],
+    );
+    expect(types).toContain("SoftwareApplication");
+    expect(types).toContain("BreadcrumbList");
   });
 });

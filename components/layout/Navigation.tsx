@@ -79,7 +79,10 @@ export function Navigation() {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
           >
-            <Link href={`/#${sectionIds.hero}`} className="flex items-center gap-2">
+            <Link
+              href={`/#${sectionIds.hero}`}
+              className="flex items-center gap-2"
+            >
               <motion.div
                 className="w-10 h-10 bg-[#06B6D4] rounded-lg flex items-center justify-center"
                 whileHover={{ rotate: 360 }}

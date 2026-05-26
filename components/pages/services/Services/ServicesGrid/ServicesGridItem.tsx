@@ -11,7 +11,7 @@ interface ServicesGridItemProps {
   index: number;
 }
 
-export function ServicesGridItem({ service, index }: ServicesGridItemProps) {
+export function ServicesGridItem({ service }: ServicesGridItemProps) {
   const t = useTranslations("services");
   const Icon = iconMap[service.iconName];
 
@@ -20,15 +20,15 @@ export function ServicesGridItem({ service, index }: ServicesGridItemProps) {
       <ServicesGridItemImage
         image={service.image}
         icon={Icon && <Icon className="w-6 h-6 text-[#090E1B]" />}
-        title={t(`${service.titleKey}` as any)}
+        title={t(`${service.titleKey}`)}
       />
 
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#06B6D4] transition-colors">
-          {t(`${service.titleKey}` as any)}
+          {t(`${service.titleKey}`)}
         </h3>
         <p className="text-gray-400 mb-4 line-clamp-3">
-          {t(`${service.shortDescriptionKey}` as any)}
+          {t(`${service.shortDescriptionKey}`)}
         </p>
 
         <ServicesGridItemFeatures features={service.features} />

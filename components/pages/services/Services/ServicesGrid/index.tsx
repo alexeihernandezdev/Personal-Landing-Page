@@ -19,10 +19,7 @@ export function ServicesGrid() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group"
-                >
+                <Link href={`/services/${service.slug}`} className="group">
                   <ServicesGridItem service={service} index={index} />
                 </Link>
               </FadeInView>

@@ -1,60 +1,68 @@
-"use client";
-
-import { ProjectDetail } from "@/components/pages/ProjectDetail";
+import { notFound } from "next/navigation";
 import { getProjects } from "@/data/projects";
-import { sectionIds } from "@/data/sectionIds";
-import { Link } from "@/i18n/navigation";
 import { FooterClient } from "@components/layout/FooterClient";
 import { MouseGlow } from "@components/layout/MouseGlow";
 import { Navigation } from "@components/layout/Navigation";
-import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
+import { ProjectDetail } from "@/components/pages/ProjectDetail";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getSiteUrl } from "@/lib/site";
 
-export default function ProjectDetailPage() {
-  const t = useTranslations("projects");
-  const locale = useLocale();
+interface Props {
+  params: Promise<{ locale: string; slug: string }>;
+}
+
+export default async function ProjectDetailPage({ params }: Props) {
+  const { locale, slug } = await params;
   const projects = getProjects(locale);
-  const params = useParams();
-  const slugParam = params.slug;
-  const slug =
-    typeof slugParam === "string" ? slugParam : (slugParam?.[0] ?? "");
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return (
-      <div className="relative flex min-h-screen items-center justify-center bg-[#090E1B]">
-        <MouseGlow />
-        <main
-          id="main-content"
-          tabIndex={-1}
-          className="relative z-10 text-center outline-none"
-        >
-          <h1 className="mb-4 text-4xl font-bold text-white">
-            {t("notFoundTitle")}
-          </h1>
-          <Link
-            href={`/#${sectionIds.projects}`}
-            className="text-[#06B6D4] hover:underline"
-          >
-            {t("backToProjects")}
-          </Link>
-        </main>
-      </div>
-    );
+    notFound();
   }
 
   const related = projects.filter((p) => p.id !== project.id).slice(0, 2);
 
+  const siteUrl = getSiteUrl();
+  const homeUrl = `${siteUrl}/${locale}`;
+  const pageUrl = `${homeUrl}/project/${slug}`;
+  const breadcrumbHome = locale === "es" ? "Inicio" : "Home";
+  const breadcrumbProjects = locale === "es" ? "Proyectos" : "Projects";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${pageUrl}#project`,
+        name: project.title,
+        description: project.shortDescription,
+        url: project.demo,
+        applicationCategory: "WebApplication",
+        keywords: project.technologies.join(", "),
+        author: { "@id": `${homeUrl}#person` },
+        ...(project.github ? { codeRepository: project.github } : {}),
+        dateCreated: project.year,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: breadcrumbHome, item: homeUrl },
+          { "@type": "ListItem", position: 2, name: breadcrumbProjects, item: `${siteUrl}/${locale}#projects` },
+          { "@type": "ListItem", position: 3, name: project.title },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="relative min-h-screen bg-[#090E1B]">
+      <JsonLd value={jsonLd} />
       <MouseGlow />
       <div className="relative z-10">
         <Navigation />
-
         <main id="main-content" tabIndex={-1} className="outline-none">
           <ProjectDetail project={project} related={related} />
         </main>
-
         <FooterClient />
       </div>
     </div>
