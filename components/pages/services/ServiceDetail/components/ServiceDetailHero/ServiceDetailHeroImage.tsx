@@ -1,11 +1,12 @@
 "use client";
 import { FadeInView } from "@components/motion/thin";
 import { useTranslations } from "next-intl";
+import type { StaticImageData } from "next/image";
 
 interface ServiceDetailHeroImageProps {
   icon: React.ReactNode;
   titleKey: string;
-  image: string;
+  image: StaticImageData;
 }
 
 export function ServiceDetailHeroImage({
@@ -23,7 +24,7 @@ export function ServiceDetailHeroImage({
     >
       <div className="relative rounded-2xl overflow-hidden">
         <img
-          src={image}
+          src={image.src}
           alt={t(`${titleKey}` as any)}
           className="w-full h-80 object-cover"
         />

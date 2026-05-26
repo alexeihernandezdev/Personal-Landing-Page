@@ -1,7 +1,9 @@
 "use client";
 
+import type { StaticImageData } from "next/image";
+
 interface ServicesGridItemImageProps {
-  image: string;
+  image: StaticImageData;
   icon: React.ReactNode;
   title: string;
 }
@@ -11,7 +13,7 @@ export function ServicesGridItemImage({ image, icon, title }: ServicesGridItemIm
     <div className="relative h-48 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#06B6D4]/20 to-transparent group-hover:from-[#06B6D4]/30 transition-all duration-300" />
       <img
-        src={image}
+        src={image.src}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       />

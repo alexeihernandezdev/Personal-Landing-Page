@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
+import type { StaticImageData } from "next/image";
 import { ImageWithFallback } from "@/components/atoms/ImageWithFallback";
 
 type Props = {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   availabilityLabel: string;
 };

@@ -10,6 +10,13 @@ import {
   Wrench,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import type { StaticImageData } from "next/image";
+import webappsImg from "@/assets/images/services/webapps.jpg";
+import presenciaImg from "@/assets/images/services/presencia.jpg";
+import modernizacionImg from "@/assets/images/services/modernizacion.jpg";
+import seoImg from "@/assets/images/services/seo.jpg";
+import automationImg from "@/assets/images/services/automation.jpg";
+import maintenanceImg from "@/assets/images/services/maintenance.jpg";
 
 export interface ServiceProcess {
   step: number;
@@ -24,7 +31,7 @@ export interface Service {
   titleKey: string;
   shortDescriptionKey: string;
   fullDescriptionKey: string;
-  image: string;
+  image: StaticImageData;
   features: string[];
   benefits: string[];
   technologies: string[];
@@ -61,7 +68,7 @@ export const services: Service[] = [
     titleKey: "webapps.title",
     shortDescriptionKey: "webapps.shortDescription",
     fullDescriptionKey: "webapps.fullDescription",
-    image: "/images/services/webapps.jpg",
+    image: webappsImg,
     features: [
       "webapps.features.0",
       "webapps.features.1",
@@ -161,7 +168,7 @@ export const services: Service[] = [
     titleKey: "presencia.title",
     shortDescriptionKey: "presencia.shortDescription",
     fullDescriptionKey: "presencia.fullDescription",
-    image: "/images/services/presencia.jpg",
+    image: presenciaImg,
     features: [
       "presencia.features.0",
       "presencia.features.1",
@@ -242,7 +249,7 @@ export const services: Service[] = [
     titleKey: "modernizacion.title",
     shortDescriptionKey: "modernizacion.shortDescription",
     fullDescriptionKey: "modernizacion.fullDescription",
-    image: "/images/services/modernizacion.jpg",
+    image: modernizacionImg,
     features: [
       "modernizacion.features.0",
       "modernizacion.features.1",
@@ -323,7 +330,7 @@ export const services: Service[] = [
     titleKey: "seo.title",
     shortDescriptionKey: "seo.shortDescription",
     fullDescriptionKey: "seo.fullDescription",
-    image: "/images/services/seo.jpg",
+    image: seoImg,
     features: [
       "seo.features.0",
       "seo.features.1",
@@ -404,7 +411,7 @@ export const services: Service[] = [
     titleKey: "automation.title",
     shortDescriptionKey: "automation.shortDescription",
     fullDescriptionKey: "automation.fullDescription",
-    image: "/images/services/automation.jpg",
+    image: automationImg,
     features: [
       "automation.features.0",
       "automation.features.1",
@@ -486,7 +493,7 @@ export const services: Service[] = [
     titleKey: "maintenance.title",
     shortDescriptionKey: "maintenance.shortDescription",
     fullDescriptionKey: "maintenance.fullDescription",
-    image: "/images/services/maintenance.jpg",
+    image: maintenanceImg,
     features: [
       "maintenance.features.0",
       "maintenance.features.1",

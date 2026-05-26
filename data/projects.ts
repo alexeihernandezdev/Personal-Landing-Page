@@ -1,10 +1,20 @@
+import type { StaticImageData } from "next/image";
+import l1 from "@/assets/images/projects/l1.png";
+import l2 from "@/assets/images/projects/l2.png";
+import l3 from "@/assets/images/projects/l3.png";
+import m1 from "@/assets/images/projects/m1.png";
+import m2 from "@/assets/images/projects/m2.png";
+import s1 from "@/assets/images/projects/s1.png";
+import s2 from "@/assets/images/projects/s2.png";
+import s3 from "@/assets/images/projects/s3.png";
+
 export interface Project {
   id: string;
   slug: string;
   title: string;
   shortDescription: string;
   fullDescription: string;
-  image: string;
+  image: StaticImageData;
   technologies: string[];
   features: string[];
   challenges: {
@@ -19,7 +29,7 @@ export interface Project {
   category: string;
   year: string;
   role: string;
-  screenshots: string[];
+  screenshots: StaticImageData[];
 }
 
 const leberpEcosystemEs: Project = {
@@ -30,7 +40,7 @@ const leberpEcosystemEs: Project = {
     "ERP cloud B2B (ventas, almacén, logística, tesorería, compras, analítica y POS): SPA en React, cliente de mostrador en Electron y backend .NET en Azure.",
   fullDescription:
     "Participación en el desarrollo de un ERP / plataforma de gestión orientada a operaciones de ventas, almacén, logística, tesorería, compras, catálogo, analítica y punto de venta, con cliente web (SPA), cliente POS multiplataforma (Electron) y monorepo backend en .NET con API, Azure Functions, integraciones y componentes de datos tabulares configurables e histórico.",
-  image: "/projects/l1.png",
+  image: l1,
   technologies: [
     "TypeScript",
     "React 18",
@@ -72,7 +82,7 @@ const leberpEcosystemEs: Project = {
   category: "Software empresarial",
   year: "2020 – actualidad",
   role: "Desarrollador full stack",
-  screenshots: ["/projects/l1.png", "/projects/l2.png", "/projects/l3.png"],
+  screenshots: [l1, l2, l3],
 };
 
 const leberpEcosystemEn: Project = {
@@ -115,7 +125,7 @@ const lashExtensionsEs: Project = {
     "Web estática y marketing local para un negocio de belleza: servicios, precios, contacto, mapa y contenido bilingüe (inglés / español).",
   fullDescription:
     "Plantilla y demo de sitio promocional centrado en extensiones de pestañas. Incluye catálogo de servicios con precios de ejemplo, formulario de contacto, mapa interactivo con OpenStreetMap y navegación responsive. Los textos de negocio, coordenadas y destino del formulario son configurables en un módulo de datos con placeholders, carrusel en la home y pie de página con contacto y redes.",
-  image: "/projects/m1.png",
+  image: m1,
   technologies: [
     "Next.js 13",
     "React 18",
@@ -162,7 +172,7 @@ const lashExtensionsEs: Project = {
   category: "Desarrollo web",
   year: "2023",
   role: "Desarrollador frontend",
-  screenshots: ["/projects/m1.png", "/projects/m2.png"],
+  screenshots: [m1, m2],
 };
 
 const lashExtensionsEn: Project = {
@@ -212,7 +222,7 @@ const iceClimberEs: Project = {
     "Remake multiplataforma del clásico Ice Climber de NES, con física 2D avanzada, iluminación dinámica y despliegue automatizado.",
   fullDescription:
     "Proyecto de videojuego 2D inspirado en el clásico Ice Climber. Desarrollado originalmente hace años y actualizado recientemente para demostrar el uso de tecnologías modernas como LibGDX y TeaVM. El juego presenta una mecánica de ascenso vertical, bloques destructibles, enemigos con IA simple y un sistema de iluminación basado en Box2D. Incluye tres niveles completos, persistencia de puntuaciones mediante JSON y una arquitectura modular que permite la ejecución tanto en escritorio como en navegadores web. Las texturas fueron elaboradas en Adobe Illustrator.",
-  image: "/projects/s2.png",
+  image: s2,
   technologies: [
     "Java",
     "LibGDX",
@@ -256,7 +266,7 @@ const iceClimberEs: Project = {
   category: "Desarrollo de videojuegos",
   year: "2020",
   role: "Desarrollador de juegos",
-  screenshots: ["/projects/s1.png", "/projects/s2.png", "/projects/s3.png"],
+  screenshots: [s1, s2, s3],
 };
 
 const iceClimberEn: Project = {

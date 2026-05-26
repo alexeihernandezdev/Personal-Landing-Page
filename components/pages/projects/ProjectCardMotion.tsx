@@ -31,8 +31,10 @@ export function ProjectCardMotion({ index, children }: CardProps) {
   );
 }
 
+import type { StaticImageData } from "next/image";
+
 type ImageProps = {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
 };
 

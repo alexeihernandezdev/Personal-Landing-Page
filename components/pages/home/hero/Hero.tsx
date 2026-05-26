@@ -144,7 +144,7 @@ export async function Hero() {
         </FadeOnMount>
 
         <HeroPortrait
-          src={personal.profileImageUrl}
+          src={personal.profileImage}
           alt={t("profileImageAlt", { name: personal.fullName })}
           availabilityLabel={t("availabilityBadge")}
         />

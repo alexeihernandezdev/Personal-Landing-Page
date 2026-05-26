@@ -24,7 +24,7 @@ export function ProjectDetailScreenshots({ project }: ProjectDetailScreenshotsPr
       <div className="grid gap-6 md:grid-cols-2">
         {project.screenshots.map((screenshot, index) => (
           <motion.div
-            key={screenshot}
+            key={`${project.slug}-screenshot-${index}`}
             className="relative h-64 overflow-hidden rounded-xl border border-[#1E293B]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
