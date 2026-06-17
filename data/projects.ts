@@ -1,4 +1,7 @@
 import type { StaticImageData } from "next/image";
+import a1 from "@/assets/images/projects/a1.png";
+import a2 from "@/assets/images/projects/a2.png";
+import a3 from "@/assets/images/projects/a3.png";
 import l1 from "@/assets/images/projects/l1.png";
 import l2 from "@/assets/images/projects/l2.png";
 import l3 from "@/assets/images/projects/l3.png";
@@ -115,6 +118,100 @@ const leberpEcosystemEn: Project = {
   category: "Enterprise software",
   year: "2020 – present",
   role: "Full stack developer",
+};
+
+const architexEs: Project = {
+  id: "4",
+  slug: "architex-marketing-agency-site",
+  title: "Architex — sitio de agencia",
+  shortDescription:
+    "Landing institucional de una agencia de marketing digital: hero, servicios, portafolio, testimonios y contacto, con páginas de detalle por servicio, bilingüe (ES / EN) y SEO con datos estructurados.",
+  fullDescription:
+    "Sitio público de Architex, una agencia de marketing digital. Incluye home con hero, catálogo de servicios, portafolio, testimonios y formulario de contacto, además de páginas de detalle por servicio con secciones de overview, características, proceso, FAQ y CTA. Implementa internacionalización española e inglesa con next-intl, contenido cargado desde módulos de datos JSON, animaciones con Motion, contacto directo vía WhatsApp y métricas en Vercel Analytics / Speed Insights. SEO reforzado con metadatos por idioma, datos estructurados (JSON-LD) y preload de imagen del hero.",
+  image: a1,
+  technologies: [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS 4",
+    "next-intl",
+    "Motion",
+    "Lucide React",
+    "Vercel Analytics",
+    "Vercel Speed Insights",
+  ],
+  features: [
+    "App Router de Next.js 16 con rutas localizadas `[locale]` y mensajes en JSON para español e inglés gestionados con next-intl",
+    "Home con hero, grilla de servicios, portafolio con modal de galería, testimonios con modal y formulario de contacto integrado con WhatsApp",
+    "Páginas de detalle por servicio (`/services/[serviceId]`) con hero, overview, features, proceso, stats, FAQ y CTA",
+    "API Routes internas para exponer el catálogo de servicios y portafolio desde data modules tipados",
+    "Animaciones de entrada y micro-interacciones con Motion y proveedor centralizado para reducir el bundle de cliente",
+    "SEO con metadatos por locale, datos estructurados (StructuredData) y preload prioritario de la imagen del hero",
+    "UI con Tailwind CSS 4 e iconos de Lucide; menú móvil, navegación sticky y switch de idioma accesibles",
+    "Telemetría con Vercel Analytics y Speed Insights cargados de forma diferida para no penalizar el LCP",
+  ],
+  challenges: [
+    {
+      title: "Internacionalización con contenido rico",
+      description:
+        "Coordinar diccionarios de next-intl con módulos de datos JSON (servicios, detalles, portafolio, testimonios) para que cada locale comparta estructura sin duplicar layout ni romper el SEO de URLs por idioma.",
+    },
+    {
+      title: "Rendimiento en una landing visual",
+      description:
+        "Una agencia necesita un sitio vistoso sin sacrificar Core Web Vitals: se difieren scripts de analítica, se hace preload del hero, se segmentan animaciones de Motion y se evita JS innecesario en componentes server.",
+    },
+    {
+      title: "Páginas de detalle escalables por servicio",
+      description:
+        "Cada servicio tiene secciones reutilizables (overview, features, proceso, FAQ, CTA) alimentadas desde data modules, para añadir nuevas líneas de servicio sin tocar la UI.",
+    },
+  ],
+  demo: "https://www.architexve.com",
+  demoIsProduction: true,
+  category: "Desarrollo web",
+  year: "2026",
+  role: "Desarrollador frontend",
+  screenshots: [a1, a2, a3],
+};
+
+const architexEn: Project = {
+  ...architexEs,
+  title: "Architex — agency website",
+  shortDescription:
+    "Marketing agency website: hero, services, portfolio, testimonials, and contact, with per-service detail pages, bilingual (ES / EN) content, and structured-data SEO.",
+  fullDescription:
+    "Public site for Architex, a digital marketing agency. It includes a home page with hero, services catalog, portfolio, testimonials, and contact form, plus per-service detail pages with overview, features, process, FAQ, and CTA sections. It implements Spanish and English internationalization with next-intl, content loaded from JSON data modules, Motion animations, direct WhatsApp contact, and Vercel Analytics / Speed Insights metrics. SEO is reinforced with per-locale metadata, structured data (JSON-LD), and hero-image preload.",
+  features: [
+    "Next.js 16 App Router with localized `[locale]` routes and JSON message catalogs for English and Spanish, managed via next-intl",
+    "Home with hero, services grid, portfolio with gallery modal, testimonials with modal, and contact form integrated with WhatsApp",
+    "Per-service detail pages (`/services/[serviceId]`) with hero, overview, features, process, stats, FAQ, and CTA",
+    "Internal API routes that expose the services catalog and portfolio from typed data modules",
+    "Entry animations and micro-interactions with Motion plus a centralized provider to keep the client bundle small",
+    "SEO with per-locale metadata, structured data (StructuredData), and priority preload of the hero image",
+    "Tailwind CSS 4 UI with Lucide icons; accessible mobile menu, sticky navigation, and language switcher",
+    "Vercel Analytics and Speed Insights loaded in a deferred way to avoid hurting LCP",
+  ],
+  challenges: [
+    {
+      title: "Internationalization with rich content",
+      description:
+        "Coordinating next-intl dictionaries with JSON data modules (services, details, portfolio, testimonials) so every locale shares structure without duplicating layout or breaking per-locale URL SEO.",
+    },
+    {
+      title: "Performance on a visual landing",
+      description:
+        "An agency needs a flashy site without sacrificing Core Web Vitals: analytics scripts are deferred, the hero image is preloaded, Motion animations are scoped, and unnecessary JS is kept out of server components.",
+    },
+    {
+      title: "Scalable per-service detail pages",
+      description:
+        "Each service has reusable sections (overview, features, process, FAQ, CTA) fed from data modules, so adding new service lines does not require touching the UI.",
+    },
+  ],
+  category: "Web development",
+  year: "2026",
+  role: "Frontend developer",
 };
 
 const lashExtensionsEs: Project = {
@@ -312,8 +409,8 @@ const iceClimberEn: Project = {
 export type AppLocale = "es" | "en";
 
 export const projectsByLocale: Record<AppLocale, Project[]> = {
-  es: [leberpEcosystemEs, lashExtensionsEs, iceClimberEs],
-  en: [leberpEcosystemEn, lashExtensionsEn, iceClimberEn],
+  es: [leberpEcosystemEs, architexEs, lashExtensionsEs, iceClimberEs],
+  en: [leberpEcosystemEn, architexEn, lashExtensionsEn, iceClimberEn],
 };
 
 export function getProjects(locale: string): Project[] {
