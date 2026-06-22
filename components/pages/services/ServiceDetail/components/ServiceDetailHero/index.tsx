@@ -2,6 +2,7 @@ import { ServiceDetailHeroBackground } from "./ServiceDetailHeroBackground";
 import { ServiceDetailHeroBreadcrumb } from "./ServiceDetailHeroBreadcrumb";
 import { ServiceDetailHeroContent } from "./ServiceDetailHeroContent";
 import { ServiceDetailHeroImage } from "./ServiceDetailHeroImage";
+import type { StaticImageData } from "next/image";
 
 interface ServiceDetailHeroProps {
   locale: string;
@@ -9,7 +10,7 @@ interface ServiceDetailHeroProps {
   isFeatured: boolean;
   titleKey: string;
   shortDescriptionKey: string;
-  image: string;
+  image: StaticImageData;
   timeline: string;
   includesDocumentation: boolean;
   includesTraining: boolean;
