@@ -78,7 +78,7 @@ export async function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {t("descriptionLead")}{" "}
+            {t("descriptionLead", { years: personal.yearsExperience })}{" "}
             <span className="font-semibold text-white">
               {t("descriptionTech")}
             </span>
