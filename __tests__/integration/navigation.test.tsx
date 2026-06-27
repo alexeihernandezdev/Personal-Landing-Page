@@ -27,8 +27,14 @@ describe("Navigation", () => {
     renderWithProviders(<Navigation />, { locale: "es" });
     expect(screen.getAllByRole("link", { name: /^inicio$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^proyectos$/i }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /^servicios$/i }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /^blog$/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /^contacto$/i }).length).toBeGreaterThan(0);
+  });
+
+  it("does not render services or blog nav links", () => {
+    usePathname.mockReturnValue("/");
+    renderWithProviders(<Navigation />, { locale: "es" });
+    expect(screen.queryByRole("link", { name: /^servicios$/i })).toBeNull();
+    expect(screen.queryByRole("link", { name: /^blog$/i })).toBeNull();
   });
 
   it("opens and closes the mobile menu via the toggle button", async () => {
@@ -62,15 +68,6 @@ describe("Navigation", () => {
     const projectsLinks = screen.getAllByRole("link", { name: /^proyectos$/i });
     await user.click(projectsLinks[projectsLinks.length - 1]);
     expect(toggle).toHaveAttribute("aria-expanded", "false");
-  });
-
-  it("services link points to /services and blog link to /blog", () => {
-    usePathname.mockReturnValue("/");
-    renderWithProviders(<Navigation />, { locale: "es" });
-    const services = screen.getAllByRole("link", { name: /^servicios$/i });
-    const blog = screen.getAllByRole("link", { name: /^blog$/i });
-    expect(services[0]).toHaveAttribute("href", "/es/services");
-    expect(blog[0]).toHaveAttribute("href", "/es/blog");
   });
 
   it("hash anchors include the section id", () => {

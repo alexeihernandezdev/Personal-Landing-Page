@@ -7,18 +7,6 @@ test.describe("navigation - desktop", () => {
     await expect(page).toHaveURL(/#projects$/);
     await expect(page.locator("#projects")).toBeInViewport();
   });
-
-  test("clicking 'Servicios' navigates to /es/services", async ({ page }) => {
-    await page.goto("/es");
-    await page.getByRole("link", { name: /^servicios$/i }).first().click();
-    await expect(page).toHaveURL(/\/es\/services$/);
-  });
-
-  test("clicking 'Blog' navigates to /es/blog", async ({ page }) => {
-    await page.goto("/es");
-    await page.getByRole("link", { name: /^blog$/i }).first().click();
-    await expect(page).toHaveURL(/\/es\/blog$/);
-  });
 });
 
 test.describe("navigation - locale switcher", () => {

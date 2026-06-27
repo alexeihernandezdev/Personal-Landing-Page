@@ -99,53 +99,29 @@ export function Navigation() {
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) =>
-              item.type === "path" ? (
-                <motion.div
-                  key={item.navKey}
-                  initial={{ opacity: 0, y: -40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.navKey}
+                initial={{ opacity: 0, y: -40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+              >
+                <motion.span
+                  className="inline-block"
+                  variants={navHoverLift}
+                  initial="rest"
+                  animate="rest"
+                  whileHover="hover"
                 >
-                  <motion.span
-                    className="inline-block"
-                    variants={navHoverLift}
-                    initial="rest"
-                    animate="rest"
-                    whileHover="hover"
+                  <Link
+                    href={`/#${sectionIds[item.section]}`}
+                    className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
                   >
-                    <Link
-                      href={item.path}
-                      className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
-                    >
-                      {t(`nav.${item.navKey}`)}
-                    </Link>
-                  </motion.span>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key={item.navKey}
-                  initial={{ opacity: 0, y: -40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <motion.span
-                    className="inline-block"
-                    variants={navHoverLift}
-                    initial="rest"
-                    animate="rest"
-                    whileHover="hover"
-                  >
-                    <Link
-                      href={`/#${sectionIds[item.section]}`}
-                      className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
-                    >
-                      {t(`nav.${item.navKey}`)}
-                    </Link>
-                  </motion.span>
-                </motion.div>
-              ),
-            )}
+                    {t(`nav.${item.navKey}`)}
+                  </Link>
+                </motion.span>
+              </motion.div>
+            ))}
             <LocaleSwitcher className="ml-2" />
           </div>
 
@@ -202,49 +178,31 @@ export function Navigation() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex flex-col gap-4">
-                  {navItems.map((item, index) =>
-                    item.type === "path" ? (
-                      <motion.div
-                        key={item.navKey}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                  {navItems.map((item, index) => (
+                    <motion.div
+                      key={item.navKey}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.2, delay: index * 0.05 }}
+                    >
+                      <motion.span
+                        className="inline-block"
+                        variants={navMobileSlide}
+                        initial="rest"
+                        animate="rest"
+                        whileHover="hover"
                       >
                         <Link
-                          href={item.path}
+                          href={`/#${sectionIds[item.section]}`}
                           onClick={handleLinkClick}
-                          className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium block"
+                          className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
                         >
                           {t(`nav.${item.navKey}`)}
                         </Link>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key={item.navKey}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.2, delay: index * 0.05 }}
-                      >
-                        <motion.span
-                          className="inline-block"
-                          variants={navMobileSlide}
-                          initial="rest"
-                          animate="rest"
-                          whileHover="hover"
-                        >
-                          <Link
-                            href={`/#${sectionIds[item.section]}`}
-                            onClick={handleLinkClick}
-                            className="text-gray-300 hover:text-[#06B6D4] transition-colors font-medium"
-                          >
-                            {t(`nav.${item.navKey}`)}
-                          </Link>
-                        </motion.span>
-                      </motion.div>
-                    ),
-                  )}
+                      </motion.span>
+                    </motion.div>
+                  ))}
                   <div className="pt-2 border-t border-[#1E293B] flex justify-center">
                     <LocaleSwitcher onNavigate={handleLinkClick} />
                   </div>
